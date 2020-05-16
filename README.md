@@ -16,9 +16,10 @@ See interfaces from [here](https://tetunori.github.io/p5.toio/docs/classes/_p5ti
 
 # Usage
 ## Environment 
-Due to the dependency to WebBluetooth, this library works with the following environment.  
+Due to the dependency to `WebBluetooth`, this library works with the following environment.  
 OS: Windows, MacOS, Android. Not support iOS/iPadOS.  
 Browser: Google Chrome is highly recommended.  
+[P5 Editor](https://editor.p5js.org/) support `WebBluetooth` but [OpenProcessing](https://www.openprocessing.org/) unfortunately does not support it so that this library also does not work.
 
 ## Import library
 Just insert a sigle script after 2 dependent scripts `p5.js` and `p5.sound.min.js` in your `<head>`.  
@@ -37,7 +38,7 @@ We can also use the non-uglified code.
 ## Use in your Sketch
 ### Search and Connect to toio™Core Cube
 Call `P5tCube.connectNewP5tCube()` and receive `P5tCube` instance in Promise as below.  
-This library depends on WebBluetooth so that this API must be called in a user-action function like `mouseClicked()` or `keyPressed()` etc.  
+This library depends on `WebBluetooth` so that this API must be called in a user-action function like `mouseClicked()` or `keyPressed()` etc.  
 
 ```javascript
 const gCubes = [];
@@ -139,7 +140,7 @@ Depending on your PC environment, performance of the API call or processing sket
 In those cases, using async function might resolve the issue.
 ```javascript
 function draw() {
-  // First cube control command with async
+  // Cube control command with async
   asyncCubeControl();
 
   // Then code your sketch...
@@ -152,7 +153,7 @@ async function asyncCubeControl() {
 ```
 
 #### Increase framerate
-This library set default frame rate of WebBluetooth communication to 15fps for poor environment as mine🙃.  
+This library set default frame rate of `WebBluetooth` communication to 15fps for poor environment as mine🙃.  
 For your high performance PCs, please increase frame rate (up to 30) by calling `setFrameRate`.
 ```javascript
 cube?.setFrameRate(30);
@@ -176,3 +177,4 @@ MIT License, Copyright (c) 2019 Gareth Williams
 [O'Reilly Japan - プログラミングTypeScript](https://www.oreilly.co.jp/books/9784873119045/)
 
 ## toio
+[toio Core Cube Specification](https://toio.github.io/toio-spec/)
