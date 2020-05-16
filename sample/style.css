@@ -1,0 +1,11 @@
+
+html, body {
+  margin:0;
+  padding:0;
+  background-color:whitesmoke;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
