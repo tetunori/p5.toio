@@ -1,6 +1,6 @@
 # p5.toio
 Version 0.5.0  
-<img src="./images/logo-a.png" width="600px">
+<img src="https://tetunori.github.io/p5.toio/images/logo-a.png" width="600px">
 
 # Description
 p5.toio is a library for controlling toio™ in p5.js environment.  
