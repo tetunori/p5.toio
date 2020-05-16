@@ -1,0 +1,4 @@
+dist/*
+docs/*
+sample/*
+globals.d.ts

@@ -1,0 +1,13 @@
+
+{
+
+  "inputFiles": ["./src/*"],
+  "mode": "modules",
+  "ignoreCompilerErrors": true,
+  "out": "docs",
+  "name": "p5.toio",
+  "disableOutputCheck": true,
+  "excludeExternals": true,
+  "excludePrivate": true
+
+}

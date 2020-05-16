@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "docs": "typedoc src/",
+    "docs:clean": "rimraf docs",
+    "docs:serve": "yarn docs:clean && yarn docs && live-server docs",
+    "min": "terser ./dist/p5.toio.js --compress --mangle --output ./dist/p5.toio.min.js",
+    "make": "eslint ./src/**/*.ts --fix && tsc && yarn min",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix"
+  },
+  "dependencies": {
+    "terser": "^4.6.13"
+  }
+}

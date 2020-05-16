@@ -1,0 +1,42 @@
+
+{
+
+  "compilerOptions": {
+
+    "module": "none",
+    "incremental": true,
+    "strict": true,
+    "target": "es6",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "outFile": "./dist/p5.toio.js",
+    // "outDir": "./out/",
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+    
+  },
+  "include": [
+    "global.d.ts",
+    "src/common/util.ts",
+    "src/id/position/mat.ts",
+    "src/id/position/TileMat.ts",
+    "src/id/position/*",
+    "src/id/standard/standardId.ts",
+    "src/id/standard/*",
+    "src/id/id.ts",
+    "src/p5tId.ts",
+    "src/cube/char/char.ts",
+    "src/cube/char/*",
+    "src/cube/cubeBase.ts",
+    "src/cube/cube.ts",
+    "src/cube/scanner.ts",
+    "src/cube/connector.ts",
+    "src/p5tCube.ts",
+  ]
+
+}
