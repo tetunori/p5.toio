@@ -51,7 +51,7 @@ function mouseClicked() {
 
   P5tCube.connectNewP5tCube().then( cube => {
     gCubes.push( cube );
-    cube.turnLightOn( color( 255, 255, 255, 255 ) );
+    cube.turnLightOn( 'white' );
     
   } );
 
@@ -86,9 +86,9 @@ function keyPressed() {
           break;
         case 52:
           cube.playMelody( [ 
-            { note: 0x50, duration: 0x1E }, 
-            { note: 0x52, duration: 0x1E }, 
-            { note: 0x54, duration: 0x1E } 
+            { note: 0x3C, duration: 0x1E }, 
+            { note: 0x3E, duration: 0x1E }, 
+            { note: 0x40, duration: 0x1E } 
           ] );
           break;
         case 53:
