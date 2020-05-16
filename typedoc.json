@@ -5,7 +5,7 @@
   "mode": "modules",
   "ignoreCompilerErrors": true,
   "out": "docs",
-  "name": "p5.Cube",
+  "name": "p5.toio",
   "disableOutputCheck": true,
   "excludeExternals": true,
   "excludePrivate": true
