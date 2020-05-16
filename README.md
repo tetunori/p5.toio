@@ -8,19 +8,26 @@ A lot of APIs on toio™ can be used with just a simple step as below.
 Now we released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.  
 Please wait for the next beta-release(0.8.0).
 
+p5.toio consists of 2 classes `P5tCube` and `P5tId`.  
+`P5tCube` class supplies a lot of APIs and utilities enable us to control Cube easily.  
+Please refer to the `P5tCube` class interfaces from here.
+`P5tId`.
+
+
+
 # Usage
 ## Import library
 Just insert a sigle script after 2 dependent scripts `p5.js` and `p5.sound.min.js` in your `<head>`.  
 ```html 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
 
-    <!-- INSERT HERE -->
-    <script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.min.js"></script>
+<!-- INSERT HERE -->
+<script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.min.js"></script>
 ```
 We can also use the non-uglified code.  
 ```html
-    <script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.js"></script>
+<script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.js"></script>
 ```
 
 ## Use in your Sketch
