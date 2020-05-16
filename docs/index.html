@@ -69,8 +69,43 @@
 				<a href="#description" id="description" style="color: inherit; text-decoration: none;">
 					<h1>Description</h1>
 				</a>
+				<p>p5.toio is a library for controlling toio™ in p5.js environment.<br>A lot of APIs on toio™ can be used with just a simple step as below.<br>Now we released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.<br>Please wait for the next beta-release(0.8.0).</p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h1>Usage</h1>
+				</a>
+				<a href="#import-library" id="import-library" style="color: inherit; text-decoration: none;">
+					<h2>Import library</h2>
+				</a>
+				<p>Just insert a sigle script after 2 dependent scripts <code>p5.js</code> and <code>p5.sound.min.js</code> in your <code>&lt;head&gt;</code>.  </p>
+				<pre><code class="language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- INSERT HERE --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<p>We can also use the non-uglified code.  </p>
+				<pre><code class="language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<a href="#use-in-your-sketch" id="use-in-your-sketch" style="color: inherit; text-decoration: none;">
+					<h2>Use in your Sketch</h2>
+				</a>
+				<a href="#search-and-connect-to-toio™core-cube" id="search-and-connect-to-toio™core-cube" style="color: inherit; text-decoration: none;">
+					<h3>Search and Connect to toio™Core Cube</h3>
+				</a>
+				<p>Call <code>P5tCube.connectNewP5tCube()</code> and receive <code>P5tCube</code> instance in Promise as below.<br>This library depends on WebBluetooth so that this API must be called in a user-action function like <code>mouseClicked()</code> or <code>keyPressed()</code> etc.  </p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> gCubes = [];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mouseClicked</span>(<span class="hljs-params"></span>) </span>{
+  P5tCube.connectNewP5tCube().then( <span class="hljs-function"><span class="hljs-params">cube</span> =&gt;</span> {
+    <span class="hljs-comment">// 'cube' is an instance of connected toio™Core Cube.</span>
+    gCubes.push( cube );
+
+    <span class="hljs-comment">// You can call any </span>
+  } );
+}</code></pre>
+				<a href="#issue-some-apis" id="issue-some-apis" style="color: inherit; text-decoration: none;">
+					<h3>Issue some APIs</h3>
+				</a>
+				<a href="#" id="" style="color: inherit; text-decoration: none;">
+					<h3></h3>
 				</a>
 				<a href="#licence" id="licence" style="color: inherit; text-decoration: none;">
 					<h1>Licence</h1>
