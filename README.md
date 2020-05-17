@@ -5,7 +5,7 @@ Version 0.5.0
 # Description
 **p5.toio** is a library for controlling toio™ in p5.js environment.  
 A lot of APIs on [toio™](https://toio.io/) can be used with just a simple step as below.  
-Now we released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.  
+Now I released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.  
 Please wait for the next beta-release(0.8.0).
 
 **p5.toio** consists of 2 classes `P5tCube` and `P5tId`.  
