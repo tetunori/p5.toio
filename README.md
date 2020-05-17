@@ -5,7 +5,7 @@ Version 0.5.0
 # Description
 **p5.toio** is a library for controlling toio™ in p5.js environment.  
 A lot of APIs on [toio™](https://toio.io/) can be used with just a simple step as below.  
-Now we released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.  
+Now I released an alpha-release(0.5.0) so that there is no test code, detailed API document or samples yet.  
 Please wait for the next beta-release(0.8.0).
 
 **p5.toio** consists of 2 classes `P5tCube` and `P5tId`.  
@@ -19,7 +19,8 @@ See interfaces from [here](https://tetunori.github.io/p5.toio/docs/classes/_p5ti
 Due to the dependency to `WebBluetooth`, this library works with the following environment.  
 OS: Windows, MacOS, Android. Not support iOS/iPadOS.  
 Browser: Google Chrome is highly recommended.  
-[P5 Editor](https://editor.p5js.org/) support `WebBluetooth` but [OpenProcessing](https://www.openprocessing.org/) unfortunately does not support it so that this library also does not work.
+[P5 Editor](https://editor.p5js.org/) support `WebBluetooth` but [OpenProcessing](https://www.openprocessing.org/) unfortunately does not support it so that this library also does not work.  
+**[P5 Editor: p5.toio basic sample](https://editor.p5js.org/tetunori/sketches/x-m5aIlWp)**
 
 ## Import library
 Just insert a sigle script after 2 dependent scripts `p5.js` and `p5.sound.min.js` in your `<head>`.  
@@ -51,6 +52,7 @@ function mouseClicked() {
   } );
 }
 ```
+**[P5 Editor Sample 1: Turn Light On](https://editor.p5js.org/tetunori/sketches/gkMCIKNk-)**
 
 ### Issue some APIs
 Basically, please refer to the TypeDoc API references [P5tCube](https://tetunori.github.io/p5.toio/docs/classes/_p5tcube_.p5tcube.html) and [P5tId](https://tetunori.github.io/p5.toio/docs/classes/_p5tid_.p5tid.html).  
@@ -61,6 +63,7 @@ Some actual examples are listed below.
 // Turn the light on with white
 cube?.turnLightOn( 'white' );
 ```
+**[P5 Editor Sample 1: Turn Light On](https://editor.p5js.org/tetunori/sketches/gkMCIKNk-)**
 
 #### Example 2: Play MIDI melody
 ```javascript
@@ -71,6 +74,7 @@ cube?.playMelody( [
   { note: 0x40, duration: 0x1E } 
 ] );
 ```
+**[P5 Editor Sample 2: Play MIDI melody](https://editor.p5js.org/tetunori/sketches/yfFYiyMRx)**
 
 #### Example 3: Interaction with mouse X.
 ```javascript
@@ -82,6 +86,7 @@ for( const cube of connectedCubeArray ){
   cube?.turnToXY( x, y, speed );
 }
 ```
+**[P5 Editor Sample 3: Keep on gazing at mouse point](https://editor.p5js.org/tetunori/sketches/HNZniaSdx)**
 
 #### Example 4: Interaction with 2 Cubes.
 ```javascript
@@ -89,12 +94,15 @@ for( const cube of connectedCubeArray ){
 const speed = 115;
 cubeP?.turnToCube( cubeQ, speed );
 ```
+**[P5 Editor Sample 4-1: Keep on gazing at the other Cube](https://editor.p5js.org/tetunori/sketches/wsYXbuRL5)**
+
 ```javascript
 // Keep on chasing the othre Cube
 const moveType = P5tCube.moveTypeId.withoutBack;
 const speed = 80;
 cubeP?.moveToCube( cubeQ, speed, moveType );
 ```
+**[P5 Editor Sample 4-2: Keep on chasing the other Cube](https://editor.p5js.org/tetunori/sketches/gSg6D4zGC)**
 
 #### Example 5: Interaction with a mat.
 ```javascript
@@ -102,24 +110,26 @@ cubeP?.moveToCube( cubeQ, speed, moveType );
   const color = P5tId.ColorTileMat.getTileColor(cube?.x, cube?.y);
   background( color );
 ```
+**[P5 Editor Sample 5: Change background color with touched mat color](https://editor.p5js.org/tetunori/sketches/cHerL4iap)**
 
 ### Event listning
 This library supplies 2 methods `addEventListener` and definition of callback to recieve notification.
 #### Example 6: addEventListner
 ```javascript
 // Button press event
-type = 'buttonpress';
+const type = 'buttonpress';
 cube?.addEventListener(type, ()=>{
   console.log(type);
 });
 ```
 ```javascript
 // Posture change event
-type = 'sensorposturechange';
+const type = 'sensorposturechange';
 cube?.addEventListener(type, (posture)=>{
   console.log(type, posture);
 });
 ```
+**[P5 Editor Sample 6: addEventListner](https://editor.p5js.org/tetunori/sketches/xTCH-scLp)**
 
 #### Example 7: Definition of callback
 If you define callback functions as below, it will call when notified.
@@ -131,6 +141,20 @@ const cubePositionIdChanged = (info) => {
 const cubeStandardIdChanged = (info) => {
   console.log('cubeStandardIdChanged!', info);
 }
+```
+**[P5 Editor Sample 7: Callback definition](https://editor.p5js.org/tetunori/sketches/tlc8-qE9d)**
+
+Here are the all callback function name.
+```javascript
+const onButtonPressed()
+const onButtonReleased()
+const onBatteryLevelChanged(batteryLevel: number)
+const onFlatChanged(flat: boolean)
+const onCollisionOccurred()
+const onDoubleTapped()
+const onPostureChanged(posture: string)
+const onPositionIdChanged(info: positionIdInfo)
+const onStandardIdChanged(info: standardIdInfo)
 ```
 
 ## Tips
