@@ -108,14 +108,14 @@ This library supplies 2 methods `addEventListener` and definition of callback to
 #### Example 6: addEventListner
 ```javascript
 // Button press event
-type = 'buttonpress';
+const type = 'buttonpress';
 cube?.addEventListener(type, ()=>{
   console.log(type);
 });
 ```
 ```javascript
 // Posture change event
-type = 'sensorposturechange';
+const type = 'sensorposturechange';
 cube?.addEventListener(type, (posture)=>{
   console.log(type, posture);
 });
@@ -131,6 +131,18 @@ const cubePositionIdChanged = (info) => {
 const cubeStandardIdChanged = (info) => {
   console.log('cubeStandardIdChanged!', info);
 }
+```
+Here are the all callback function name.
+```javascript
+const onButtonPressed()
+const onButtonReleased()
+const onBatteryLevelChanged(batteryLevel: number)
+const onFlatChanged(flat: boolean)
+const onCollisionOccurred()
+const onDoubleTapped()
+const onPostureChanged(posture: string)
+const onPositionIdChanged(info: positionIdInfo)
+const onStandardIdChanged(info: standardIdInfo)
 ```
 
 ## Tips
