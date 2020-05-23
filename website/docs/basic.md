@@ -24,7 +24,7 @@ function mouseClicked() {
 Then, we can fully access to any API of `p5.toio`.
 
 ## Issue a P5tCube API
-Basically, please refer to the [`P5tCube` API reference Page](https://tetunori.github.io/p5.toio/docs/classes/_p5tcube_.p5tcube.html). Here is a simple example.
+Basically, please refer to the [`P5tCube` API reference Page](https://tetunori.github.io/p5.toio/docs/cube/classes/p5tcube/). Here is a simple example.
 
 ### Example: Turn the light on
 ```js {2}
@@ -35,7 +35,7 @@ OK. Super simple. You can confirm the result by p5.js Web Editor.
 **[p5.js Web Editor Sample: Turn Light On](https://editor.p5js.org/tetunori/sketches/2J4HYQA35)**
 
 ## Issue a P5tId API
-For `P5tId` class, refer to the [`P5tId` API reference Page](https://tetunori.github.io/p5.toio/docs/classes/_p5tid_.p5tid.html). And here is another sample.
+For `P5tId` class, refer to the [`P5tId` API reference Page](https://tetunori.github.io/p5.toio/docs/id/classes/p5tid/). And here is another sample.
 
 ### Example: Is on the tile mat
 ```js {1,3}
