@@ -10,9 +10,9 @@ Please wait for the next beta-release(0.8.0).
 
 **p5.toio** consists of 2 classes `P5tCube` and `P5tId`.  
 `P5tCube` class supplies a lot of APIs and utilities enable us to control Cube easily.  
-Please refer to the `P5tCube` class interfaces from [here](https://tetunori.github.io/p5.toio/docs/classes/_p5tcube_.p5tcube.html).  
+Please refer to the `P5tCube` class interfaces from [here](https://tetunori.github.io/p5.toio/docs/cube/classes/p5tcube).  
 `P5tId` class includes APIs and properties on toioIDs printed on toio™'s mats, cards, stickers.  
-See interfaces from [here](https://tetunori.github.io/p5.toio/docs/classes/_p5tid_.p5tid.html) for `P5tId`.  
+See interfaces from [here](https://tetunori.github.io/p5.toio/docs/id/classes/p5tid) for `P5tId`.  
 
 # Usage
 ## Environment 
@@ -55,7 +55,7 @@ function mouseClicked() {
 **[P5 Editor Sample 1: Turn Light On](https://editor.p5js.org/tetunori/sketches/gkMCIKNk-)**
 
 ### Issue some APIs
-Basically, please refer to the TypeDoc API references [P5tCube](https://tetunori.github.io/p5.toio/docs/classes/_p5tcube_.p5tcube.html) and [P5tId](https://tetunori.github.io/p5.toio/docs/classes/_p5tid_.p5tid.html).  
+Basically, please refer to the TypeDoc API references [P5tCube](https://tetunori.github.io/p5.toio/docs/cube/classes/p5tcube) and [P5tId](https://tetunori.github.io/p5.toio/docs/id/classes/p5tid).  
 Some actual examples are listed below.
 
 #### Example 1: Turn the light on
