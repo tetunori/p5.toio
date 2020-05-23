@@ -24,7 +24,7 @@ We can also use the non-uglified code.
 1. Click `>` button icon to open Sketch files.
 2. Select `index.html` to insert `p5.toio` library as the method above.
 3. Then, you can go back and start programming by selecting `index.js`.
-   Go on to the next page [Basic Usage](https://toio.io/).
+   Go on to the next page [Basic Usage](https://tetunori.github.io/p5.toio/docs/basic).
 
 :::note
 [p5.js Web Editor](https://editor.p5js.org/) support `Web Bluetooth` but [OpenProcessing](https://www.openprocessing.org/) unfortunately does not support it so that this library also does not work😭.  
