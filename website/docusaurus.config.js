@@ -2,17 +2,17 @@ module.exports = {
   title: 'p5.toio',
   tagline: 'The library of toio™ for p5.js',
   url: 'https://tetunori.github.io',
-  baseUrl: '/DocusaurusTest/',
-  favicon: 'img/favicon.ico',
+  baseUrl: '/p5.toio/',
+  favicon: 'images/favicon.ico',
   organizationName: 'tetunori',
-  projectName: 'DocusaurusTest',
+  projectName: 'p5.toio',
   themeConfig: {
-    image: 'img/logo-a.png',
+    image: 'images/logo-a.png',
     navbar: {
       title: 'p5.toio',
       logo: {
         alt: 'mini logo',
-        src: 'img/mini-logo.png',
+        src: 'images/mini-logo.png',
       },
       links: [
         {

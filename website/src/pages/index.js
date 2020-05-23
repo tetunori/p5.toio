@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Easy to Use</>,
-    imageUrl: 'img/easy.svg',
+    imageUrl: 'images/easy.svg',
     description: (
       <>
         p5.toio was designed from the ground up to be easily integrated and
@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: <>Focus on What You Create</>,
-    imageUrl: 'img/focus.svg',
+    imageUrl: 'images/focus.svg',
     description: (
       <>
         p5.toio lets you focus on your creativity, and we&apos;ll do the chores. 
@@ -29,7 +29,7 @@ const features = [
   },
   {
     title: <>Powered by Web Bluetooth</>,
-    imageUrl: 'img/powered.svg',
+    imageUrl: 'images/powered.svg',
     description: (
       <>
         Since p5.toio was implemented based on Web Bluetooth, you can start programming toio™Core Cube 
@@ -66,7 +66,7 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className={classnames('col col--4')}>
-              <img className={styles.heroImg} src="img/logo.png" />
+              <img className={styles.heroImg} src="images/logoCropped.png" />
             </div>
             <div className={classnames('col col--6')}>
               <h1 className="hero__title">Control toio™Core Cube in p5.js instantly</h1>
