@@ -1,0 +1,63 @@
+module.exports = {
+  someSidebar: {
+    'p5.toio': ['intro'],
+    'Getting Started': ['import', 'basic'],
+    'Guides': ['example', 'event', 'tips', 'env'],
+    'API Reference': [ {
+      "p5tCube": [
+        "cube/classes/p5tcube",
+        {
+        "Supplement": [
+          "cube/classes/cube",
+          "cube/classes/cubebase",
+          "cube/classes/cubebatterychar",
+          "cube/classes/cubebuttonchar",
+          "cube/classes/cubechar",
+          "cube/classes/cubeconnector",
+          "cube/classes/cubeidchar",
+          "cube/classes/cubelightchar",
+          "cube/classes/cubemotorchar",
+          "cube/classes/cubescanner",
+          "cube/classes/cubesensorchar",
+          "cube/classes/cubesoundchar",
+          "cube/interfaces/cubebaseif",
+          "cube/interfaces/cubecharif",
+          "cube/globals",
+        ]},
+      ],
+      "p5tId": [
+        "id/classes/p5tid",
+        "id/classes/card",
+        "id/classes/colortilemat",
+        "id/classes/devmat01",
+        "id/classes/devmat02",
+        "id/classes/devmat03",
+        "id/classes/devmat04",
+        "id/classes/devmat05",
+        "id/classes/devmat06",
+        "id/classes/devmat07",
+        "id/classes/devmat08",
+        "id/classes/devmat09",
+        "id/classes/devmat10",
+        "id/classes/devmat11",
+        "id/classes/devmat12",
+        "id/classes/gamemark",
+        "id/classes/ringmat",
+        "id/classes/simplecardalphabet",
+        "id/classes/simplecardnumber",
+        "id/classes/simplecardsymbol",
+        "id/classes/simpletilemat",
+        "id/classes/skunk",
+        "id/classes/sticker",
+        {
+        "Supplement": [
+          "id/classes/id",
+          "id/classes/mat",
+          "id/classes/standardid",
+          "id/classes/tilemat",
+          "id/globals",
+        ]},
+      ] }
+    ],
+  },
+};
