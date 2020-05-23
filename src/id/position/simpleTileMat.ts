@@ -7,10 +7,10 @@ class SimpleTileMat extends TileMat {
   public static readonly centerX = 250;
   public static readonly centerY = 250;
 
-  public static readonly matrixMinX = 599;
-  public static readonly matrixMinY = 140;
-  public static readonly matrixMaxX = 904;
-  public static readonly matrixMaxY = 359;
+  public static readonly matrixMinX = 98;
+  public static readonly matrixMinY = 142;
+  public static readonly matrixMaxX = 402;
+  public static readonly matrixMaxY = 358;
   public static readonly matrixRows = 5;
   public static readonly matrixColumns = 7;
 }
