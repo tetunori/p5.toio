@@ -16,7 +16,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/',
+          to: 'docs/intro',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -44,7 +44,7 @@ module.exports = {
             },
             {
               label: 'API Reference',
-              to: 'docs/intro/',
+              to: 'docs/cube/classes/p5tcube',
             },
           ],
         },
@@ -87,7 +87,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          homePageId: 'intro',
+          homePageId: 'docs/intro',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/tetunori/p5.toio/',
