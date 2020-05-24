@@ -1,4 +1,6 @@
-class SimpleCardSymbol extends StandardId {
+import { StandardId } from './standardId';
+
+export class SimpleCardSymbol extends StandardId {
   public static readonly names = {
     markExclamation: 'markExclamation',
     markUp: 'markUp',

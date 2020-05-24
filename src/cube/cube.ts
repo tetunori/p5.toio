@@ -1,4 +1,18 @@
-class Cube {
+import { CubeConnector } from './connector';
+import { CubeBatteryLevelListner } from './char/batteryChar';
+import { CubeIdCharListner, positionIdInfo, standardIdInfo } from './char/idChar';
+import { CubeButtonPressedStatusListner } from './char/buttonChar';
+import {
+  CubeFlatListner,
+  CubeCollisionListner,
+  CubeDoubleTapListner,
+  CubePostureListner,
+  CubeSensorChar,
+} from './char/sensorChar';
+import { CubeMotorChar } from './char/motorChar';
+import { CubeSoundChar } from './char/soundChar';
+import { CubeBase, CubeListner } from './cubeBase';
+export class Cube {
   static seId = CubeSoundChar.seId;
   static postureId = CubeSensorChar.postureId;
   static moveTypeId = CubeMotorChar.moveTypeId;

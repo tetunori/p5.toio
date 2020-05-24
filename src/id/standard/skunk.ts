@@ -1,4 +1,6 @@
-class Skunk extends StandardId {
+import { StandardId } from './standardId';
+
+export class Skunk extends StandardId {
   public static readonly names = {
     blueSkunk: 'blueSkunk',
     greenSkunk: 'greenSkunk',

@@ -5,7 +5,7 @@ interface CubeCharIF {
   setFrameRate(fps: number): void;
 }
 
-class CubeChar implements CubeCharIF {
+export class CubeChar implements CubeCharIF {
   protected uuid = ''; // To be override
   protected characteristic: BluetoothRemoteGATTCharacteristic | undefined = undefined;
 

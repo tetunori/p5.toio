@@ -1,10 +1,18 @@
-type CubeListner =
+import { CubeSensorCharListner, CubeSensorChar } from './char/sensorChar';
+import { CubeBatteryCharListner, CubeBatteryChar } from './char/batteryChar';
+import { CubeButtonCharListner, CubeButtonChar } from './char/buttonChar';
+import { CubeIdCharListner, CubeIDChar } from './char/idChar';
+import { CubeLightChar } from './char/lightChar';
+import { CubeMotorChar } from './char/motorChar';
+import { CubeSoundChar } from './char/soundChar';
+
+export type CubeListner =
   | CubeSensorCharListner
   | CubeBatteryCharListner
   | CubeButtonCharListner
   | CubeIdCharListner;
 
-type CubeCharInstance =
+export type CubeCharInstance =
   | CubeIDChar
   | CubeMotorChar
   | CubeLightChar
@@ -28,7 +36,7 @@ interface CubeBaseIF {
   buttonChar: CubeButtonChar | undefined;
 }
 
-class CubeBase implements CubeBaseIF {
+export class CubeBase implements CubeBaseIF {
   public idChar: CubeIDChar | undefined = undefined;
   public motorChar: CubeMotorChar | undefined = undefined;
   public lightChar: CubeLightChar | undefined = undefined;

@@ -1,4 +1,6 @@
-class GameMark extends StandardId {
+import { StandardId } from './standardId';
+
+export class GameMark extends StandardId {
   public static readonly names = {
     craftFighter: 'craftFighter',
     rythmAndGo: 'rythmAndGo',

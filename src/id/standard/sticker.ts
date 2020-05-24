@@ -1,4 +1,6 @@
-class Sticker extends StandardId {
+import { StandardId } from './standardId';
+
+export class Sticker extends StandardId {
   public static readonly names = {
     speedUpSticker: 'speedUpSticker',
     speedDownSticker: 'speedDownSticker',

@@ -1,7 +1,8 @@
-type CubeButtonPressedStatusListner = (isPressed?: boolean) => void;
-type CubeButtonCharListner = CubeButtonPressedStatusListner;
+import { CubeChar } from './char';
+export type CubeButtonPressedStatusListner = (isPressed?: boolean) => void;
+export type CubeButtonCharListner = CubeButtonPressedStatusListner;
 
-class CubeButtonChar extends CubeChar {
+export class CubeButtonChar extends CubeChar {
   readonly uuid: string = '10b20107-5b3b-4571-9508-cf3efcd7bbae';
 
   private buttonPressed = false;

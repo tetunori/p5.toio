@@ -1,7 +1,8 @@
-type CubeBatteryLevelListner = (batteryLevel: number) => void;
-type CubeBatteryCharListner = CubeBatteryLevelListner;
+import { CubeChar } from './char';
+export type CubeBatteryLevelListner = (batteryLevel: number) => void;
+export type CubeBatteryCharListner = CubeBatteryLevelListner;
 
-class CubeBatteryChar extends CubeChar {
+export class CubeBatteryChar extends CubeChar {
   readonly uuid: string = '10b20108-5b3b-4571-9508-cf3efcd7bbae';
 
   private batteryLevel = 0;

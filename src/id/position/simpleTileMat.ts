@@ -1,4 +1,5 @@
-class SimpleTileMat extends TileMat {
+import { TileMat } from './tileMat';
+export class SimpleTileMat extends TileMat {
   // Override
   public static readonly minX = 98;
   public static readonly minY = 142;
