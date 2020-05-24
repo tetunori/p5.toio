@@ -1,0 +1,25 @@
+
+{
+
+  "compilerOptions": {
+
+    "module": "none",
+    "incremental": true,
+    "strict": true,
+    "target": "es6",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+    
+  },
+  "include": [
+    "global.d.ts",
+  ]
+
+}
