@@ -8,6 +8,10 @@ module.exports = {
   projectName: 'p5.toio',
   themeConfig: {
     image: 'images/logo-a.png',
+    googleAnalytics: {
+      trackingID: 'UA-167461637-1',
+      anonymizeIP: true,
+    },
     navbar: {
       title: 'p5.toio',
       logo: {
