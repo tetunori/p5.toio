@@ -4,3 +4,7 @@ yarn-error.log
 /docs
 
 node_modules
+
+/tests/execute
+/tests/execute/*
+/tests/target.ts

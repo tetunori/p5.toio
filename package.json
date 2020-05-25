@@ -11,6 +11,8 @@
     "make": "eslint ./src/**/*.ts --fix && tsc && yarn min",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint ./src/**/*.ts --fix",
+    "test:prepare": "bash ./tests/sh/prepareTest.sh",
+    "test:common": "yarn test:prepare",
     "test": "jest"
   },
   "dependencies": {
