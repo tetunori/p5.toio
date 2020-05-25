@@ -1,10 +1,4 @@
-#!/bin/sh
-TARGET_FILE="./tests/target.ts"
-
-# Initialize test target
-rm $TARGET_FILE
-
-# Concatenate test target files
+rm ./tests/target.ts
 cat ./global.d.ts\
     ./src/common/util.ts\
     ./src/id/position/mat.ts\
@@ -35,17 +29,4 @@ cat ./global.d.ts\
     ./src/cube/cube.ts\
     ./src/cube/scanner.ts\
     ./src/cube/connector.ts\
-    ./src/p5tCube.ts > $TARGET_FILE
-while [ ! -e $TARGET_FILE ]
-do
-  sleep 1
-done
-
-# copy and generate execute folder
-rm -rf ./tests/execute
-mkdir ./tests/execute
-mkdir ./tests/execute/common
-
-# Generate test file for common
-cat $TARGET_FILE ./tests/common/util.test.ts > ./tests/execute/common/util.test.ts
-
+    ./src/p5tCube.ts > ./tests/target.ts
