@@ -12,7 +12,7 @@
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint ./src/**/*.ts --fix",
     "test:prepare": "bash ./tests/sh/prepareTest.sh",
-    "test:common": "yarn test:prepare",
+    "test:common": "yarn test:prepare && jest --config ./tests/config/common.json",
     "test": "jest"
   },
   "dependencies": {

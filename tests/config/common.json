@@ -1,0 +1,18 @@
+{
+  "moduleFileExtensions": [
+    "ts",
+    "js"
+  ],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "./tests/config/tsconfigTest.json"
+    }
+  },
+  "rootDir": "../",
+  "testMatch": [
+    "**/tests/execute/common/*.test.ts"
+  ]
+}

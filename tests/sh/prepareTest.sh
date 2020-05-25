@@ -5,8 +5,7 @@ TARGET_FILE="./tests/target.ts"
 rm $TARGET_FILE
 
 # Concatenate test target files
-cat ./global.d.ts\
-    ./src/common/util.ts\
+cat ./src/common/util.ts\
     ./src/id/position/mat.ts\
     ./src/id/position/TileMat.ts\
     ./src/id/position/colorTileMat.ts\
