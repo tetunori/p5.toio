@@ -1,4 +1,4 @@
-class StandardId {
+export class StandardId {
   protected static readonly idTable: { name: string; id: number }[];
 
   /**

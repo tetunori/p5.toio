@@ -1,4 +1,4 @@
-class CubeUtil {
+export class CubeUtil {
   /**
    * Clip and modify a specified number as it is in 0-255 integer value.
    *

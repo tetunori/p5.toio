@@ -1,4 +1,3 @@
-"use strict";
 class CubeUtil {
     static clipNumberUInt8(num) {
         if (num < 0) {
@@ -801,7 +800,7 @@ class CubeChar {
                     .catch((error) => {
                     if (error.message.indexOf(this.errStrInProgress) !== -1) {
                         clearTimeout(this.timerID);
-                        this.timerID = setTimeout(this.writeValueCore.bind(this, buf, countRetry + 1), this.retryInterval);
+                        this.timerID = window.setTimeout(this.writeValueCore.bind(this, buf, countRetry + 1), this.retryInterval);
                     }
                     else {
                         reject(error);
@@ -824,7 +823,7 @@ class CubeChar {
                     .catch((error) => {
                     if (error.message.indexOf(this.errStrInProgress) !== -1) {
                         clearTimeout(this.timerID);
-                        this.timerID = setTimeout(this.readValue.bind(this), this.retryInterval);
+                        this.timerID = window.setTimeout(this.readValue.bind(this), this.retryInterval);
                     }
                     else {
                         reject(error);

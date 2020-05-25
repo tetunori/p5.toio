@@ -1,4 +1,9 @@
-class P5tCube extends Cube {
+import { Cube } from './cube/cube';
+import { CubeConnector } from './cube/connector';
+import { positionIdInfo, standardIdInfo } from './cube/char/idChar';
+import { CubeMotorChar } from './cube/char/motorChar';
+import { CubeBase } from './cube/cubeBase';
+export class P5tCube extends Cube {
   /**
    * Connect to the toio™Core Cube.
    *

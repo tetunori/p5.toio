@@ -1,4 +1,6 @@
-class CubeMotorChar extends CubeChar {
+import { CubeChar } from './char';
+import { CubeUtil } from '../../common/util';
+export class CubeMotorChar extends CubeChar {
   readonly uuid: string = '10b20102-5b3b-4571-9508-cf3efcd7bbae';
 
   /**

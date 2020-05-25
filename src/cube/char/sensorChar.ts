@@ -1,19 +1,20 @@
-type sensorInfo = {
+import { CubeChar } from './char';
+export type sensorInfo = {
   flat: boolean;
   posture: string;
 };
 
-type CubeFlatListner = (isFlat: boolean) => void;
-type CubeCollisionListner = () => void;
-type CubeDoubleTapListner = () => void;
-type CubePostureListner = (posture: string) => void;
-type CubeSensorCharListner =
+export type CubeFlatListner = (isFlat: boolean) => void;
+export type CubeCollisionListner = () => void;
+export type CubeDoubleTapListner = () => void;
+export type CubePostureListner = (posture: string) => void;
+export type CubeSensorCharListner =
   | CubeFlatListner
   | CubeCollisionListner
   | CubeDoubleTapListner
   | CubePostureListner;
 
-class CubeSensorChar extends CubeChar {
+export class CubeSensorChar extends CubeChar {
   readonly uuid: string = '10b20106-5b3b-4571-9508-cf3efcd7bbae';
 
   /**
