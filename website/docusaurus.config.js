@@ -8,6 +8,10 @@ module.exports = {
   projectName: 'p5.toio',
   themeConfig: {
     image: 'images/logo-a.png',
+    algolia: {
+      apiKey: '40d278d81283e5fccabca0c4e788be6d',
+      indexName: 'p5_toio',
+    },
     googleAnalytics: {
       trackingID: 'UA-167461637-1',
       anonymizeIP: true,
@@ -27,7 +31,8 @@ module.exports = {
         },
         {
           href: 'https://github.com/tetunori/p5.toio',
-          label: 'GitHub',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
