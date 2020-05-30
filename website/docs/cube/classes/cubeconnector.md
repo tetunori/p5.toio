@@ -22,7 +22,7 @@ sidebar_label: "CubeConnector"
 
 ▸ **connectNewCube**(): *Promise‹[CubeBase](cubebase.md)›*
 
-*Defined in [cube/connector.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/connector.ts#L7)*
+*Defined in [cube/connector.ts:9](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/connector.ts#L9)*
 
 Connect to new toio™Core Cube.
 

@@ -35,7 +35,7 @@ sidebar_label: "DevMat08"
 
 *Overrides [Mat](mat.md).[centerX](mat.md#static-protected-centerx)*
 
-*Defined in [id/position/devMat.ts:69](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L69)*
+*Defined in [id/position/devMat.ts:70](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L70)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerY](mat.md#static-protected-centery)*
 
-*Defined in [id/position/devMat.ts:70](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L70)*
+*Defined in [id/position/devMat.ts:71](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L71)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxX](mat.md#static-protected-maxx)*
 
-*Defined in [id/position/devMat.ts:67](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L67)*
+*Defined in [id/position/devMat.ts:68](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L68)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxY](mat.md#static-protected-maxy)*
 
-*Defined in [id/position/devMat.ts:68](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L68)*
+*Defined in [id/position/devMat.ts:69](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L69)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 *Overrides [Mat](mat.md).[minX](mat.md#static-protected-minx)*
 
-*Defined in [id/position/devMat.ts:65](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L65)*
+*Defined in [id/position/devMat.ts:66](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L66)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 *Overrides [Mat](mat.md).[minY](mat.md#static-protected-miny)*
 
-*Defined in [id/position/devMat.ts:66](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/devMat.ts#L66)*
+*Defined in [id/position/devMat.ts:67](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/devMat.ts#L67)*
 
 ## Methods
 
@@ -93,9 +93,9 @@ ___
 
 ▸ **isOnMat**(`x`: number | undefined, `y`: number | undefined): *boolean*
 
-*Inherited from [ColorTileMat](colortilemat.md).[isOnMat](colortilemat.md#static-isonmat)*
+*Inherited from [Mat](mat.md).[isOnMat](mat.md#static-isonmat)*
 
-*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L17)*
+*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L17)*
 
 Specified coordinate is on the mat or not.
 

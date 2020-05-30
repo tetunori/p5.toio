@@ -46,9 +46,9 @@ sidebar_label: "CubeSensorChar"
 
 \+ **new CubeSensorChar**(`service`: BluetoothRemoteGATTService): *[CubeSensorChar](cubesensorchar.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[constructor](cubebatterychar.md#constructor)*
+*Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -64,9 +64,9 @@ Name | Type |
 
 • **characteristic**: *BluetoothRemoteGATTCharacteristic | undefined* = undefined
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[characteristic](cubebatterychar.md#protected-characteristic)*
+*Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -74,9 +74,9 @@ ___
 
 • **errStrInProgress**: *string* = "GATT operation already in progress."
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[errStrInProgress](cubebatterychar.md#protected-errstrinprogress)*
+*Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/sensorChar.ts:17](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L17)*
+*Defined in [cube/char/sensorChar.ts:18](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L18)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
     left: 'left',
   } as const
 
-*Defined in [cube/char/sensorChar.ts:22](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L22)*
+*Defined in [cube/char/sensorChar.ts:23](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L23)*
 
 Posture IDs.
 
@@ -125,7 +125,7 @@ Posture IDs.
 
 ▸ **addEventListener**(`type`: string, `listener`: [CubeSensorCharListner](../globals.md#cubesensorcharlistner)): *void*
 
-*Defined in [cube/char/sensorChar.ts:181](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L181)*
+*Defined in [cube/char/sensorChar.ts:182](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L182)*
 
 Register callback.
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **getPosture**(): *string*
 
-*Defined in [cube/char/sensorChar.ts:94](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L94)*
+*Defined in [cube/char/sensorChar.ts:95](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L95)*
 
 Get current posture.
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **isFlat**(): *boolean*
 
-*Defined in [cube/char/sensorChar.ts:85](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L85)*
+*Defined in [cube/char/sensorChar.ts:86](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L86)*
 
 Get current flat status.
 
@@ -176,7 +176,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/sensorChar.ts:46](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/sensorChar.ts#L46)*
+*Defined in [cube/char/sensorChar.ts:47](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/sensorChar.ts#L47)*
 
 Prepare for using sensor characteristic function.
 
@@ -192,9 +192,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[readValue](cubebatterychar.md#readvalue)*
+*Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L114)*
+*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L114)*
 
 Read value from remote GATT Characteristics.
 
@@ -210,9 +210,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[setFrameRate](cubebatterychar.md#setframerate)*
+*Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L142)*
+*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L142)*
 
 Set framerate.
 
@@ -232,9 +232,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValue](cubebatterychar.md#writevalue)*
+*Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -254,9 +254,9 @@ ___
 
 ▸ **writeValueCore**(`buf`: ArrayBuffer, `countRetry`: number): *Promise‹string | Error›*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValueCore](cubebatterychar.md#writevaluecore)*
+*Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

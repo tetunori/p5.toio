@@ -45,9 +45,9 @@ sidebar_label: "CubeLightChar"
 
 \+ **new CubeLightChar**(`service`: BluetoothRemoteGATTService): *[CubeLightChar](cubelightchar.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[constructor](cubebatterychar.md#constructor)*
+*Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -63,9 +63,9 @@ Name | Type |
 
 • **characteristic**: *BluetoothRemoteGATTCharacteristic | undefined* = undefined
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[characteristic](cubebatterychar.md#protected-characteristic)*
+*Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -73,9 +73,9 @@ ___
 
 • **errStrInProgress**: *string* = "GATT operation already in progress."
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[errStrInProgress](cubebatterychar.md#protected-errstrinprogress)*
+*Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/lightChar.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/lightChar.ts#L2)*
+*Defined in [cube/char/lightChar.ts:4](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/lightChar.ts#L4)*
 
 ## Methods
 
@@ -97,7 +97,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L30)*
+*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L30)*
 
 Prepare for using characteristic function.
 
@@ -113,9 +113,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[readValue](cubebatterychar.md#readvalue)*
+*Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L114)*
+*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L114)*
 
 Read value from remote GATT Characteristics.
 
@@ -131,9 +131,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[setFrameRate](cubebatterychar.md#setframerate)*
+*Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L142)*
+*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L142)*
 
 Set framerate.
 
@@ -151,7 +151,7 @@ ___
 
 ▸ **turnLightOff**(): *void*
 
-*Defined in [cube/char/lightChar.ts:15](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/lightChar.ts#L15)*
+*Defined in [cube/char/lightChar.ts:17](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/lightChar.ts#L17)*
 
 Turn the light off.
 
@@ -163,7 +163,7 @@ ___
 
 ▸ **turnLightOnRGB**(`r`: number, `g`: number, `b`: number, `duration`: number): *void*
 
-*Defined in [cube/char/lightChar.ts:28](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/lightChar.ts#L28)*
+*Defined in [cube/char/lightChar.ts:30](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/lightChar.ts#L30)*
 
 Turn the light on with specified RGB and duration(optional) values.
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **turnLightOnRGBA**(`r`: number, `g`: number, `b`: number, `a`: number, `duration`: number): *void*
 
-*Defined in [cube/char/lightChar.ts:41](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/lightChar.ts#L41)*
+*Defined in [cube/char/lightChar.ts:43](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/lightChar.ts#L43)*
 
 Turn the light on with specified RGB, Alpha and duration(optional) values.
 
@@ -208,9 +208,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValue](cubebatterychar.md#writevalue)*
+*Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -230,9 +230,9 @@ ___
 
 ▸ **writeValueCore**(`buf`: ArrayBuffer, `countRetry`: number): *Promise‹string | Error›*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValueCore](cubebatterychar.md#writevaluecore)*
+*Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

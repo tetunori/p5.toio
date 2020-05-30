@@ -46,7 +46,7 @@ sidebar_label: "SimpleCardNumber"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/number.ts:16](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L16)*
+*Defined in [id/standard/number.ts:18](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L18)*
 
 ## Methods
 
@@ -54,9 +54,9 @@ sidebar_label: "SimpleCardNumber"
 
 ▸ **getIdName**(`value`: number): *string | undefined*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[getIdName](simplecardalphabet.md#static-getidname)*
+*Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -76,9 +76,9 @@ ___
 
 ▸ **includes**(`idName`: string): *boolean*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[includes](simplecardalphabet.md#static-includes)*
+*Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -98,64 +98,64 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/number.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L2)*
+*Defined in [id/standard/number.ts:4](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L4)*
 
 ###  mark0
 
 • **mark0**: *string* = "mark0"
 
-*Defined in [id/standard/number.ts:3](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L3)*
+*Defined in [id/standard/number.ts:5](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L5)*
 
 ###  mark1
 
 • **mark1**: *string* = "mark1"
 
-*Defined in [id/standard/number.ts:4](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L4)*
+*Defined in [id/standard/number.ts:6](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L6)*
 
 ###  mark2
 
 • **mark2**: *string* = "mark2"
 
-*Defined in [id/standard/number.ts:5](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L5)*
+*Defined in [id/standard/number.ts:7](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L7)*
 
 ###  mark3
 
 • **mark3**: *string* = "mark3"
 
-*Defined in [id/standard/number.ts:6](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L6)*
+*Defined in [id/standard/number.ts:8](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L8)*
 
 ###  mark4
 
 • **mark4**: *string* = "mark4"
 
-*Defined in [id/standard/number.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L7)*
+*Defined in [id/standard/number.ts:9](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L9)*
 
 ###  mark5
 
 • **mark5**: *string* = "mark5"
 
-*Defined in [id/standard/number.ts:8](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L8)*
+*Defined in [id/standard/number.ts:10](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L10)*
 
 ###  mark6
 
 • **mark6**: *string* = "mark6"
 
-*Defined in [id/standard/number.ts:9](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L9)*
+*Defined in [id/standard/number.ts:11](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L11)*
 
 ###  mark7
 
 • **mark7**: *string* = "mark7"
 
-*Defined in [id/standard/number.ts:10](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L10)*
+*Defined in [id/standard/number.ts:12](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L12)*
 
 ###  mark8
 
 • **mark8**: *string* = "mark8"
 
-*Defined in [id/standard/number.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L11)*
+*Defined in [id/standard/number.ts:13](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L13)*
 
 ###  mark9
 
 • **mark9**: *string* = "mark9"
 
-*Defined in [id/standard/number.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/number.ts#L12)*
+*Defined in [id/standard/number.ts:14](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/number.ts#L14)*

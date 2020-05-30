@@ -10,6 +10,10 @@ sidebar_label: "Mat"
 
 * **Mat**
 
+  ↳ [TileMat](tilemat.md)
+
+  ↳ [RingMat](ringmat.md)
+
   ↳ [DevMat01](devmat01.md)
 
   ↳ [DevMat02](devmat02.md)
@@ -34,10 +38,6 @@ sidebar_label: "Mat"
 
   ↳ [DevMat12](devmat12.md)
 
-  ↳ [RingMat](ringmat.md)
-
-  ↳ [TileMat](tilemat.md)
-
 ## Index
 
 ### Properties
@@ -59,7 +59,7 @@ sidebar_label: "Mat"
 
 ▪ **centerX**: *number*
 
-*Defined in [id/position/mat.ts:6](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L6)*
+*Defined in [id/position/mat.ts:6](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L6)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 ▪ **centerY**: *number*
 
-*Defined in [id/position/mat.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L7)*
+*Defined in [id/position/mat.ts:7](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L7)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 ▪ **maxX**: *number*
 
-*Defined in [id/position/mat.ts:4](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L4)*
+*Defined in [id/position/mat.ts:4](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L4)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 ▪ **maxY**: *number*
 
-*Defined in [id/position/mat.ts:5](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L5)*
+*Defined in [id/position/mat.ts:5](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L5)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 ▪ **minX**: *number*
 
-*Defined in [id/position/mat.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L2)*
+*Defined in [id/position/mat.ts:2](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L2)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 ▪ **minY**: *number*
 
-*Defined in [id/position/mat.ts:3](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L3)*
+*Defined in [id/position/mat.ts:3](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L3)*
 
 ## Methods
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **isOnMat**(`x`: number | undefined, `y`: number | undefined): *boolean*
 
-*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L17)*
+*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L17)*
 
 Specified coordinate is on the mat or not.
 

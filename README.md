@@ -1,6 +1,11 @@
-# p5.toio
-Version 0.5.0  
-<img src="https://tetunori.github.io/p5.toio/images/logo-a.png" width="600px">
+<h1 align="center">
+  <a href="https://tetunori.github.io/p5.toio"><img src="https://tetunori.github.io/p5.toio/images/logo-a.png" alt="p5.toio" width="600px"></a>
+</h1>
+
+<p align="center">
+  <a href="https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
+  <!-- <a href="https://github.com/facebook/jest"><img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest"></a> -->
+</p>
 
 # Description
 **p5.toio** is a library for controlling toio™ in p5.js environment.  

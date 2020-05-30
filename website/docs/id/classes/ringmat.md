@@ -43,7 +43,7 @@ sidebar_label: "RingMat"
 
 ▪ **blueLineY**: *88* = 88
 
-*Defined in [id/position/ringMat.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L12)*
+*Defined in [id/position/ringMat.ts:13](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L13)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerX](mat.md#static-protected-centerx)*
 
-*Defined in [id/position/ringMat.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L7)*
+*Defined in [id/position/ringMat.ts:8](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L8)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerY](mat.md#static-protected-centery)*
 
-*Defined in [id/position/ringMat.ts:8](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L8)*
+*Defined in [id/position/ringMat.ts:9](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L9)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 ▪ **greenLineY**: *410* = 410
 
-*Defined in [id/position/ringMat.ts:13](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L13)*
+*Defined in [id/position/ringMat.ts:14](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L14)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxX](mat.md#static-protected-maxx)*
 
-*Defined in [id/position/ringMat.ts:5](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L5)*
+*Defined in [id/position/ringMat.ts:6](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L6)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxY](mat.md#static-protected-maxy)*
 
-*Defined in [id/position/ringMat.ts:6](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L6)*
+*Defined in [id/position/ringMat.ts:7](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L7)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 *Overrides [Mat](mat.md).[minX](mat.md#static-protected-minx)*
 
-*Defined in [id/position/ringMat.ts:3](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L3)*
+*Defined in [id/position/ringMat.ts:4](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L4)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 *Overrides [Mat](mat.md).[minY](mat.md#static-protected-miny)*
 
-*Defined in [id/position/ringMat.ts:4](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L4)*
+*Defined in [id/position/ringMat.ts:5](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L5)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 ▪ **radius**: *190* = 190
 
-*Defined in [id/position/ringMat.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L11)*
+*Defined in [id/position/ringMat.ts:12](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L12)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 ▪ **startPointBlueSideX**: *250* = 250
 
-*Defined in [id/position/ringMat.ts:14](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L14)*
+*Defined in [id/position/ringMat.ts:15](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L15)*
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 ▪ **startPointBlueSideY**: *198* = 198
 
-*Defined in [id/position/ringMat.ts:15](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L15)*
+*Defined in [id/position/ringMat.ts:16](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L16)*
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 ▪ **startPointGreenSideX**: *250* = 250
 
-*Defined in [id/position/ringMat.ts:16](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L16)*
+*Defined in [id/position/ringMat.ts:17](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L17)*
 
 ___
 
@@ -151,7 +151,7 @@ ___
 
 ▪ **startPointGreenSideY**: *300* = 300
 
-*Defined in [id/position/ringMat.ts:17](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L17)*
+*Defined in [id/position/ringMat.ts:18](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L18)*
 
 ## Methods
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **isInFrontOfBlueLine**(`y`: number): *boolean*
 
-*Defined in [id/position/ringMat.ts:46](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L46)*
+*Defined in [id/position/ringMat.ts:47](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L47)*
 
 Specified coordinate is in front of the blue line of toio Collection ring mat or not.
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **isInFrontOfGreenLine**(`y`: number): *boolean*
 
-*Defined in [id/position/ringMat.ts:62](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L62)*
+*Defined in [id/position/ringMat.ts:63](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L63)*
 
 Specified coordinate is in front of the green line of toio Collection ring mat or not.
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **isInsideCircle**(`x`: number, `y`: number): *boolean*
 
-*Defined in [id/position/ringMat.ts:27](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/ringMat.ts#L27)*
+*Defined in [id/position/ringMat.ts:28](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/ringMat.ts#L28)*
 
 Specified coordinate is inside of the circle of toio Collection ring mat or not.
 
@@ -220,9 +220,9 @@ ___
 
 ▸ **isOnMat**(`x`: number | undefined, `y`: number | undefined): *boolean*
 
-*Inherited from [ColorTileMat](colortilemat.md).[isOnMat](colortilemat.md#static-isonmat)*
+*Inherited from [Mat](mat.md).[isOnMat](mat.md#static-isonmat)*
 
-*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/position/mat.ts#L17)*
+*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/position/mat.ts#L17)*
 
 Specified coordinate is on the mat or not.
 

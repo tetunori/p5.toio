@@ -48,7 +48,7 @@ sidebar_label: "SimpleCardSymbol"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/symbol.ts:18](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L18)*
+*Defined in [id/standard/symbol.ts:20](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L20)*
 
 ## Methods
 
@@ -56,9 +56,9 @@ sidebar_label: "SimpleCardSymbol"
 
 ▸ **getIdName**(`value`: number): *string | undefined*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[getIdName](simplecardalphabet.md#static-getidname)*
+*Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -78,9 +78,9 @@ ___
 
 ▸ **includes**(`idName`: string): *boolean*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[includes](simplecardalphabet.md#static-includes)*
+*Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -100,76 +100,76 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/symbol.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L2)*
+*Defined in [id/standard/symbol.ts:4](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L4)*
 
 ###  markDivision
 
 • **markDivision**: *string* = "markDivision"
 
-*Defined in [id/standard/symbol.ts:13](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L13)*
+*Defined in [id/standard/symbol.ts:15](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L15)*
 
 ###  markDown
 
 • **markDown**: *string* = "markDown"
 
-*Defined in [id/standard/symbol.ts:10](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L10)*
+*Defined in [id/standard/symbol.ts:12](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L12)*
 
 ###  markEqual
 
 • **markEqual**: *string* = "markEqual"
 
-*Defined in [id/standard/symbol.ts:8](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L8)*
+*Defined in [id/standard/symbol.ts:10](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L10)*
 
 ###  markExclamation
 
 • **markExclamation**: *string* = "markExclamation"
 
-*Defined in [id/standard/symbol.ts:3](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L3)*
+*Defined in [id/standard/symbol.ts:5](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L5)*
 
 ###  markLeft
 
 • **markLeft**: *string* = "markLeft"
 
-*Defined in [id/standard/symbol.ts:9](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L9)*
+*Defined in [id/standard/symbol.ts:11](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L11)*
 
 ###  markMinus
 
 • **markMinus**: *string* = "markMinus"
 
-*Defined in [id/standard/symbol.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L7)*
+*Defined in [id/standard/symbol.ts:9](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L9)*
 
 ###  markMultiple
 
 • **markMultiple**: *string* = "markMultiple"
 
-*Defined in [id/standard/symbol.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L12)*
+*Defined in [id/standard/symbol.ts:14](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L14)*
 
 ###  markPercent
 
 • **markPercent**: *string* = "markPercent"
 
-*Defined in [id/standard/symbol.ts:14](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L14)*
+*Defined in [id/standard/symbol.ts:16](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L16)*
 
 ###  markPlus
 
 • **markPlus**: *string* = "markPlus"
 
-*Defined in [id/standard/symbol.ts:6](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L6)*
+*Defined in [id/standard/symbol.ts:8](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L8)*
 
 ###  markQuestion
 
 • **markQuestion**: *string* = "markQuestion"
 
-*Defined in [id/standard/symbol.ts:5](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L5)*
+*Defined in [id/standard/symbol.ts:7](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L7)*
 
 ###  markRight
 
 • **markRight**: *string* = "markRight"
 
-*Defined in [id/standard/symbol.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L11)*
+*Defined in [id/standard/symbol.ts:13](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L13)*
 
 ###  markUp
 
 • **markUp**: *string* = "markUp"
 
-*Defined in [id/standard/symbol.ts:4](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/symbol.ts#L4)*
+*Defined in [id/standard/symbol.ts:6](https://github.com/tetunori/p5.toio/blob/ef4c5ff/src/id/standard/symbol.ts#L6)*
