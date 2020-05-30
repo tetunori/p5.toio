@@ -1,4 +1,6 @@
-class Card extends StandardId {
+import { StandardId } from './standardId';
+
+export class Card extends StandardId {
   public static readonly names = {
     typhoonCard: 'typhoonCard',
     rushCard: 'rushCard',

@@ -1,4 +1,6 @@
-class SimpleCardAlphabet extends StandardId {
+import { StandardId } from './standardId';
+
+export class SimpleCardAlphabet extends StandardId {
   public static readonly names = {
     markA: 'markA',
     markB: 'markB',

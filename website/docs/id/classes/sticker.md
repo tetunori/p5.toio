@@ -42,7 +42,7 @@ sidebar_label: "Sticker"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/sticker.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L12)*
+*Defined in [id/standard/sticker.ts:14](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L14)*
 
 ## Methods
 
@@ -50,9 +50,9 @@ sidebar_label: "Sticker"
 
 ▸ **getIdName**(`value`: number): *string | undefined*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[getIdName](simplecardalphabet.md#static-getidname)*
+*Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -72,9 +72,9 @@ ___
 
 ▸ **includes**(`idName`: string): *boolean*
 
-*Inherited from [SimpleCardAlphabet](simplecardalphabet.md).[includes](simplecardalphabet.md#static-includes)*
+*Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -94,40 +94,40 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/sticker.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L2)*
+*Defined in [id/standard/sticker.ts:4](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L4)*
 
 ###  panicSticker
 
 • **panicSticker**: *string* = "panicSticker"
 
-*Defined in [id/standard/sticker.ts:6](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L6)*
+*Defined in [id/standard/sticker.ts:8](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L8)*
 
 ###  shockSticker
 
 • **shockSticker**: *string* = "shockSticker"
 
-*Defined in [id/standard/sticker.ts:8](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L8)*
+*Defined in [id/standard/sticker.ts:10](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L10)*
 
 ###  speedDownSticker
 
 • **speedDownSticker**: *string* = "speedDownSticker"
 
-*Defined in [id/standard/sticker.ts:4](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L4)*
+*Defined in [id/standard/sticker.ts:6](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L6)*
 
 ###  speedUpSticker
 
 • **speedUpSticker**: *string* = "speedUpSticker"
 
-*Defined in [id/standard/sticker.ts:3](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L3)*
+*Defined in [id/standard/sticker.ts:5](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L5)*
 
 ###  spinSticker
 
 • **spinSticker**: *string* = "spinSticker"
 
-*Defined in [id/standard/sticker.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L7)*
+*Defined in [id/standard/sticker.ts:9](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L9)*
 
 ###  wobbleSticker
 
 • **wobbleSticker**: *string* = "wobbleSticker"
 
-*Defined in [id/standard/sticker.ts:5](https://github.com/tetunori/p5.toio/blob/1b39efe/src/id/standard/sticker.ts#L5)*
+*Defined in [id/standard/sticker.ts:7](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/sticker.ts#L7)*

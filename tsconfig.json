@@ -3,17 +3,18 @@
 
   "compilerOptions": {
 
-    "module": "none",
+    "module": "ES6",
     "incremental": true,
     "strict": true,
-    "target": "es6",
+    "target": "ES6",
     "removeComments": true,
     "preserveConstEnums": true,
     "noImplicitAny": true,
-    "outFile": "./dist/p5.toio.js",
-    // "outDir": "./out/",
+    // "outFile": "./dist/p5.toio.js",
+    "outDir": "./out/",
     "strictNullChecks": true,
     "noImplicitThis": true,
+    "skipLibCheck": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

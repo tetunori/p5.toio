@@ -1,4 +1,6 @@
-class CubeConnector {
+import { CubeScanner } from './scanner';
+import { CubeBase } from './cubeBase';
+export class CubeConnector {
   /**
    * Connect to new toio™Core Cube.
    *

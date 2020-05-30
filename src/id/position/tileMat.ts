@@ -1,4 +1,5 @@
-class TileMat extends Mat {
+import { Mat } from './mat';
+export class TileMat extends Mat {
   public static readonly matrixMinX: number;
   public static readonly matrixMinY: number;
   public static readonly matrixMaxX: number;

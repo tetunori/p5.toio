@@ -1,4 +1,29 @@
-class Id {
+import { ColorTileMat } from './position/colorTileMat';
+import { RingMat } from './position/ringMat';
+import { SimpleTileMat } from './position/simpleTileMat';
+import {
+  DevMat01,
+  DevMat02,
+  DevMat03,
+  DevMat04,
+  DevMat05,
+  DevMat06,
+  DevMat07,
+  DevMat08,
+  DevMat09,
+  DevMat10,
+  DevMat11,
+  DevMat12,
+} from './position/devMat';
+import { Card } from './standard/card';
+import { GameMark } from './standard/gameMark';
+import { Skunk } from './standard/skunk';
+import { Sticker } from './standard/sticker';
+import { SimpleCardNumber } from './standard/number';
+import { SimpleCardAlphabet } from './standard/alphabet';
+import { SimpleCardSymbol } from './standard/symbol';
+
+export class Id {
   public static Card = Card;
   public static GameMark = GameMark;
   public static Skunk = Skunk;

@@ -1,4 +1,5 @@
-class RingMat extends Mat {
+import { Mat } from './mat';
+export class RingMat extends Mat {
   // Override
   public static readonly minX = 45;
   public static readonly minY = 45;

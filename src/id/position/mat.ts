@@ -1,4 +1,4 @@
-class Mat {
+export class Mat {
   protected static minX: number;
   protected static minY: number;
   protected static maxX: number;

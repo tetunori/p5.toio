@@ -46,9 +46,9 @@ sidebar_label: "CubeSoundChar"
 
 \+ **new CubeSoundChar**(`service`: BluetoothRemoteGATTService): *[CubeSoundChar](cubesoundchar.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[constructor](cubebatterychar.md#constructor)*
+*Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -64,9 +64,9 @@ Name | Type |
 
 • **characteristic**: *BluetoothRemoteGATTCharacteristic | undefined* = undefined
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[characteristic](cubebatterychar.md#protected-characteristic)*
+*Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -74,9 +74,9 @@ ___
 
 • **errStrInProgress**: *string* = "GATT operation already in progress."
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[errStrInProgress](cubebatterychar.md#protected-errstrinprogress)*
+*Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/soundChar.ts:2](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/soundChar.ts#L2)*
+*Defined in [cube/char/soundChar.ts:4](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/soundChar.ts#L4)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
     effect2: 10,
   } as const
 
-*Defined in [cube/char/soundChar.ts:15](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/soundChar.ts#L15)*
+*Defined in [cube/char/soundChar.ts:17](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/soundChar.ts#L17)*
 
 Sound Effect IDs.
 
@@ -140,7 +140,7 @@ Sound Effect IDs.
 
 ▸ **playMelody**(`melody`: object[]): *void*
 
-*Defined in [cube/char/soundChar.ts:86](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/soundChar.ts#L86)*
+*Defined in [cube/char/soundChar.ts:88](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/soundChar.ts#L88)*
 
 Play melody specified wiht MIDI note sequence.
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **playSE**(`idSE`: number): *void*
 
-*Defined in [cube/char/soundChar.ts:34](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/soundChar.ts#L34)*
+*Defined in [cube/char/soundChar.ts:36](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/soundChar.ts#L36)*
 
 Play pre-installed sound effect.
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **playSingleNote**(`note`: number, `duration`: number): *void*
 
-*Defined in [cube/char/soundChar.ts:51](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/soundChar.ts#L51)*
+*Defined in [cube/char/soundChar.ts:53](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/soundChar.ts#L53)*
 
 Play single MIDI note.
 
@@ -199,7 +199,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L30)*
+*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L30)*
 
 Prepare for using characteristic function.
 
@@ -215,9 +215,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[readValue](cubebatterychar.md#readvalue)*
+*Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L114)*
+*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L114)*
 
 Read value from remote GATT Characteristics.
 
@@ -233,9 +233,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[setFrameRate](cubebatterychar.md#setframerate)*
+*Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L142)*
+*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L142)*
 
 Set framerate.
 
@@ -255,9 +255,9 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValue](cubebatterychar.md#writevalue)*
+*Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -277,9 +277,9 @@ ___
 
 ▸ **writeValueCore**(`buf`: ArrayBuffer, `countRetry`: number): *Promise‹string | Error›*
 
-*Inherited from [CubeBatteryChar](cubebatterychar.md).[writeValueCore](cubebatterychar.md#writevaluecore)*
+*Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

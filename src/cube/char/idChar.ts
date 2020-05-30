@@ -1,4 +1,6 @@
-type positionIdInfo =
+import { CubeChar } from './char';
+import { Id } from '../../id/id';
+export type positionIdInfo =
   | {
       centerX: number;
       centerY: number;
@@ -8,7 +10,7 @@ type positionIdInfo =
     }
   | undefined;
 
-type standardIdInfo =
+export type standardIdInfo =
   | {
       id: string;
       idNum: number;
@@ -16,16 +18,16 @@ type standardIdInfo =
     }
   | undefined;
 
-type idInfo = {
+export type idInfo = {
   positionId: positionIdInfo;
   standardId: standardIdInfo;
 };
 
-type CubePositionIdListner = (info: positionIdInfo) => void;
-type CubeStandardIdListner = (info: standardIdInfo) => void;
-type CubeIdCharListner = CubePositionIdListner | CubeStandardIdListner;
+export type CubePositionIdListner = (info: positionIdInfo) => void;
+export type CubeStandardIdListner = (info: standardIdInfo) => void;
+export type CubeIdCharListner = CubePositionIdListner | CubeStandardIdListner;
 
-class CubeIDChar extends CubeChar {
+export class CubeIDChar extends CubeChar {
   readonly uuid: string = '10b20101-5b3b-4571-9508-cf3efcd7bbae';
 
   private idInfo: idInfo = {

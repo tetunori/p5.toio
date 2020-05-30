@@ -1,4 +1,5 @@
-class DevMat01 extends Mat {
+import { Mat } from './mat';
+export class DevMat01 extends Mat {
   public static readonly minX = 34;
   public static readonly minY = 35;
   public static readonly maxX = 339;
@@ -7,7 +8,7 @@ class DevMat01 extends Mat {
   public static readonly centerY = 143;
 }
 
-class DevMat02 extends Mat {
+export class DevMat02 extends Mat {
   public static readonly minX = 34;
   public static readonly minY = 251;
   public static readonly maxX = 339;
@@ -16,7 +17,7 @@ class DevMat02 extends Mat {
   public static readonly centerY = 359;
 }
 
-class DevMat03 extends Mat {
+export class DevMat03 extends Mat {
   public static readonly minX = 34;
   public static readonly minY = 467;
   public static readonly maxX = 339;
@@ -25,7 +26,7 @@ class DevMat03 extends Mat {
   public static readonly centerY = 575;
 }
 
-class DevMat04 extends Mat {
+export class DevMat04 extends Mat {
   public static readonly minX = 34;
   public static readonly minY = 683;
   public static readonly maxX = 339;
@@ -34,7 +35,7 @@ class DevMat04 extends Mat {
   public static readonly centerY = 791;
 }
 
-class DevMat05 extends Mat {
+export class DevMat05 extends Mat {
   public static readonly minX = 340;
   public static readonly minY = 35;
   public static readonly maxX = 644;
@@ -43,7 +44,7 @@ class DevMat05 extends Mat {
   public static readonly centerY = 143;
 }
 
-class DevMat06 extends Mat {
+export class DevMat06 extends Mat {
   public static readonly minX = 340;
   public static readonly minY = 251;
   public static readonly maxX = 644;
@@ -52,7 +53,7 @@ class DevMat06 extends Mat {
   public static readonly centerY = 359;
 }
 
-class DevMat07 extends Mat {
+export class DevMat07 extends Mat {
   public static readonly minX = 340;
   public static readonly minY = 467;
   public static readonly maxX = 644;
@@ -61,7 +62,7 @@ class DevMat07 extends Mat {
   public static readonly centerY = 575;
 }
 
-class DevMat08 extends Mat {
+export class DevMat08 extends Mat {
   public static readonly minX = 340;
   public static readonly minY = 683;
   public static readonly maxX = 644;
@@ -70,7 +71,7 @@ class DevMat08 extends Mat {
   public static readonly centerY = 791;
 }
 
-class DevMat09 extends Mat {
+export class DevMat09 extends Mat {
   public static readonly minX = 645;
   public static readonly minY = 35;
   public static readonly maxX = 949;
@@ -79,7 +80,7 @@ class DevMat09 extends Mat {
   public static readonly centerY = 143;
 }
 
-class DevMat10 extends Mat {
+export class DevMat10 extends Mat {
   public static readonly minX = 645;
   public static readonly minY = 251;
   public static readonly maxX = 949;
@@ -88,7 +89,7 @@ class DevMat10 extends Mat {
   public static readonly centerY = 359;
 }
 
-class DevMat11 extends Mat {
+export class DevMat11 extends Mat {
   public static readonly minX = 645;
   public static readonly minY = 467;
   public static readonly maxX = 949;
@@ -97,7 +98,7 @@ class DevMat11 extends Mat {
   public static readonly centerY = 575;
 }
 
-class DevMat12 extends Mat {
+export class DevMat12 extends Mat {
   public static readonly minX = 645;
   public static readonly minY = 683;
   public static readonly maxX = 949;

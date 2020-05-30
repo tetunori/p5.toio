@@ -5,7 +5,7 @@ interface CubeCharIF {
   setFrameRate(fps: number): void;
 }
 
-class CubeChar implements CubeCharIF {
+export class CubeChar implements CubeCharIF {
   protected uuid = ''; // To be override
   protected characteristic: BluetoothRemoteGATTCharacteristic | undefined = undefined;
 
@@ -92,7 +92,7 @@ class CubeChar implements CubeCharIF {
             if (error.message.indexOf(this.errStrInProgress) !== -1) {
               // Retry
               clearTimeout(this.timerID);
-              this.timerID = setTimeout(
+              this.timerID = window.setTimeout(
                 this.writeValueCore.bind(this, buf, countRetry + 1),
                 this.retryInterval,
               );
@@ -123,7 +123,7 @@ class CubeChar implements CubeCharIF {
             if (error.message.indexOf(this.errStrInProgress) !== -1) {
               // Retry
               clearTimeout(this.timerID);
-              this.timerID = setTimeout(this.readValue.bind(this), this.retryInterval);
+              this.timerID = window.setTimeout(this.readValue.bind(this), this.retryInterval);
             } else {
               reject(error);
             }

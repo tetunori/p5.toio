@@ -22,7 +22,7 @@ sidebar_label: "CubeScanner"
 
 ▸ **scanNewCube**(): *Promise‹[CubeBase](cubebase.md)›*
 
-*Defined in [cube/scanner.ts:7](https://github.com/tetunori/p5.toio/blob/1b39efe/src/cube/scanner.ts#L7)*
+*Defined in [cube/scanner.ts:9](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/scanner.ts#L9)*
 
 Scan a new cube.
 

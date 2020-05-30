@@ -5,14 +5,37 @@
     "docs:serve": "yarn docs:clean && yarn docs && live-server docs",
     "docs2:id": "typedoc src/p5tId.ts src/id/ --out docs/id --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:cube": "typedoc src/p5tCube.ts src/cube/ --out docs/cube --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
-    "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/",
-    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web", 
+    "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/ && git checkout website/sidebars.js",
+    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web",
     "min": "terser ./dist/p5.toio.js --compress --mangle --output ./dist/p5.toio.min.js",
-    "make": "eslint ./src/**/*.ts --fix && tsc && yarn min",
+    "make": "eslint ./src/**/*.ts --fix && tsc && bash ./concat.sh && yarn min",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint ./src/**/*.ts --fix"
   },
   "dependencies": {
-    "terser": "^4.6.13"
+    "terser": "^4.6.13",
+    "@types/p5": "^0.9.0",
+    "@types/web-bluetooth": "0.0.5",
+    "eslint-config-p5js": "^1.0.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "p5": "^1.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.5",
+    "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.2.17"
   }
 }

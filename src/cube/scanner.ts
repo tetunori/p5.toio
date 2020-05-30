@@ -1,4 +1,6 @@
-class CubeScanner {
+import { CubeBase } from './cubeBase';
+
+export class CubeScanner {
   /**
    * Scan a new cube.
    *
