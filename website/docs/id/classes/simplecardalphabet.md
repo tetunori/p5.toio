@@ -62,7 +62,7 @@ sidebar_label: "SimpleCardAlphabet"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/alphabet.ts:34](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L34)*
+*Defined in [id/standard/alphabet.ts:34](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L34)*
 
 ## Methods
 
@@ -72,7 +72,7 @@ sidebar_label: "SimpleCardAlphabet"
 
 *Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -114,160 +114,160 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/alphabet.ts:4](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L4)*
+*Defined in [id/standard/alphabet.ts:4](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L4)*
 
 ###  markA
 
 • **markA**: *string* = "markA"
 
-*Defined in [id/standard/alphabet.ts:5](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L5)*
+*Defined in [id/standard/alphabet.ts:5](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L5)*
 
 ###  markB
 
 • **markB**: *string* = "markB"
 
-*Defined in [id/standard/alphabet.ts:6](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L6)*
+*Defined in [id/standard/alphabet.ts:6](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L6)*
 
 ###  markC
 
 • **markC**: *string* = "markC"
 
-*Defined in [id/standard/alphabet.ts:7](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L7)*
+*Defined in [id/standard/alphabet.ts:7](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L7)*
 
 ###  markD
 
 • **markD**: *string* = "markD"
 
-*Defined in [id/standard/alphabet.ts:8](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L8)*
+*Defined in [id/standard/alphabet.ts:8](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L8)*
 
 ###  markE
 
 • **markE**: *string* = "markE"
 
-*Defined in [id/standard/alphabet.ts:9](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L9)*
+*Defined in [id/standard/alphabet.ts:9](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L9)*
 
 ###  markF
 
 • **markF**: *string* = "markF"
 
-*Defined in [id/standard/alphabet.ts:10](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L10)*
+*Defined in [id/standard/alphabet.ts:10](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L10)*
 
 ###  markG
 
 • **markG**: *string* = "markG"
 
-*Defined in [id/standard/alphabet.ts:11](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L11)*
+*Defined in [id/standard/alphabet.ts:11](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L11)*
 
 ###  markH
 
 • **markH**: *string* = "markH"
 
-*Defined in [id/standard/alphabet.ts:12](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L12)*
+*Defined in [id/standard/alphabet.ts:12](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L12)*
 
 ###  markI
 
 • **markI**: *string* = "markI"
 
-*Defined in [id/standard/alphabet.ts:13](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L13)*
+*Defined in [id/standard/alphabet.ts:13](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L13)*
 
 ###  markJ
 
 • **markJ**: *string* = "markJ"
 
-*Defined in [id/standard/alphabet.ts:14](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L14)*
+*Defined in [id/standard/alphabet.ts:14](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L14)*
 
 ###  markK
 
 • **markK**: *string* = "markK"
 
-*Defined in [id/standard/alphabet.ts:15](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L15)*
+*Defined in [id/standard/alphabet.ts:15](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L15)*
 
 ###  markL
 
 • **markL**: *string* = "markL"
 
-*Defined in [id/standard/alphabet.ts:16](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L16)*
+*Defined in [id/standard/alphabet.ts:16](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L16)*
 
 ###  markM
 
 • **markM**: *string* = "markM"
 
-*Defined in [id/standard/alphabet.ts:17](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L17)*
+*Defined in [id/standard/alphabet.ts:17](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L17)*
 
 ###  markN
 
 • **markN**: *string* = "markN"
 
-*Defined in [id/standard/alphabet.ts:18](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L18)*
+*Defined in [id/standard/alphabet.ts:18](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L18)*
 
 ###  markO
 
 • **markO**: *string* = "markO"
 
-*Defined in [id/standard/alphabet.ts:19](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L19)*
+*Defined in [id/standard/alphabet.ts:19](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L19)*
 
 ###  markP
 
 • **markP**: *string* = "markP"
 
-*Defined in [id/standard/alphabet.ts:20](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L20)*
+*Defined in [id/standard/alphabet.ts:20](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L20)*
 
 ###  markQ
 
 • **markQ**: *string* = "markQ"
 
-*Defined in [id/standard/alphabet.ts:21](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L21)*
+*Defined in [id/standard/alphabet.ts:21](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L21)*
 
 ###  markR
 
 • **markR**: *string* = "markR"
 
-*Defined in [id/standard/alphabet.ts:22](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L22)*
+*Defined in [id/standard/alphabet.ts:22](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L22)*
 
 ###  markS
 
 • **markS**: *string* = "markS"
 
-*Defined in [id/standard/alphabet.ts:23](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L23)*
+*Defined in [id/standard/alphabet.ts:23](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L23)*
 
 ###  markT
 
 • **markT**: *string* = "markT"
 
-*Defined in [id/standard/alphabet.ts:24](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L24)*
+*Defined in [id/standard/alphabet.ts:24](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L24)*
 
 ###  markU
 
 • **markU**: *string* = "markU"
 
-*Defined in [id/standard/alphabet.ts:25](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L25)*
+*Defined in [id/standard/alphabet.ts:25](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L25)*
 
 ###  markV
 
 • **markV**: *string* = "markV"
 
-*Defined in [id/standard/alphabet.ts:26](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L26)*
+*Defined in [id/standard/alphabet.ts:26](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L26)*
 
 ###  markW
 
 • **markW**: *string* = "markW"
 
-*Defined in [id/standard/alphabet.ts:27](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L27)*
+*Defined in [id/standard/alphabet.ts:27](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L27)*
 
 ###  markX
 
 • **markX**: *string* = "markX"
 
-*Defined in [id/standard/alphabet.ts:28](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L28)*
+*Defined in [id/standard/alphabet.ts:28](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L28)*
 
 ###  markY
 
 • **markY**: *string* = "markY"
 
-*Defined in [id/standard/alphabet.ts:29](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L29)*
+*Defined in [id/standard/alphabet.ts:29](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L29)*
 
 ###  markZ
 
 • **markZ**: *string* = "markZ"
 
-*Defined in [id/standard/alphabet.ts:30](https://github.com/tetunori/p5.toio/blob/7e9fa1c/src/id/standard/alphabet.ts#L30)*
+*Defined in [id/standard/alphabet.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/alphabet.ts#L30)*
