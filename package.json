@@ -6,7 +6,7 @@
     "docs2:id": "typedoc src/p5tId.ts src/id/ --out docs/id --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:cube": "typedoc src/p5tCube.ts src/cube/ --out docs/cube --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/",
-    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web", 
+    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web",
     "min": "terser ./dist/p5.toio.js --compress --mangle --output ./dist/p5.toio.min.js",
     "make": "eslint ./src/**/*.ts --fix && tsc && bash ./concat.sh && yarn min",
     "lint": "eslint ./src/**/*.ts",
@@ -34,7 +34,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typedoc": "^0.17.7"
   }
-
 }
