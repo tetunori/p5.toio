@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "docs": "typedoc src/",
+    "docs": "typedoc src/ --plugin none",
     "docs:clean": "rimraf docs",
     "docs:serve": "yarn docs:clean && yarn docs && live-server docs",
     "docs2:id": "typedoc src/p5tId.ts src/id/ --out docs/id --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
