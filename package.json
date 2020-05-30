@@ -5,7 +5,7 @@
     "docs:serve": "yarn docs:clean && yarn docs && live-server docs",
     "docs2:id": "typedoc src/p5tId.ts src/id/ --out docs/id --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:cube": "typedoc src/p5tCube.ts src/cube/ --out docs/cube --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
-    "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/",
+    "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/ && git checkout website/sidebars.js",
     "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web",
     "min": "terser ./dist/p5.toio.js --compress --mangle --output ./dist/p5.toio.min.js",
     "make": "eslint ./src/**/*.ts --fix && tsc && bash ./concat.sh && yarn min",
