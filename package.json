@@ -57,7 +57,8 @@
       }
     },
     "testMatch": [
-      "**/tests/**/*.test.ts"
+      "**/tests/common/*.test.ts",
+      "**/tests/id/standard/*.test.ts"
     ]
   }
 }
