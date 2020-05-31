@@ -11,7 +11,8 @@
     "make": "eslint ./src/**/*.ts --fix && tsc && bash ./concat.sh && yarn min",
     "lint": "eslint ./src/**/*.ts ./tests/**/*.ts",
     "lint:fix": "eslint ./src/**/*.ts ./tests/**/*.ts --fix",
-    "test": "jest --coverage --collectCoverage"
+    "test": "jest --coverage",
+    "test:coverage": "jest --coverage --collectCoverage"
   },
   "dependencies": {
     "terser": "^4.6.13",
@@ -58,7 +59,8 @@
     },
     "testMatch": [
       "**/tests/common/*.test.ts",
-      "**/tests/id/position/ringMat.test.ts"
+      "**/tests/id/standard/*.test.ts",
+      "**/tests/id/position/*.test.ts"
     ]
   }
 }
