@@ -13,7 +13,7 @@ export class TileMat extends Mat {
    * @param row Target row number.
    * @param column Target column number.
    *
-   * @returns Center position x, y of the specified row/column. If specified row/column is invalid, this function returns undefined.
+   * @returns Center position x, y of the specified row/column as `{x: number, y: number}`. If specified row/column is invalid, this function returns undefined.
    */
   public static getTileCenter(
     row: number | undefined,
@@ -44,7 +44,7 @@ export class TileMat extends Mat {
    * @param x X coordinate of checking target point.
    * @param y Y coordinate of checking target point.
    *
-   * @returns row/column numbers. If specified (x, y) is not on toio Collection tile mat, this function returns undefined.
+   * @returns row/column numbers as `{row: number, column: number}`. If specified (x, y) is not on toio Collection tile mat, this function returns undefined.
    */
   public static getTileMatrixIndex(
     x: number | undefined,
@@ -61,11 +61,6 @@ export class TileMat extends Mat {
       return undefined;
     }
 
-    if (!this.isValidRow(row) || !this.isValidColumn(column)) {
-      // Invalid row/column number
-      return undefined;
-    }
-
     return { row: row, column: column };
   }
 
@@ -79,6 +74,10 @@ export class TileMat extends Mat {
   public static getTileRow(y: number | undefined): number | undefined {
     if (y === undefined) {
       return undefined;
+    }
+
+    if (y === this.matrixMaxY) {
+      return this.matrixRows - 1;
     }
 
     const row = Math.floor(
@@ -102,6 +101,10 @@ export class TileMat extends Mat {
   public static getTileColumn(x: number | undefined): number | undefined {
     if (x === undefined) {
       return undefined;
+    }
+
+    if (x === this.matrixMaxX) {
+      return this.matrixColumns - 1;
     }
 
     const column = Math.floor(
