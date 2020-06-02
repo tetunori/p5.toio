@@ -241,7 +241,7 @@ export class ColorTileMat extends TileMat {
    *
    * @returns tile color name string. If specified (x, y) is not on toio Collection tile mat, this function returns undefined.
    */
-  public static getTileColor(x: number, y: number): string | undefined {
+  public static getTileColor(x: number | undefined, y: number | undefined): string | undefined {
     const row = this.getTileRow(y);
     const column = this.getTileColumn(x);
 

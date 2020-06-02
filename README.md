@@ -5,9 +5,10 @@
 <p align="center">
   <a href="https://github.com/tetunori/p5.toio/actions?query=workflow%3Abuild"><img alt="build" src="https://github.com/tetunori/p5.toio/workflows/build/badge.svg"></a>
   <a href="https://github.com/tetunori/p5.toio/actions?query=workflow%3Alint"><img alt="lint" src="https://github.com/tetunori/p5.toio/workflows/lint/badge.svg"></a>
+  <a href="https://github.com/tetunori/p5.toio/actions?query=workflow%3Atest"><img alt="test" src="https://github.com/tetunori/p5.toio/workflows/test/badge.svg"></a>
   <a href="https://github.com/tetunori/p5.toio/actions?query=workflow%3Adocs"><img alt="docs" src="https://github.com/tetunori/p5.toio/workflows/docs/badge.svg"></a>
   <a href="https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
-  <!-- <a href="https://github.com/facebook/jest"><img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest"></a> -->
+  <a href="https://github.com/facebook/jest"><img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest"></a>
 </p>
 
 # Description
