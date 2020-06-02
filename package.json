@@ -59,8 +59,8 @@
     },
     "testMatch": [
       "**/tests/common/*.test.ts",
-      "**/tests/id/standard/*.test.ts",
-      "**/tests/id/position/*.test.ts"
+      "**/tests/id/**/*.test.ts",
+      "**/tests/p5tId.test.ts"
     ]
   }
 }
