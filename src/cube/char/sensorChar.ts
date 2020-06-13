@@ -34,10 +34,10 @@ export class CubeSensorChar extends CubeChar {
     posture: CubeSensorChar.postureId.top,
   };
 
-  private cbFlat: (CubeFlatListner | undefined)[] = [];
-  private cbCollision: (CubeCollisionListner | undefined)[] = [];
-  private cbDoubleTapped: (CubeCollisionListner | undefined)[] = [];
-  private cbPostureChanged: (CubePostureListner | undefined)[] = [];
+  private cbFlat: CubeFlatListner[] = [];
+  private cbCollision: CubeCollisionListner[] = [];
+  private cbDoubleTapped: CubeCollisionListner[] = [];
+  private cbPostureChanged: CubePostureListner[] = [];
 
   /**
    * Prepare for using sensor characteristic function.
@@ -49,28 +49,24 @@ export class CubeSensorChar extends CubeChar {
       super
         .prepare()
         .then(() => {
-          if (this.characteristic) {
-            // Enable notification
-            this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
-              const target = event.target as BluetoothRemoteGATTCharacteristic;
-              if (target?.value) {
-                this.setSensorInfo(target.value);
-              }
+          // Enable notification
+          this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
+            const target = event.target as BluetoothRemoteGATTCharacteristic;
+            if (target?.value) {
+              this.setSensorInfo(target.value);
+            }
+          });
+          this.characteristic
+            .startNotifications()
+            .then(() => {
+              return this.readSensorInfo();
+            })
+            .then(() => {
+              resolve('characteristic resolve');
+            })
+            .catch((error) => {
+              reject(error);
             });
-            this.characteristic
-              .startNotifications()
-              .then(() => {
-                return this.readSensorInfo();
-              })
-              .then(() => {
-                resolve('characteristic resolve');
-              })
-              .catch((error) => {
-                reject(error);
-              });
-          } else {
-            reject(new Error('characteristic does not exist.'));
-          }
         })
         .catch((error) => {
           reject(error);
@@ -133,27 +129,27 @@ export class CubeSensorChar extends CubeChar {
 
       if (data.getUint8(DOUBLE_TAP_INDEX)) {
         for (const cb of this.cbDoubleTapped) {
-          cb?.();
+          cb();
         }
       }
 
       if (data.getUint8(COLLISION_INDEX)) {
         for (const cb of this.cbCollision) {
-          cb?.();
+          cb();
         }
       }
 
       this.sensorInfo.flat = !!data.getUint8(FLAT_INDEX);
       if (previousSensorInfo.flat !== this.sensorInfo.flat) {
         for (const cb of this.cbFlat) {
-          cb?.(this.sensorInfo.flat);
+          cb(this.sensorInfo.flat);
         }
       }
 
       this.sensorInfo.posture = this.convertPostureValueToId(data.getUint8(POSTURE_INDEX));
       if (previousSensorInfo.posture !== this.sensorInfo.posture) {
         for (const cb of this.cbPostureChanged) {
-          cb?.(this.sensorInfo.posture);
+          cb(this.sensorInfo.posture);
         }
       }
     }
@@ -164,11 +160,11 @@ export class CubeSensorChar extends CubeChar {
    */
   private callbackCurrentInfo(): void {
     for (const cb of this.cbFlat) {
-      cb?.(this.sensorInfo.flat);
+      cb(this.sensorInfo.flat);
     }
 
     for (const cb of this.cbPostureChanged) {
-      cb?.(this.sensorInfo.posture);
+      cb(this.sensorInfo.posture);
     }
   }
 

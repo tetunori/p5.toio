@@ -1382,28 +1382,23 @@ class CubeSensorChar extends CubeChar {
             super
                 .prepare()
                 .then(() => {
-                if (this.characteristic) {
-                    this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
-                        const target = event.target;
-                        if (target === null || target === void 0 ? void 0 : target.value) {
-                            this.setSensorInfo(target.value);
-                        }
-                    });
-                    this.characteristic
-                        .startNotifications()
-                        .then(() => {
-                        return this.readSensorInfo();
-                    })
-                        .then(() => {
-                        resolve('characteristic resolve');
-                    })
-                        .catch((error) => {
-                        reject(error);
-                    });
-                }
-                else {
-                    reject(new Error('characteristic does not exist.'));
-                }
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setSensorInfo(target.value);
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.readSensorInfo();
+                })
+                    .then(() => {
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
             })
                 .catch((error) => {
                 reject(error);
@@ -1439,34 +1434,34 @@ class CubeSensorChar extends CubeChar {
             const POSTURE_INDEX = 4;
             if (data.getUint8(DOUBLE_TAP_INDEX)) {
                 for (const cb of this.cbDoubleTapped) {
-                    cb === null || cb === void 0 ? void 0 : cb();
+                    cb();
                 }
             }
             if (data.getUint8(COLLISION_INDEX)) {
                 for (const cb of this.cbCollision) {
-                    cb === null || cb === void 0 ? void 0 : cb();
+                    cb();
                 }
             }
             this.sensorInfo.flat = !!data.getUint8(FLAT_INDEX);
             if (previousSensorInfo.flat !== this.sensorInfo.flat) {
                 for (const cb of this.cbFlat) {
-                    cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.flat);
+                    cb(this.sensorInfo.flat);
                 }
             }
             this.sensorInfo.posture = this.convertPostureValueToId(data.getUint8(POSTURE_INDEX));
             if (previousSensorInfo.posture !== this.sensorInfo.posture) {
                 for (const cb of this.cbPostureChanged) {
-                    cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.posture);
+                    cb(this.sensorInfo.posture);
                 }
             }
         }
     }
     callbackCurrentInfo() {
         for (const cb of this.cbFlat) {
-            cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.flat);
+            cb(this.sensorInfo.flat);
         }
         for (const cb of this.cbPostureChanged) {
-            cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.posture);
+            cb(this.sensorInfo.posture);
         }
     }
     addEventListener(type, listener) {
