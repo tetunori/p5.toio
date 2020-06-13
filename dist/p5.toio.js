@@ -912,30 +912,25 @@ class CubeButtonChar extends CubeChar {
             super
                 .prepare()
                 .then(() => {
-                if (this.characteristic) {
-                    this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
-                        const target = event.target;
-                        if (target === null || target === void 0 ? void 0 : target.value) {
-                            this.setButtonStatus(target.value);
-                            this.callbackButtonStatus(this.buttonPressed);
-                        }
-                    });
-                    this.characteristic
-                        .startNotifications()
-                        .then(() => {
-                        return this.readButtonStatus();
-                    })
-                        .then(() => {
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setButtonStatus(target.value);
                         this.callbackButtonStatus(this.buttonPressed);
-                        resolve('characteristic resolve');
-                    })
-                        .catch((error) => {
-                        reject(error);
-                    });
-                }
-                else {
-                    reject(new Error('characteristic does not exist.'));
-                }
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.readButtonStatus();
+                })
+                    .then(() => {
+                    this.callbackButtonStatus(this.buttonPressed);
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
             })
                 .catch((error) => {
                 reject(error);
@@ -985,16 +980,16 @@ class CubeButtonChar extends CubeChar {
     }
     callbackButtonStatus(isPressed) {
         for (const cb of this.cbBoth) {
-            cb === null || cb === void 0 ? void 0 : cb(isPressed);
+            cb(isPressed);
         }
         for (const cb of this.cbPressed) {
             if (isPressed) {
-                cb === null || cb === void 0 ? void 0 : cb();
+                cb();
             }
         }
         for (const cb of this.cbReleased) {
             if (!isPressed) {
-                cb === null || cb === void 0 ? void 0 : cb();
+                cb();
             }
         }
     }
