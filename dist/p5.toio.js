@@ -1371,11 +1371,13 @@ class CubeSensorChar extends CubeChar {
         this.sensorInfo = {
             flat: false,
             posture: CubeSensorChar.postureId.top,
+            shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
         };
         this.cbFlat = [];
         this.cbCollision = [];
         this.cbDoubleTapped = [];
         this.cbPostureChanged = [];
+        this.cbShakeLevelChanged = [];
     }
     prepare() {
         return new Promise((resolve, reject) => {
@@ -1411,6 +1413,9 @@ class CubeSensorChar extends CubeChar {
     getPosture() {
         return this.sensorInfo.posture;
     }
+    getShakeLevel() {
+        return this.sensorInfo.shakeLevel;
+    }
     readSensorInfo() {
         return new Promise((resolve, reject) => {
             this.readValue()
@@ -1432,6 +1437,7 @@ class CubeSensorChar extends CubeChar {
             const COLLISION_INDEX = 2;
             const DOUBLE_TAP_INDEX = 3;
             const POSTURE_INDEX = 4;
+            const SHAKE_LEVEL_INDEX = 5;
             if (data.getUint8(DOUBLE_TAP_INDEX)) {
                 for (const cb of this.cbDoubleTapped) {
                     cb();
@@ -1454,6 +1460,12 @@ class CubeSensorChar extends CubeChar {
                     cb(this.sensorInfo.posture);
                 }
             }
+            this.sensorInfo.shakeLevel = this.convertShakeLevelValueToId(data.getUint8(SHAKE_LEVEL_INDEX));
+            if (previousSensorInfo.shakeLevel !== this.sensorInfo.shakeLevel) {
+                for (const cb of this.cbShakeLevelChanged) {
+                    cb(this.sensorInfo.shakeLevel);
+                }
+            }
         }
     }
     callbackCurrentInfo() {
@@ -1463,12 +1475,16 @@ class CubeSensorChar extends CubeChar {
         for (const cb of this.cbPostureChanged) {
             cb(this.sensorInfo.posture);
         }
+        for (const cb of this.cbShakeLevelChanged) {
+            cb(this.sensorInfo.shakeLevel);
+        }
     }
     addEventListener(type, listener) {
         const TYPE_FLAT = 'flat';
         const TYPE_COLLISION = 'collision';
         const TYPE_DOUBLE_TAP = 'doubletap';
         const TYPE_POSTURE = 'posture';
+        const TYPE_SHAKE_LEVEL = 'shakelevel';
         if (type === TYPE_FLAT) {
             this.cbFlat.push(listener);
         }
@@ -1480,6 +1496,9 @@ class CubeSensorChar extends CubeChar {
         }
         else if (type === TYPE_POSTURE) {
             this.cbPostureChanged.push(listener);
+        }
+        else if (type === TYPE_SHAKE_LEVEL) {
+            this.cbShakeLevelChanged.push(listener);
         }
         this.callbackCurrentInfo();
     }
@@ -1499,6 +1518,14 @@ class CubeSensorChar extends CubeChar {
         ];
         return matrix[value - 1];
     }
+    convertShakeLevelValueToId(value) {
+        const SHAKE_LEVEL_VALUE_MIN = 0x00;
+        const SHAKE_LEVEL_VALUE_MAX = 0x0a;
+        if (value < SHAKE_LEVEL_VALUE_MIN || value > SHAKE_LEVEL_VALUE_MAX) {
+            return CubeSensorChar.shakeLevelId.noDetection;
+        }
+        return value;
+    }
 }
 CubeSensorChar.postureId = {
     top: 'top',
@@ -1507,6 +1534,19 @@ CubeSensorChar.postureId = {
     front: 'front',
     right: 'right',
     left: 'left',
+};
+CubeSensorChar.shakeLevelId = {
+    noDetection: 0x00,
+    level1: 0x01,
+    level2: 0x02,
+    level3: 0x03,
+    level4: 0x04,
+    level5: 0x05,
+    level6: 0x06,
+    level7: 0x07,
+    level8: 0x08,
+    level9: 0x09,
+    level10: 0x0a,
 };
 class CubeSoundChar extends CubeChar {
     constructor() {
@@ -1679,6 +1719,7 @@ class Cube {
         this.standardId = undefined;
         this.flat = undefined;
         this.posture = undefined;
+        this.shakeLevel = undefined;
         this.buttonPressed = undefined;
         this.batteryLevel = undefined;
         this.cube = undefined;
@@ -1708,7 +1749,7 @@ class Cube {
         cube === null || cube === void 0 ? void 0 : cube.disconnect();
     }
     addEventListener(type, listener) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         const TYPE_BT_PRESS = 'buttonpress';
         const TYPE_BT_RELEASE = 'buttonrelease';
         const TYPE_BATT_LEVEL = 'batterylevelchange';
@@ -1716,6 +1757,7 @@ class Cube {
         const TYPE_SENSOR_COLLISION = 'sensorcollision';
         const TYPE_SENSOR_DTAP = 'sensordoubletap';
         const TYPE_SENSOR_POSTURE = 'sensorposturechange';
+        const TYPE_SENSOR_SHAKE_LEVEL = 'sensorshakelevelchange';
         const TYPE_ID_POSITION = 'positionid';
         const TYPE_ID_STANDARD = 'standardid';
         switch (type) {
@@ -1740,16 +1782,19 @@ class Cube {
             case TYPE_SENSOR_POSTURE:
                 (_p = (_o = this.cube) === null || _o === void 0 ? void 0 : _o.sensorChar) === null || _p === void 0 ? void 0 : _p.addEventListener('posture', listener);
                 break;
+            case TYPE_SENSOR_SHAKE_LEVEL:
+                (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', listener);
+                break;
             case TYPE_ID_POSITION:
-                (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.idChar) === null || _r === void 0 ? void 0 : _r.addEventListener('positionid', listener);
+                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', listener);
                 break;
             case TYPE_ID_STANDARD:
-                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('standardid', listener);
+                (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', listener);
                 break;
         }
     }
     registCallback() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.buttonChar) === null || _b === void 0 ? void 0 : _b.addEventListener('press', this.onButtonPressed.bind(this));
         (_d = (_c = this.cube) === null || _c === void 0 ? void 0 : _c.buttonChar) === null || _d === void 0 ? void 0 : _d.addEventListener('release', this.onButtonReleased.bind(this));
         (_f = (_e = this.cube) === null || _e === void 0 ? void 0 : _e.batteryChar) === null || _f === void 0 ? void 0 : _f.addEventListener('change', this.onBatteryLevelChanged.bind(this));
@@ -1757,8 +1802,9 @@ class Cube {
         (_k = (_j = this.cube) === null || _j === void 0 ? void 0 : _j.sensorChar) === null || _k === void 0 ? void 0 : _k.addEventListener('collision', this.onCollisionOccurred.bind(this));
         (_m = (_l = this.cube) === null || _l === void 0 ? void 0 : _l.sensorChar) === null || _m === void 0 ? void 0 : _m.addEventListener('doubletap', this.onDoubleTapped.bind(this));
         (_p = (_o = this.cube) === null || _o === void 0 ? void 0 : _o.sensorChar) === null || _p === void 0 ? void 0 : _p.addEventListener('posture', this.onPostureChanged.bind(this));
-        (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.idChar) === null || _r === void 0 ? void 0 : _r.addEventListener('positionid', this.onPositionIdChanged.bind(this));
-        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+        (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', this.onShakeLevelChanged.bind(this));
+        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', this.onPositionIdChanged.bind(this));
+        (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', this.onStandardIdChanged.bind(this));
     }
     onButtonPressed() {
         this.buttonPressed = true;
@@ -1798,6 +1844,12 @@ class Cube {
         this.posture = posture;
         if (typeof cubePostureChanged === 'function') {
             cubePostureChanged(posture);
+        }
+    }
+    onShakeLevelChanged(shakeLevel) {
+        this.shakeLevel = shakeLevel;
+        if (typeof cubeShakeLevelChanged === 'function') {
+            cubeShakeLevelChanged(shakeLevel);
         }
     }
     onPositionIdChanged(info) {
@@ -1995,6 +2047,7 @@ class Cube {
 }
 Cube.seId = CubeSoundChar.seId;
 Cube.postureId = CubeSensorChar.postureId;
+Cube.shakeLevelId = CubeSensorChar.shakeLevelId;
 Cube.moveTypeId = CubeMotorChar.moveTypeId;
 Cube.easeTypeId = CubeMotorChar.easeTypeId;
 Cube.angleTypeId = CubeMotorChar.angleTypeId;

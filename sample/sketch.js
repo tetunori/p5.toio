@@ -161,6 +161,7 @@ function keyPressed() {
           console.log(cube.standardId, cube.angle);
           break;
         case 74:
+          console.log(cube.shakeLevel);
           break;
         case 65:
           break;
@@ -201,6 +202,10 @@ function keyPressed() {
           cube.addEventListener(type, (idInfo)=>{console.log(type, idInfo)});
           break;
         case 80:
+          type = 'sensorshakelevelchange';
+          cube.addEventListener(type, (shakeLevel)=>{console.log(type, shakeLevel)});
+          break;
+        case 192:
           break;
         case 219:
           break;
@@ -299,6 +304,11 @@ const initCanvas = () => {
 // const cubePostureChanged = (posture) => {
 //   console.log('O: cubePostureChanged!', posture);
 // }
+
+// const cubeShakeLevelChanged = (shakeLevel) => {
+//   console.log('O: cubeShakeLevelChanged!', shakeLevel);
+// }
+
 // const cubePositionIdChanged = (info) => {
 //   console.log('O: cubePositionIdChanged!', info);
 // }

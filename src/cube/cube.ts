@@ -7,6 +7,7 @@ import {
   CubeCollisionListner,
   CubeDoubleTapListner,
   CubePostureListner,
+  CubeShakeLevelListner,
   CubeSensorChar,
 } from './char/sensorChar';
 import { CubeMotorChar } from './char/motorChar';
@@ -15,6 +16,7 @@ import { CubeBase, CubeListner } from './cubeBase';
 export class Cube {
   static seId = CubeSoundChar.seId;
   static postureId = CubeSensorChar.postureId;
+  static shakeLevelId = CubeSensorChar.shakeLevelId;
   static moveTypeId = CubeMotorChar.moveTypeId;
   static easeTypeId = CubeMotorChar.easeTypeId;
   static angleTypeId = CubeMotorChar.angleTypeId;
@@ -33,6 +35,7 @@ export class Cube {
   public standardId: string | undefined = undefined;
   public flat: boolean | undefined = undefined;
   public posture: string | undefined = undefined;
+  public shakeLevel: number | undefined = undefined;
   public buttonPressed: boolean | undefined = undefined;
   public batteryLevel: number | undefined = undefined;
 
@@ -86,6 +89,7 @@ export class Cube {
    *  - 'sensorcollision'
    *  - 'sensordoubletap'
    *  - 'sensorposturechange'
+   *  - 'sensorshakelevelchange'
    *  - 'positionid'
    *  - 'standardid'
    * @param listener: Callback function.
@@ -99,6 +103,7 @@ export class Cube {
     const TYPE_SENSOR_COLLISION = 'sensorcollision';
     const TYPE_SENSOR_DTAP = 'sensordoubletap';
     const TYPE_SENSOR_POSTURE = 'sensorposturechange';
+    const TYPE_SENSOR_SHAKE_LEVEL = 'sensorshakelevelchange';
     const TYPE_ID_POSITION = 'positionid';
     const TYPE_ID_STANDARD = 'standardid';
 
@@ -130,6 +135,9 @@ export class Cube {
       case TYPE_SENSOR_POSTURE:
         this.cube?.sensorChar?.addEventListener('posture', listener as CubePostureListner);
         break;
+      case TYPE_SENSOR_SHAKE_LEVEL:
+        this.cube?.sensorChar?.addEventListener('shakelevel', listener as CubeShakeLevelListner);
+        break;
       case TYPE_ID_POSITION:
         this.cube?.idChar?.addEventListener('positionid', listener as CubeIdCharListner);
         break;
@@ -150,6 +158,7 @@ export class Cube {
     this.cube?.sensorChar?.addEventListener('collision', this.onCollisionOccurred.bind(this));
     this.cube?.sensorChar?.addEventListener('doubletap', this.onDoubleTapped.bind(this));
     this.cube?.sensorChar?.addEventListener('posture', this.onPostureChanged.bind(this));
+    this.cube?.sensorChar?.addEventListener('shakelevel', this.onShakeLevelChanged.bind(this));
     this.cube?.idChar?.addEventListener('positionid', this.onPositionIdChanged.bind(this));
     this.cube?.idChar?.addEventListener('standardid', this.onStandardIdChanged.bind(this));
   }
@@ -252,6 +261,21 @@ export class Cube {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       cubePostureChanged(posture);
+    }
+  }
+
+  /**
+   * For prepared callback function `cubeShakeLevelChanged`.
+   */
+  private onShakeLevelChanged(shakeLevel: number): void {
+    this.shakeLevel = shakeLevel;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    if (typeof cubeShakeLevelChanged === 'function') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      cubeShakeLevelChanged(shakeLevel);
     }
   }
 

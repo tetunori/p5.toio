@@ -2,17 +2,20 @@ import { CubeChar } from './char';
 export type sensorInfo = {
   flat: boolean;
   posture: string;
+  shakeLevel: number;
 };
 
 export type CubeFlatListner = (isFlat: boolean) => void;
 export type CubeCollisionListner = () => void;
 export type CubeDoubleTapListner = () => void;
 export type CubePostureListner = (posture: string) => void;
+export type CubeShakeLevelListner = (shakeLevel: number) => void;
 export type CubeSensorCharListner =
   | CubeFlatListner
   | CubeCollisionListner
   | CubeDoubleTapListner
-  | CubePostureListner;
+  | CubePostureListner
+  | CubeShakeLevelListner;
 
 export class CubeSensorChar extends CubeChar {
   readonly uuid: string = '10b20106-5b3b-4571-9508-cf3efcd7bbae';
@@ -29,15 +32,34 @@ export class CubeSensorChar extends CubeChar {
     left: 'left',
   } as const;
 
+  /**
+   * Shake level IDs.
+   */
+  static shakeLevelId = {
+    noDetection: 0x00,
+    level1: 0x01,
+    level2: 0x02,
+    level3: 0x03,
+    level4: 0x04,
+    level5: 0x05,
+    level6: 0x06,
+    level7: 0x07,
+    level8: 0x08,
+    level9: 0x09,
+    level10: 0x0a,
+  } as const;
+
   private sensorInfo: sensorInfo = {
     flat: false,
     posture: CubeSensorChar.postureId.top,
+    shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
   };
 
   private cbFlat: CubeFlatListner[] = [];
   private cbCollision: CubeCollisionListner[] = [];
   private cbDoubleTapped: CubeCollisionListner[] = [];
   private cbPostureChanged: CubePostureListner[] = [];
+  private cbShakeLevelChanged: CubeShakeLevelListner[] = [];
 
   /**
    * Prepare for using sensor characteristic function.
@@ -93,6 +115,15 @@ export class CubeSensorChar extends CubeChar {
   }
 
   /**
+   * Get current shake level.
+   *
+   * @returns id of shake level.
+   */
+  public getShakeLevel(): number {
+    return this.sensorInfo.shakeLevel;
+  }
+
+  /**
    * Read sensorInfo from Cube.
    *
    * @returns Promise. `resolve` handler says that sensorInfo was correctly got.
@@ -126,6 +157,7 @@ export class CubeSensorChar extends CubeChar {
       const COLLISION_INDEX = 2;
       const DOUBLE_TAP_INDEX = 3;
       const POSTURE_INDEX = 4;
+      const SHAKE_LEVEL_INDEX = 5;
 
       if (data.getUint8(DOUBLE_TAP_INDEX)) {
         for (const cb of this.cbDoubleTapped) {
@@ -152,6 +184,15 @@ export class CubeSensorChar extends CubeChar {
           cb(this.sensorInfo.posture);
         }
       }
+
+      this.sensorInfo.shakeLevel = this.convertShakeLevelValueToId(
+        data.getUint8(SHAKE_LEVEL_INDEX),
+      );
+      if (previousSensorInfo.shakeLevel !== this.sensorInfo.shakeLevel) {
+        for (const cb of this.cbShakeLevelChanged) {
+          cb(this.sensorInfo.shakeLevel);
+        }
+      }
     }
   }
 
@@ -165,6 +206,10 @@ export class CubeSensorChar extends CubeChar {
 
     for (const cb of this.cbPostureChanged) {
       cb(this.sensorInfo.posture);
+    }
+
+    for (const cb of this.cbShakeLevelChanged) {
+      cb(this.sensorInfo.shakeLevel);
     }
   }
 
@@ -180,6 +225,7 @@ export class CubeSensorChar extends CubeChar {
     const TYPE_COLLISION = 'collision';
     const TYPE_DOUBLE_TAP = 'doubletap';
     const TYPE_POSTURE = 'posture';
+    const TYPE_SHAKE_LEVEL = 'shakelevel';
 
     if (type === TYPE_FLAT) {
       this.cbFlat.push(listener as CubeFlatListner);
@@ -189,6 +235,8 @@ export class CubeSensorChar extends CubeChar {
       this.cbDoubleTapped.push(listener as CubeCollisionListner);
     } else if (type === TYPE_POSTURE) {
       this.cbPostureChanged.push(listener as CubePostureListner);
+    } else if (type === TYPE_SHAKE_LEVEL) {
+      this.cbShakeLevelChanged.push(listener as CubeShakeLevelListner);
     }
     this.callbackCurrentInfo();
   }
@@ -218,5 +266,24 @@ export class CubeSensorChar extends CubeChar {
     ];
 
     return matrix[value - 1];
+  }
+
+  /**
+   * Convert from shake level value to string ID value.
+   *
+   * @param value shake level value.
+   *
+   * @returns ID.
+   */
+  private convertShakeLevelValueToId(value: number): number {
+    const SHAKE_LEVEL_VALUE_MIN = 0x00;
+    const SHAKE_LEVEL_VALUE_MAX = 0x0a;
+
+    if (value < SHAKE_LEVEL_VALUE_MIN || value > SHAKE_LEVEL_VALUE_MAX) {
+      // Return no detecton for invalid values.
+      return CubeSensorChar.shakeLevelId.noDetection;
+    }
+
+    return value;
   }
 }
