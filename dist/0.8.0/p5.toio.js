@@ -1,4 +1,3 @@
-"use strict";
 class CubeUtil {
     static clipNumberUInt8(num) {
         if (num < 0) {
@@ -58,14 +57,14 @@ class TileMat extends Mat {
         if (row === undefined || column === undefined) {
             return undefined;
         }
-        if (!this.isValidRow(row) || !this.isValidColumn(column)) {
-            return undefined;
-        }
         return { row: row, column: column };
     }
     static getTileRow(y) {
         if (y === undefined) {
             return undefined;
+        }
+        if (y === this.matrixMaxY) {
+            return this.matrixRows - 1;
         }
         const row = Math.floor(((y - this.matrixMinY) / (this.matrixMaxY - this.matrixMinY)) * this.matrixRows);
         if (this.isValidRow(row)) {
@@ -78,6 +77,9 @@ class TileMat extends Mat {
     static getTileColumn(x) {
         if (x === undefined) {
             return undefined;
+        }
+        if (x === this.matrixMaxX) {
+            return this.matrixColumns - 1;
         }
         const column = Math.floor(((x - this.matrixMinX) / (this.matrixMaxX - this.matrixMinX)) * this.matrixColumns);
         if (this.isValidColumn(column)) {
@@ -749,7 +751,6 @@ class P5tId extends Id {
 class CubeChar {
     constructor(service) {
         this.uuid = '';
-        this.characteristic = undefined;
         this.errStrInProgress = 'GATT operation already in progress.';
         this.timerID = 0;
         this.retryInterval = 30;
@@ -789,51 +790,37 @@ class CubeChar {
     }
     writeValueCore(buf, countRetry) {
         return new Promise((resolve, reject) => {
+            var _a;
             if (countRetry > this.maxRetryCount) {
                 resolve('writeValue ignored because it reaches max retry count');
             }
-            if (this.characteristic !== undefined) {
-                this.characteristic
-                    .writeValue(buf)
-                    .then(() => {
-                    resolve('writeValue resolved');
-                })
-                    .catch((error) => {
-                    if (error.message.indexOf(this.errStrInProgress) !== -1) {
-                        clearTimeout(this.timerID);
-                        this.timerID = setTimeout(this.writeValueCore.bind(this, buf, countRetry + 1), this.retryInterval);
-                    }
-                    else {
-                        reject(error);
-                    }
-                });
-            }
-            else {
-                reject(new Error('characteristic does not exist.'));
-            }
+            (_a = this.characteristic) === null || _a === void 0 ? void 0 : _a.writeValue(buf).then(() => {
+                resolve('writeValue resolved');
+            }).catch((error) => {
+                if (error.message.indexOf(this.errStrInProgress) !== -1) {
+                    clearTimeout(this.timerID);
+                    this.timerID = window.setTimeout(this.writeValueCore.bind(this, buf, countRetry + 1), this.retryInterval);
+                }
+                else {
+                    reject(error);
+                }
+            });
         });
     }
     readValue() {
         return new Promise((resolve, reject) => {
-            if (this.characteristic !== undefined) {
-                this.characteristic
-                    .readValue()
-                    .then((dataView) => {
-                    resolve(dataView);
-                })
-                    .catch((error) => {
-                    if (error.message.indexOf(this.errStrInProgress) !== -1) {
-                        clearTimeout(this.timerID);
-                        this.timerID = setTimeout(this.readValue.bind(this), this.retryInterval);
-                    }
-                    else {
-                        reject(error);
-                    }
-                });
-            }
-            else {
-                reject(new Error('characteristic does not exist.'));
-            }
+            var _a;
+            (_a = this.characteristic) === null || _a === void 0 ? void 0 : _a.readValue().then((dataView) => {
+                resolve(dataView);
+            }).catch((error) => {
+                if (error.message.indexOf(this.errStrInProgress) !== -1) {
+                    clearTimeout(this.timerID);
+                    this.timerID = window.setTimeout(this.readValue.bind(this), this.retryInterval);
+                }
+                else {
+                    reject(error);
+                }
+            });
         });
     }
     setFrameRate(fps) {
@@ -852,28 +839,23 @@ class CubeBatteryChar extends CubeChar {
             super
                 .prepare()
                 .then(() => {
-                if (this.characteristic) {
-                    this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
-                        const target = event.target;
-                        if (target === null || target === void 0 ? void 0 : target.value) {
-                            this.setBatteryLevel(target.value);
-                        }
-                    });
-                    this.characteristic
-                        .startNotifications()
-                        .then(() => {
-                        return this.readBatteryLevel();
-                    })
-                        .then(() => {
-                        resolve('characteristic resolve');
-                    })
-                        .catch((error) => {
-                        reject(error);
-                    });
-                }
-                else {
-                    reject(new Error('characteristic does not exist.'));
-                }
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setBatteryLevel(target.value);
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.readBatteryLevel();
+                })
+                    .then(() => {
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
             })
                 .catch((error) => {
                 reject(error);
@@ -912,7 +894,7 @@ class CubeBatteryChar extends CubeChar {
     }
     callbackBatteryLevel(batteryLevel) {
         for (const cb of this.cbBatteryLevelChanged) {
-            cb === null || cb === void 0 ? void 0 : cb(batteryLevel);
+            cb(batteryLevel);
         }
     }
 }
@@ -930,30 +912,25 @@ class CubeButtonChar extends CubeChar {
             super
                 .prepare()
                 .then(() => {
-                if (this.characteristic) {
-                    this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
-                        const target = event.target;
-                        if (target === null || target === void 0 ? void 0 : target.value) {
-                            this.setButtonStatus(target.value);
-                            this.callbackButtonStatus(this.buttonPressed);
-                        }
-                    });
-                    this.characteristic
-                        .startNotifications()
-                        .then(() => {
-                        return this.readButtonStatus();
-                    })
-                        .then(() => {
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setButtonStatus(target.value);
                         this.callbackButtonStatus(this.buttonPressed);
-                        resolve('characteristic resolve');
-                    })
-                        .catch((error) => {
-                        reject(error);
-                    });
-                }
-                else {
-                    reject(new Error('characteristic does not exist.'));
-                }
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.readButtonStatus();
+                })
+                    .then(() => {
+                    this.callbackButtonStatus(this.buttonPressed);
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
             })
                 .catch((error) => {
                 reject(error);
@@ -1003,16 +980,16 @@ class CubeButtonChar extends CubeChar {
     }
     callbackButtonStatus(isPressed) {
         for (const cb of this.cbBoth) {
-            cb === null || cb === void 0 ? void 0 : cb(isPressed);
+            cb(isPressed);
         }
         for (const cb of this.cbPressed) {
             if (isPressed) {
-                cb === null || cb === void 0 ? void 0 : cb();
+                cb();
             }
         }
         for (const cb of this.cbReleased) {
             if (!isPressed) {
-                cb === null || cb === void 0 ? void 0 : cb();
+                cb();
             }
         }
     }
@@ -1394,39 +1371,36 @@ class CubeSensorChar extends CubeChar {
         this.sensorInfo = {
             flat: false,
             posture: CubeSensorChar.postureId.top,
+            shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
         };
         this.cbFlat = [];
         this.cbCollision = [];
         this.cbDoubleTapped = [];
         this.cbPostureChanged = [];
+        this.cbShakeLevelChanged = [];
     }
     prepare() {
         return new Promise((resolve, reject) => {
             super
                 .prepare()
                 .then(() => {
-                if (this.characteristic) {
-                    this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
-                        const target = event.target;
-                        if (target === null || target === void 0 ? void 0 : target.value) {
-                            this.setSensorInfo(target.value);
-                        }
-                    });
-                    this.characteristic
-                        .startNotifications()
-                        .then(() => {
-                        return this.readSensorInfo();
-                    })
-                        .then(() => {
-                        resolve('characteristic resolve');
-                    })
-                        .catch((error) => {
-                        reject(error);
-                    });
-                }
-                else {
-                    reject(new Error('characteristic does not exist.'));
-                }
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setSensorInfo(target.value);
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.readSensorInfo();
+                })
+                    .then(() => {
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
             })
                 .catch((error) => {
                 reject(error);
@@ -1438,6 +1412,9 @@ class CubeSensorChar extends CubeChar {
     }
     getPosture() {
         return this.sensorInfo.posture;
+    }
+    getShakeLevel() {
+        return this.sensorInfo.shakeLevel;
     }
     readSensorInfo() {
         return new Promise((resolve, reject) => {
@@ -1460,36 +1437,46 @@ class CubeSensorChar extends CubeChar {
             const COLLISION_INDEX = 2;
             const DOUBLE_TAP_INDEX = 3;
             const POSTURE_INDEX = 4;
+            const SHAKE_LEVEL_INDEX = 5;
             if (data.getUint8(DOUBLE_TAP_INDEX)) {
                 for (const cb of this.cbDoubleTapped) {
-                    cb === null || cb === void 0 ? void 0 : cb();
+                    cb();
                 }
             }
             if (data.getUint8(COLLISION_INDEX)) {
                 for (const cb of this.cbCollision) {
-                    cb === null || cb === void 0 ? void 0 : cb();
+                    cb();
                 }
             }
             this.sensorInfo.flat = !!data.getUint8(FLAT_INDEX);
             if (previousSensorInfo.flat !== this.sensorInfo.flat) {
                 for (const cb of this.cbFlat) {
-                    cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.flat);
+                    cb(this.sensorInfo.flat);
                 }
             }
             this.sensorInfo.posture = this.convertPostureValueToId(data.getUint8(POSTURE_INDEX));
             if (previousSensorInfo.posture !== this.sensorInfo.posture) {
                 for (const cb of this.cbPostureChanged) {
-                    cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.posture);
+                    cb(this.sensorInfo.posture);
+                }
+            }
+            this.sensorInfo.shakeLevel = this.convertShakeLevelValueToId(data.getUint8(SHAKE_LEVEL_INDEX));
+            if (previousSensorInfo.shakeLevel !== this.sensorInfo.shakeLevel) {
+                for (const cb of this.cbShakeLevelChanged) {
+                    cb(this.sensorInfo.shakeLevel);
                 }
             }
         }
     }
     callbackCurrentInfo() {
         for (const cb of this.cbFlat) {
-            cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.flat);
+            cb(this.sensorInfo.flat);
         }
         for (const cb of this.cbPostureChanged) {
-            cb === null || cb === void 0 ? void 0 : cb(this.sensorInfo.posture);
+            cb(this.sensorInfo.posture);
+        }
+        for (const cb of this.cbShakeLevelChanged) {
+            cb(this.sensorInfo.shakeLevel);
         }
     }
     addEventListener(type, listener) {
@@ -1497,6 +1484,7 @@ class CubeSensorChar extends CubeChar {
         const TYPE_COLLISION = 'collision';
         const TYPE_DOUBLE_TAP = 'doubletap';
         const TYPE_POSTURE = 'posture';
+        const TYPE_SHAKE_LEVEL = 'shakelevel';
         if (type === TYPE_FLAT) {
             this.cbFlat.push(listener);
         }
@@ -1508,6 +1496,9 @@ class CubeSensorChar extends CubeChar {
         }
         else if (type === TYPE_POSTURE) {
             this.cbPostureChanged.push(listener);
+        }
+        else if (type === TYPE_SHAKE_LEVEL) {
+            this.cbShakeLevelChanged.push(listener);
         }
         this.callbackCurrentInfo();
     }
@@ -1527,6 +1518,14 @@ class CubeSensorChar extends CubeChar {
         ];
         return matrix[value - 1];
     }
+    convertShakeLevelValueToId(value) {
+        const SHAKE_LEVEL_VALUE_MIN = 0x00;
+        const SHAKE_LEVEL_VALUE_MAX = 0x0a;
+        if (value < SHAKE_LEVEL_VALUE_MIN || value > SHAKE_LEVEL_VALUE_MAX) {
+            return CubeSensorChar.shakeLevelId.noDetection;
+        }
+        return value;
+    }
 }
 CubeSensorChar.postureId = {
     top: 'top',
@@ -1535,6 +1534,19 @@ CubeSensorChar.postureId = {
     front: 'front',
     right: 'right',
     left: 'left',
+};
+CubeSensorChar.shakeLevelId = {
+    noDetection: 0x00,
+    level1: 0x01,
+    level2: 0x02,
+    level3: 0x03,
+    level4: 0x04,
+    level5: 0x05,
+    level6: 0x06,
+    level7: 0x07,
+    level8: 0x08,
+    level9: 0x09,
+    level10: 0x0a,
 };
 class CubeSoundChar extends CubeChar {
     constructor() {
@@ -1707,6 +1719,7 @@ class Cube {
         this.standardId = undefined;
         this.flat = undefined;
         this.posture = undefined;
+        this.shakeLevel = undefined;
         this.buttonPressed = undefined;
         this.batteryLevel = undefined;
         this.cube = undefined;
@@ -1736,7 +1749,7 @@ class Cube {
         cube === null || cube === void 0 ? void 0 : cube.disconnect();
     }
     addEventListener(type, listener) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         const TYPE_BT_PRESS = 'buttonpress';
         const TYPE_BT_RELEASE = 'buttonrelease';
         const TYPE_BATT_LEVEL = 'batterylevelchange';
@@ -1744,6 +1757,7 @@ class Cube {
         const TYPE_SENSOR_COLLISION = 'sensorcollision';
         const TYPE_SENSOR_DTAP = 'sensordoubletap';
         const TYPE_SENSOR_POSTURE = 'sensorposturechange';
+        const TYPE_SENSOR_SHAKE_LEVEL = 'sensorshakelevelchange';
         const TYPE_ID_POSITION = 'positionid';
         const TYPE_ID_STANDARD = 'standardid';
         switch (type) {
@@ -1768,16 +1782,19 @@ class Cube {
             case TYPE_SENSOR_POSTURE:
                 (_p = (_o = this.cube) === null || _o === void 0 ? void 0 : _o.sensorChar) === null || _p === void 0 ? void 0 : _p.addEventListener('posture', listener);
                 break;
+            case TYPE_SENSOR_SHAKE_LEVEL:
+                (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', listener);
+                break;
             case TYPE_ID_POSITION:
-                (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.idChar) === null || _r === void 0 ? void 0 : _r.addEventListener('positionid', listener);
+                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', listener);
                 break;
             case TYPE_ID_STANDARD:
-                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('standardid', listener);
+                (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', listener);
                 break;
         }
     }
     registCallback() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
         (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.buttonChar) === null || _b === void 0 ? void 0 : _b.addEventListener('press', this.onButtonPressed.bind(this));
         (_d = (_c = this.cube) === null || _c === void 0 ? void 0 : _c.buttonChar) === null || _d === void 0 ? void 0 : _d.addEventListener('release', this.onButtonReleased.bind(this));
         (_f = (_e = this.cube) === null || _e === void 0 ? void 0 : _e.batteryChar) === null || _f === void 0 ? void 0 : _f.addEventListener('change', this.onBatteryLevelChanged.bind(this));
@@ -1785,8 +1802,9 @@ class Cube {
         (_k = (_j = this.cube) === null || _j === void 0 ? void 0 : _j.sensorChar) === null || _k === void 0 ? void 0 : _k.addEventListener('collision', this.onCollisionOccurred.bind(this));
         (_m = (_l = this.cube) === null || _l === void 0 ? void 0 : _l.sensorChar) === null || _m === void 0 ? void 0 : _m.addEventListener('doubletap', this.onDoubleTapped.bind(this));
         (_p = (_o = this.cube) === null || _o === void 0 ? void 0 : _o.sensorChar) === null || _p === void 0 ? void 0 : _p.addEventListener('posture', this.onPostureChanged.bind(this));
-        (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.idChar) === null || _r === void 0 ? void 0 : _r.addEventListener('positionid', this.onPositionIdChanged.bind(this));
-        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+        (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', this.onShakeLevelChanged.bind(this));
+        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', this.onPositionIdChanged.bind(this));
+        (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', this.onStandardIdChanged.bind(this));
     }
     onButtonPressed() {
         this.buttonPressed = true;
@@ -1826,6 +1844,12 @@ class Cube {
         this.posture = posture;
         if (typeof cubePostureChanged === 'function') {
             cubePostureChanged(posture);
+        }
+    }
+    onShakeLevelChanged(shakeLevel) {
+        this.shakeLevel = shakeLevel;
+        if (typeof cubeShakeLevelChanged === 'function') {
+            cubeShakeLevelChanged(shakeLevel);
         }
     }
     onPositionIdChanged(info) {
@@ -2023,6 +2047,7 @@ class Cube {
 }
 Cube.seId = CubeSoundChar.seId;
 Cube.postureId = CubeSensorChar.postureId;
+Cube.shakeLevelId = CubeSensorChar.shakeLevelId;
 Cube.moveTypeId = CubeMotorChar.moveTypeId;
 Cube.easeTypeId = CubeMotorChar.easeTypeId;
 Cube.angleTypeId = CubeMotorChar.angleTypeId;
