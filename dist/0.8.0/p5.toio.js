@@ -1372,12 +1372,14 @@ class CubeSensorChar extends CubeChar {
             flat: false,
             posture: CubeSensorChar.postureId.top,
             shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
+            magnet: CubeSensorChar.magnetId.noMagnet,
         };
         this.cbFlat = [];
         this.cbCollision = [];
         this.cbDoubleTapped = [];
         this.cbPostureChanged = [];
         this.cbShakeLevelChanged = [];
+        this.cbMagnetChanged = [];
     }
     prepare() {
         return new Promise((resolve, reject) => {
@@ -1416,6 +1418,9 @@ class CubeSensorChar extends CubeChar {
     getShakeLevel() {
         return this.sensorInfo.shakeLevel;
     }
+    getMagnetSatus() {
+        return this.sensorInfo.magnet;
+    }
     readSensorInfo() {
         return new Promise((resolve, reject) => {
             this.readValue()
@@ -1432,6 +1437,7 @@ class CubeSensorChar extends CubeChar {
         const previousSensorInfo = Object.assign({}, this.sensorInfo);
         const INFO_TYPE_INDEX = 0;
         const INFO_TYPE_DETECTED = 1;
+        const INFO_TYPE_MAGNET = 2;
         if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_DETECTED) {
             const FLAT_INDEX = 1;
             const COLLISION_INDEX = 2;
@@ -1467,6 +1473,15 @@ class CubeSensorChar extends CubeChar {
                 }
             }
         }
+        else if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_MAGNET) {
+            const MAGNET_STATUS_INDEX = 1;
+            this.sensorInfo.magnet = this.convertMagnetValueToId(data.getUint8(MAGNET_STATUS_INDEX));
+            if (previousSensorInfo.magnet !== this.sensorInfo.magnet) {
+                for (const cb of this.cbMagnetChanged) {
+                    cb(this.sensorInfo.magnet);
+                }
+            }
+        }
     }
     callbackCurrentInfo() {
         for (const cb of this.cbFlat) {
@@ -1478,6 +1493,9 @@ class CubeSensorChar extends CubeChar {
         for (const cb of this.cbShakeLevelChanged) {
             cb(this.sensorInfo.shakeLevel);
         }
+        for (const cb of this.cbMagnetChanged) {
+            cb(this.sensorInfo.magnet);
+        }
     }
     addEventListener(type, listener) {
         const TYPE_FLAT = 'flat';
@@ -1485,6 +1503,7 @@ class CubeSensorChar extends CubeChar {
         const TYPE_DOUBLE_TAP = 'doubletap';
         const TYPE_POSTURE = 'posture';
         const TYPE_SHAKE_LEVEL = 'shakelevel';
+        const TYPE_MAGNET = 'magnet';
         if (type === TYPE_FLAT) {
             this.cbFlat.push(listener);
         }
@@ -1499,6 +1518,9 @@ class CubeSensorChar extends CubeChar {
         }
         else if (type === TYPE_SHAKE_LEVEL) {
             this.cbShakeLevelChanged.push(listener);
+        }
+        else if (type === TYPE_MAGNET) {
+            this.cbMagnetChanged.push(listener);
         }
         this.callbackCurrentInfo();
     }
@@ -1526,6 +1548,23 @@ class CubeSensorChar extends CubeChar {
         }
         return value;
     }
+    convertMagnetValueToId(value) {
+        const MAGNET_VALUE_MIN = 0x00;
+        const MAGNET_VALUE_MAX = 0x06;
+        if (value < MAGNET_VALUE_MIN || value > MAGNET_VALUE_MAX) {
+            return 'invalid';
+        }
+        const matrix = [
+            CubeSensorChar.magnetId.noMagnet,
+            CubeSensorChar.magnetId.pattern1,
+            CubeSensorChar.magnetId.pattern2,
+            CubeSensorChar.magnetId.pattern3,
+            CubeSensorChar.magnetId.pattern4,
+            CubeSensorChar.magnetId.pattern5,
+            CubeSensorChar.magnetId.pattern6,
+        ];
+        return matrix[value];
+    }
 }
 CubeSensorChar.postureId = {
     top: 'top',
@@ -1547,6 +1586,15 @@ CubeSensorChar.shakeLevelId = {
     level8: 0x08,
     level9: 0x09,
     level10: 0x0a,
+};
+CubeSensorChar.magnetId = {
+    noMagnet: 'noMagnet',
+    pattern1: 'pattern1',
+    pattern2: 'pattern2',
+    pattern3: 'pattern3',
+    pattern4: 'pattern4',
+    pattern5: 'pattern5',
+    pattern6: 'pattern6',
 };
 class CubeSoundChar extends CubeChar {
     constructor() {
@@ -1612,6 +1660,29 @@ CubeSoundChar.seId = {
     effect1: 9,
     effect2: 10,
 };
+class CubeConfigChar extends CubeChar {
+    constructor() {
+        super(...arguments);
+        this.uuid = '10b201ff-5b3b-4571-9508-cf3efcd7bbae';
+        this.cmdId = {
+            configMagnet: 0x1b,
+        };
+        this.magConfigId = {
+            disable: 0x00,
+            enable: 0x01,
+        };
+    }
+    enableMagnet() {
+        const RESERVED = 0x00;
+        const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.enable]);
+        this.writeValue(buf);
+    }
+    disableMagnet() {
+        const RESERVED = 0x00;
+        const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.disable]);
+        this.writeValue(buf);
+    }
+}
 class CubeBase {
     constructor(device) {
         this.idChar = undefined;
@@ -1621,8 +1692,9 @@ class CubeBase {
         this.batteryChar = undefined;
         this.soundChar = undefined;
         this.buttonChar = undefined;
+        this.configChar = undefined;
         this.device = undefined;
-        this.charStatusArray = [false, false, false, false, false, false, false];
+        this.charStatusArray = [false, false, false, false, false, false, false, false];
         this.isConnected = false;
         this.device = device;
     }
@@ -1645,10 +1717,12 @@ class CubeBase {
                         charArray.push((this.batteryChar = new CubeBatteryChar(service)));
                         charArray.push((this.soundChar = new CubeSoundChar(service)));
                         charArray.push((this.buttonChar = new CubeButtonChar(service)));
+                        charArray.push((this.configChar = new CubeConfigChar(service)));
                         for (let index = 0; index < charArray.length; index++) {
                             const characteristic = charArray[index];
                             characteristic === null || characteristic === void 0 ? void 0 : characteristic.prepare().then(() => {
                                 if (this.updateCharState(index, true)) {
+                                    this.initializeOnConnet();
                                     resolve(this);
                                 }
                             }).catch((error) => {
@@ -1687,6 +1761,7 @@ class CubeBase {
         this.batteryChar = undefined;
         this.soundChar = undefined;
         this.buttonChar = undefined;
+        this.configChar = undefined;
         this.device = undefined;
     }
     updateCharState(charIndex, isReady) {
@@ -1699,7 +1774,7 @@ class CubeBase {
         return true;
     }
     setFrameRate(fps) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         (_a = this.idChar) === null || _a === void 0 ? void 0 : _a.setFrameRate(fps);
         (_b = this.motorChar) === null || _b === void 0 ? void 0 : _b.setFrameRate(fps);
         (_c = this.lightChar) === null || _c === void 0 ? void 0 : _c.setFrameRate(fps);
@@ -1707,6 +1782,11 @@ class CubeBase {
         (_e = this.batteryChar) === null || _e === void 0 ? void 0 : _e.setFrameRate(fps);
         (_f = this.soundChar) === null || _f === void 0 ? void 0 : _f.setFrameRate(fps);
         (_g = this.buttonChar) === null || _g === void 0 ? void 0 : _g.setFrameRate(fps);
+        (_h = this.configChar) === null || _h === void 0 ? void 0 : _h.setFrameRate(fps);
+    }
+    initializeOnConnet() {
+        var _a;
+        (_a = this.configChar) === null || _a === void 0 ? void 0 : _a.enableMagnet();
     }
 }
 class Cube {
@@ -1720,6 +1800,7 @@ class Cube {
         this.flat = undefined;
         this.posture = undefined;
         this.shakeLevel = undefined;
+        this.magnet = undefined;
         this.buttonPressed = undefined;
         this.batteryLevel = undefined;
         this.cube = undefined;
@@ -1749,7 +1830,7 @@ class Cube {
         cube === null || cube === void 0 ? void 0 : cube.disconnect();
     }
     addEventListener(type, listener) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         const TYPE_BT_PRESS = 'buttonpress';
         const TYPE_BT_RELEASE = 'buttonrelease';
         const TYPE_BATT_LEVEL = 'batterylevelchange';
@@ -1758,6 +1839,7 @@ class Cube {
         const TYPE_SENSOR_DTAP = 'sensordoubletap';
         const TYPE_SENSOR_POSTURE = 'sensorposturechange';
         const TYPE_SENSOR_SHAKE_LEVEL = 'sensorshakelevelchange';
+        const TYPE_SENSOR_MAGNET = 'sensormagnetchange';
         const TYPE_ID_POSITION = 'positionid';
         const TYPE_ID_STANDARD = 'standardid';
         switch (type) {
@@ -1785,16 +1867,19 @@ class Cube {
             case TYPE_SENSOR_SHAKE_LEVEL:
                 (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', listener);
                 break;
+            case TYPE_SENSOR_MAGNET:
+                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.sensorChar) === null || _t === void 0 ? void 0 : _t.addEventListener('magnet', listener);
+                break;
             case TYPE_ID_POSITION:
-                (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', listener);
+                (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('positionid', listener);
                 break;
             case TYPE_ID_STANDARD:
-                (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', listener);
+                (_x = (_w = this.cube) === null || _w === void 0 ? void 0 : _w.idChar) === null || _x === void 0 ? void 0 : _x.addEventListener('standardid', listener);
                 break;
         }
     }
     registCallback() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
         (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.buttonChar) === null || _b === void 0 ? void 0 : _b.addEventListener('press', this.onButtonPressed.bind(this));
         (_d = (_c = this.cube) === null || _c === void 0 ? void 0 : _c.buttonChar) === null || _d === void 0 ? void 0 : _d.addEventListener('release', this.onButtonReleased.bind(this));
         (_f = (_e = this.cube) === null || _e === void 0 ? void 0 : _e.batteryChar) === null || _f === void 0 ? void 0 : _f.addEventListener('change', this.onBatteryLevelChanged.bind(this));
@@ -1803,8 +1888,9 @@ class Cube {
         (_m = (_l = this.cube) === null || _l === void 0 ? void 0 : _l.sensorChar) === null || _m === void 0 ? void 0 : _m.addEventListener('doubletap', this.onDoubleTapped.bind(this));
         (_p = (_o = this.cube) === null || _o === void 0 ? void 0 : _o.sensorChar) === null || _p === void 0 ? void 0 : _p.addEventListener('posture', this.onPostureChanged.bind(this));
         (_r = (_q = this.cube) === null || _q === void 0 ? void 0 : _q.sensorChar) === null || _r === void 0 ? void 0 : _r.addEventListener('shakelevel', this.onShakeLevelChanged.bind(this));
-        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.idChar) === null || _t === void 0 ? void 0 : _t.addEventListener('positionid', this.onPositionIdChanged.bind(this));
-        (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+        (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.sensorChar) === null || _t === void 0 ? void 0 : _t.addEventListener('magnet', this.onMagnetChanged.bind(this));
+        (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('positionid', this.onPositionIdChanged.bind(this));
+        (_x = (_w = this.cube) === null || _w === void 0 ? void 0 : _w.idChar) === null || _x === void 0 ? void 0 : _x.addEventListener('standardid', this.onStandardIdChanged.bind(this));
     }
     onButtonPressed() {
         this.buttonPressed = true;
@@ -1850,6 +1936,12 @@ class Cube {
         this.shakeLevel = shakeLevel;
         if (typeof cubeShakeLevelChanged === 'function') {
             cubeShakeLevelChanged(shakeLevel);
+        }
+    }
+    onMagnetChanged(magnet) {
+        this.magnet = magnet;
+        if (typeof cubeMagnetChanged === 'function') {
+            cubeMagnetChanged(magnet);
         }
     }
     onPositionIdChanged(info) {
@@ -2044,10 +2136,21 @@ class Cube {
         }
         return normalizedAngle;
     }
+    configMagnet(enable) {
+        var _a;
+        const char = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.configChar;
+        if (enable) {
+            char === null || char === void 0 ? void 0 : char.enableMagnet();
+        }
+        else {
+            char === null || char === void 0 ? void 0 : char.disableMagnet();
+        }
+    }
 }
 Cube.seId = CubeSoundChar.seId;
 Cube.postureId = CubeSensorChar.postureId;
 Cube.shakeLevelId = CubeSensorChar.shakeLevelId;
+Cube.magnetId = CubeSensorChar.magnetId;
 Cube.moveTypeId = CubeMotorChar.moveTypeId;
 Cube.easeTypeId = CubeMotorChar.easeTypeId;
 Cube.angleTypeId = CubeMotorChar.angleTypeId;
