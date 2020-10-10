@@ -3,6 +3,7 @@ export type sensorInfo = {
   flat: boolean;
   posture: string;
   shakeLevel: number;
+  magnet: string;
 };
 
 export type CubeFlatListner = (isFlat: boolean) => void;
@@ -10,12 +11,14 @@ export type CubeCollisionListner = () => void;
 export type CubeDoubleTapListner = () => void;
 export type CubePostureListner = (posture: string) => void;
 export type CubeShakeLevelListner = (shakeLevel: number) => void;
+export type CubeMagnetListner = (magnet: string) => void;
 export type CubeSensorCharListner =
   | CubeFlatListner
   | CubeCollisionListner
   | CubeDoubleTapListner
   | CubePostureListner
-  | CubeShakeLevelListner;
+  | CubeShakeLevelListner
+  | CubeMagnetListner;
 
 export class CubeSensorChar extends CubeChar {
   readonly uuid: string = '10b20106-5b3b-4571-9508-cf3efcd7bbae';
@@ -49,10 +52,24 @@ export class CubeSensorChar extends CubeChar {
     level10: 0x0a,
   } as const;
 
+  /**
+   * Magnet IDs.
+   */
+  static magnetId = {
+    noMagnet: 'noMagnet',
+    pattern1: 'pattern1',
+    pattern2: 'pattern2',
+    pattern3: 'pattern3',
+    pattern4: 'pattern4',
+    pattern5: 'pattern5',
+    pattern6: 'pattern6',
+  } as const;
+
   private sensorInfo: sensorInfo = {
     flat: false,
     posture: CubeSensorChar.postureId.top,
     shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
+    magnet: CubeSensorChar.magnetId.noMagnet,
   };
 
   private cbFlat: CubeFlatListner[] = [];
@@ -60,6 +77,7 @@ export class CubeSensorChar extends CubeChar {
   private cbDoubleTapped: CubeCollisionListner[] = [];
   private cbPostureChanged: CubePostureListner[] = [];
   private cbShakeLevelChanged: CubeShakeLevelListner[] = [];
+  private cbMagnetChanged: CubeMagnetListner[] = [];
 
   /**
    * Prepare for using sensor characteristic function.
@@ -124,6 +142,15 @@ export class CubeSensorChar extends CubeChar {
   }
 
   /**
+   * Get current magnet status.
+   *
+   * @returns string id of magnet status.
+   */
+  public getMagnetSatus(): string {
+    return this.sensorInfo.magnet;
+  }
+
+  /**
    * Read sensorInfo from Cube.
    *
    * @returns Promise. `resolve` handler says that sensorInfo was correctly got.
@@ -152,6 +179,7 @@ export class CubeSensorChar extends CubeChar {
 
     const INFO_TYPE_INDEX = 0;
     const INFO_TYPE_DETECTED = 1;
+    const INFO_TYPE_MAGNET = 2;
     if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_DETECTED) {
       const FLAT_INDEX = 1;
       const COLLISION_INDEX = 2;
@@ -193,6 +221,15 @@ export class CubeSensorChar extends CubeChar {
           cb(this.sensorInfo.shakeLevel);
         }
       }
+    } else if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_MAGNET) {
+      const MAGNET_STATUS_INDEX = 1;
+
+      this.sensorInfo.magnet = this.convertMagnetValueToId(data.getUint8(MAGNET_STATUS_INDEX));
+      if (previousSensorInfo.magnet !== this.sensorInfo.magnet) {
+        for (const cb of this.cbMagnetChanged) {
+          cb(this.sensorInfo.magnet);
+        }
+      }
     }
   }
 
@@ -211,12 +248,16 @@ export class CubeSensorChar extends CubeChar {
     for (const cb of this.cbShakeLevelChanged) {
       cb(this.sensorInfo.shakeLevel);
     }
+
+    for (const cb of this.cbMagnetChanged) {
+      cb(this.sensorInfo.magnet);
+    }
   }
 
   /**
    * Register callback.
    *
-   * @param type Specify the type from 'flat', 'collision', 'doubletap' or 'posture'.
+   * @param type Specify the type from 'flat', 'collision', 'doubletap', 'magnet' or 'posture'.
    * @param listener: Callback function with param info: sensorInfo and return: void.
    *
    */
@@ -226,6 +267,7 @@ export class CubeSensorChar extends CubeChar {
     const TYPE_DOUBLE_TAP = 'doubletap';
     const TYPE_POSTURE = 'posture';
     const TYPE_SHAKE_LEVEL = 'shakelevel';
+    const TYPE_MAGNET = 'magnet';
 
     if (type === TYPE_FLAT) {
       this.cbFlat.push(listener as CubeFlatListner);
@@ -237,6 +279,8 @@ export class CubeSensorChar extends CubeChar {
       this.cbPostureChanged.push(listener as CubePostureListner);
     } else if (type === TYPE_SHAKE_LEVEL) {
       this.cbShakeLevelChanged.push(listener as CubeShakeLevelListner);
+    } else if (type === TYPE_MAGNET) {
+      this.cbMagnetChanged.push(listener as CubeMagnetListner);
     }
     this.callbackCurrentInfo();
   }
@@ -285,5 +329,33 @@ export class CubeSensorChar extends CubeChar {
     }
 
     return value;
+  }
+
+  /**
+   * Convert from magnet value to string ID value.
+   *
+   * @param value magnet value.
+   *
+   * @returns ID name string.
+   */
+  private convertMagnetValueToId(value: number): string {
+    const MAGNET_VALUE_MIN = 0x00;
+    const MAGNET_VALUE_MAX = 0x06;
+
+    if (value < MAGNET_VALUE_MIN || value > MAGNET_VALUE_MAX) {
+      return 'invalid';
+    }
+
+    const matrix: string[] = [
+      CubeSensorChar.magnetId.noMagnet,
+      CubeSensorChar.magnetId.pattern1,
+      CubeSensorChar.magnetId.pattern2,
+      CubeSensorChar.magnetId.pattern3,
+      CubeSensorChar.magnetId.pattern4,
+      CubeSensorChar.magnetId.pattern5,
+      CubeSensorChar.magnetId.pattern6,
+    ];
+
+    return matrix[value];
   }
 }

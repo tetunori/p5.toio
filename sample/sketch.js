@@ -163,7 +163,8 @@ function keyPressed() {
         case 74:
           console.log(cube.shakeLevel);
           break;
-        case 65:
+        case 75:
+          console.log(cube.magnet);
           break;
         case 81: // 'q'
           type = 'buttonpress';
@@ -205,9 +206,9 @@ function keyPressed() {
           type = 'sensorshakelevelchange';
           cube.addEventListener(type, (shakeLevel)=>{console.log(type, shakeLevel)});
           break;
-        case 192:
-          break;
         case 219:
+          type = 'sensormagnetchange';
+          cube.addEventListener(type, (magnet)=>{console.log(type, magnet)});
           break;
         case 90: // z
           cube.turnToXY( 351, 344, 50 );
@@ -307,6 +308,10 @@ const initCanvas = () => {
 
 // const cubeShakeLevelChanged = (shakeLevel) => {
 //   console.log('O: cubeShakeLevelChanged!', shakeLevel);
+// }
+
+// const cubeMagnetChanged = (magnet) => {
+//   console.log('O: cubeMagnetChanged!', magnet);
 // }
 
 // const cubePositionIdChanged = (info) => {
