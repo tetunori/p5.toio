@@ -1612,6 +1612,29 @@ CubeSoundChar.seId = {
     effect1: 9,
     effect2: 10,
 };
+class CubeConfigChar extends CubeChar {
+    constructor() {
+        super(...arguments);
+        this.uuid = '10b201ff-5b3b-4571-9508-cf3efcd7bbae';
+        this.cmdId = {
+            configMagnet: 0x1b,
+        };
+        this.magConfigId = {
+            disable: 0x00,
+            enable: 0x01,
+        };
+    }
+    enableMagnet() {
+        const RESERVED = 0x00;
+        const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.enable]);
+        this.writeValue(buf);
+    }
+    disableMagnet() {
+        const RESERVED = 0x00;
+        const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.disable]);
+        this.writeValue(buf);
+    }
+}
 class CubeBase {
     constructor(device) {
         this.idChar = undefined;
@@ -1621,8 +1644,9 @@ class CubeBase {
         this.batteryChar = undefined;
         this.soundChar = undefined;
         this.buttonChar = undefined;
+        this.configChar = undefined;
         this.device = undefined;
-        this.charStatusArray = [false, false, false, false, false, false, false];
+        this.charStatusArray = [false, false, false, false, false, false, false, false];
         this.isConnected = false;
         this.device = device;
     }
@@ -1645,10 +1669,12 @@ class CubeBase {
                         charArray.push((this.batteryChar = new CubeBatteryChar(service)));
                         charArray.push((this.soundChar = new CubeSoundChar(service)));
                         charArray.push((this.buttonChar = new CubeButtonChar(service)));
+                        charArray.push((this.configChar = new CubeConfigChar(service)));
                         for (let index = 0; index < charArray.length; index++) {
                             const characteristic = charArray[index];
                             characteristic === null || characteristic === void 0 ? void 0 : characteristic.prepare().then(() => {
                                 if (this.updateCharState(index, true)) {
+                                    this.initializeOnConnet();
                                     resolve(this);
                                 }
                             }).catch((error) => {
@@ -1687,6 +1713,7 @@ class CubeBase {
         this.batteryChar = undefined;
         this.soundChar = undefined;
         this.buttonChar = undefined;
+        this.configChar = undefined;
         this.device = undefined;
     }
     updateCharState(charIndex, isReady) {
@@ -1699,7 +1726,7 @@ class CubeBase {
         return true;
     }
     setFrameRate(fps) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         (_a = this.idChar) === null || _a === void 0 ? void 0 : _a.setFrameRate(fps);
         (_b = this.motorChar) === null || _b === void 0 ? void 0 : _b.setFrameRate(fps);
         (_c = this.lightChar) === null || _c === void 0 ? void 0 : _c.setFrameRate(fps);
@@ -1707,6 +1734,11 @@ class CubeBase {
         (_e = this.batteryChar) === null || _e === void 0 ? void 0 : _e.setFrameRate(fps);
         (_f = this.soundChar) === null || _f === void 0 ? void 0 : _f.setFrameRate(fps);
         (_g = this.buttonChar) === null || _g === void 0 ? void 0 : _g.setFrameRate(fps);
+        (_h = this.configChar) === null || _h === void 0 ? void 0 : _h.setFrameRate(fps);
+    }
+    initializeOnConnet() {
+        var _a;
+        (_a = this.configChar) === null || _a === void 0 ? void 0 : _a.enableMagnet();
     }
 }
 class Cube {
@@ -2043,6 +2075,16 @@ class Cube {
             }
         }
         return normalizedAngle;
+    }
+    configMagnet(enable) {
+        var _a;
+        const char = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.configChar;
+        if (enable) {
+            char === null || char === void 0 ? void 0 : char.enableMagnet();
+        }
+        else {
+            char === null || char === void 0 ? void 0 : char.disableMagnet();
+        }
     }
 }
 Cube.seId = CubeSoundChar.seId;

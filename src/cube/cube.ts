@@ -737,6 +737,21 @@ export class Cube {
   }
 
   /**
+   * Enable/Disable magnet function.
+   *
+   * @param enable boolean value. set `true` to enable and `false` to disable.
+   *
+   */
+  public configMagnet(enable: boolean): void {
+    const char = this.cube?.configChar;
+    if (enable) {
+      char?.enableMagnet();
+    } else {
+      char?.disableMagnet();
+    }
+  }
+
+  /**
    * Connect to new toio™Core Cube.
    *
    * @returns Promise. `resolve` handler includes a instance of connected `Cube`.

@@ -5,6 +5,7 @@ import { CubeIdCharListner, CubeIDChar } from './char/idChar';
 import { CubeLightChar } from './char/lightChar';
 import { CubeMotorChar } from './char/motorChar';
 import { CubeSoundChar } from './char/soundChar';
+import { CubeConfigChar } from './char/configChar';
 
 export type CubeListner =
   | CubeSensorCharListner
@@ -20,6 +21,7 @@ export type CubeCharInstance =
   | CubeBatteryChar
   | CubeSoundChar
   | CubeButtonChar
+  | CubeConfigChar
   | undefined;
 
 interface CubeBaseIF {
@@ -34,6 +36,7 @@ interface CubeBaseIF {
   batteryChar: CubeBatteryChar | undefined;
   soundChar: CubeSoundChar | undefined;
   buttonChar: CubeButtonChar | undefined;
+  configChar: CubeConfigChar | undefined;
 }
 
 export class CubeBase implements CubeBaseIF {
@@ -44,6 +47,7 @@ export class CubeBase implements CubeBaseIF {
   public batteryChar: CubeBatteryChar | undefined = undefined;
   public soundChar: CubeSoundChar | undefined = undefined;
   public buttonChar: CubeButtonChar | undefined = undefined;
+  public configChar: CubeConfigChar | undefined = undefined;
   private device: BluetoothDevice | undefined = undefined;
   // private server: BluetoothRemoteGATTServer | undefined = undefined;
   // private service: BluetoothRemoteGATTService | undefined = undefined;
@@ -51,7 +55,7 @@ export class CubeBase implements CubeBaseIF {
   /**
    * charcteristics class and its instance.
    */
-  private charStatusArray: boolean[] = [false, false, false, false, false, false, false];
+  private charStatusArray: boolean[] = [false, false, false, false, false, false, false, false];
 
   /**
    * State GATT connected or not.
@@ -98,6 +102,7 @@ export class CubeBase implements CubeBaseIF {
               charArray.push((this.batteryChar = new CubeBatteryChar(service)));
               charArray.push((this.soundChar = new CubeSoundChar(service)));
               charArray.push((this.buttonChar = new CubeButtonChar(service)));
+              charArray.push((this.configChar = new CubeConfigChar(service)));
 
               for (let index = 0; index < charArray.length; index++) {
                 const characteristic = charArray[index];
@@ -105,6 +110,7 @@ export class CubeBase implements CubeBaseIF {
                   ?.prepare()
                   .then(() => {
                     if (this.updateCharState(index, true)) {
+                      this.initializeOnConnet();
                       resolve(this);
                     }
                   })
@@ -151,6 +157,7 @@ export class CubeBase implements CubeBaseIF {
     this.batteryChar = undefined;
     this.soundChar = undefined;
     this.buttonChar = undefined;
+    this.configChar = undefined;
 
     this.device = undefined;
     // this.server = undefined;
@@ -190,5 +197,14 @@ export class CubeBase implements CubeBaseIF {
     this.batteryChar?.setFrameRate(fps);
     this.soundChar?.setFrameRate(fps);
     this.buttonChar?.setFrameRate(fps);
+    this.configChar?.setFrameRate(fps);
+  }
+
+  /**
+   * Initialize in Connect sequence.
+   *
+   */
+  private initializeOnConnet(): void {
+    this.configChar?.enableMagnet();
   }
 }
