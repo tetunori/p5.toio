@@ -5,12 +5,13 @@ import { CubeIdCharListner, CubeIDChar } from './char/idChar';
 import { CubeLightChar } from './char/lightChar';
 import { CubeMotorChar } from './char/motorChar';
 import { CubeSoundChar } from './char/soundChar';
-import { CubeConfigChar } from './char/configChar';
+import { CubeConfigChar, CubeConfigCharListner } from './char/configChar';
 
 export type CubeListner =
   | CubeSensorCharListner
   | CubeBatteryCharListner
   | CubeButtonCharListner
+  | CubeConfigCharListner
   | CubeIdCharListner;
 
 export type CubeCharInstance =

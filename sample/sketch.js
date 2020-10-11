@@ -147,12 +147,15 @@ function keyPressed() {
           break;
         case 83:
           console.log(cube.batteryLevel);
+          console.log(cube.flat);
+          console.log(cube.posture);
+          console.log(cube.shakeLevel);
+          console.log(cube.magnet);
           break;
         case 68:
-          console.log(cube.flat);
+          console.log(cube.bleProtocolVersion);
           break;
         case 70:
-          console.log(cube.posture);
           break;
         case 71:
           console.log(cube.x, cube.y, cube.angle, cube.sensorX, cube.sensorY);
@@ -161,10 +164,8 @@ function keyPressed() {
           console.log(cube.standardId, cube.angle);
           break;
         case 74:
-          console.log(cube.shakeLevel);
           break;
         case 75:
-          console.log(cube.magnet);
           break;
         case 81: // 'q'
           type = 'buttonpress';

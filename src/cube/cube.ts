@@ -14,6 +14,7 @@ import {
 import { CubeMotorChar } from './char/motorChar';
 import { CubeSoundChar } from './char/soundChar';
 import { CubeBase, CubeListner } from './cubeBase';
+
 export class Cube {
   static seId = CubeSoundChar.seId;
   static postureId = CubeSensorChar.postureId;
@@ -41,6 +42,7 @@ export class Cube {
   public magnet: string | undefined = undefined;
   public buttonPressed: boolean | undefined = undefined;
   public batteryLevel: number | undefined = undefined;
+  public bleProtocolVersion: string | undefined = undefined;
 
   protected cube: CubeBase | undefined = undefined;
 
@@ -170,6 +172,10 @@ export class Cube {
     this.cube?.sensorChar?.addEventListener('magnet', this.onMagnetChanged.bind(this));
     this.cube?.idChar?.addEventListener('positionid', this.onPositionIdChanged.bind(this));
     this.cube?.idChar?.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+    this.cube?.configChar?.addEventListener(
+      'protocolversion',
+      this.onProtocolVersionNotified.bind(this),
+    );
   }
 
   /**
@@ -342,6 +348,13 @@ export class Cube {
       // @ts-ignore
       cubeStandardIdChanged(info);
     }
+  }
+
+  /**
+   * For setting protocol version.
+   */
+  private onProtocolVersionNotified(version: string): void {
+    this.bleProtocolVersion = version;
   }
 
   /**
