@@ -110,7 +110,7 @@ function keyPressed() {
           cube.stop();
           break;
         case 189:
-          cube.rotate(-70, 120);
+          cube.rotate(80, 0);
           break;
         case 187:
           cube.moveTo( { x: 351, y: 344 }, 80/* maxSpeed */, undefined, P5tCube.easeTypeId.decel );

@@ -1751,7 +1751,7 @@ class CubeConfigChar extends CubeChar {
         const CONFIG_TYPE_BLE_PROTOCOL_VERSION = 0x81;
         if (data.getUint8(CONFIG_TYPE_INDEX) === CONFIG_TYPE_BLE_PROTOCOL_VERSION) {
             const BLE_PROTOCOL_VERSION_INDEX = 2;
-            const BLE_PROTOCOL_VERSION_SIZE = 6;
+            const BLE_PROTOCOL_VERSION_SIZE = 5;
             let protocolVersionText = '';
             for (let i = 0; i < BLE_PROTOCOL_VERSION_SIZE; i++) {
                 protocolVersionText += String.fromCharCode(data.getUint8(BLE_PROTOCOL_VERSION_INDEX + i));
