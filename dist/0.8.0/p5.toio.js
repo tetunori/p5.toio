@@ -603,6 +603,25 @@ GameMark.names = {
     fingerStrike2P: 'fingerStrike2P',
     fingerStrike1P: 'fingerStrike1P',
     freeMove: 'freeMove',
+    quickSkunk2P: 'quickSkunk2P',
+    quickSkunkCPU: 'quickSkunkCPU',
+    KaijuBusters: 'KaijuBusters',
+    watchOutFree: 'watchOutFree',
+    watchOut2P: 'watchOut2P',
+    watchOutCPU: 'watchOutCPU',
+    colorMemory: 'colorMemory',
+    lazerBeamChallenge: 'lazerBeamChallenge',
+    lazerBeamCreate: 'lazerBeamCreate',
+    Baton: 'Baton',
+    pullBack: 'pullBack',
+    dash: 'dash',
+    dontDisturbNormal: 'dontDisturbNormal',
+    dontDisturbRodeo: 'dontDisturbRodeo',
+    answer: 'answer',
+    music1: 'music1',
+    music2: 'music2',
+    music3: 'music3',
+    music4: 'music4',
 };
 GameMark.idTable = [
     { name: GameMark.names.craftFighter, id: 3670048 },
@@ -611,6 +630,25 @@ GameMark.idTable = [
     { name: GameMark.names.fingerStrike2P, id: 3670050 },
     { name: GameMark.names.fingerStrike1P, id: 3670088 },
     { name: GameMark.names.freeMove, id: 3670084 },
+    { name: GameMark.names.quickSkunk2P, id: 3670092 },
+    { name: GameMark.names.quickSkunkCPU, id: 3670094 },
+    { name: GameMark.names.KaijuBusters, id: 3670096 },
+    { name: GameMark.names.watchOutFree, id: 3670098 },
+    { name: GameMark.names.watchOut2P, id: 3670100 },
+    { name: GameMark.names.watchOutCPU, id: 3670102 },
+    { name: GameMark.names.colorMemory, id: 3670104 },
+    { name: GameMark.names.lazerBeamChallenge, id: 3670106 },
+    { name: GameMark.names.lazerBeamCreate, id: 3670108 },
+    { name: GameMark.names.Baton, id: 3670110 },
+    { name: GameMark.names.pullBack, id: 3670112 },
+    { name: GameMark.names.dash, id: 3670114 },
+    { name: GameMark.names.dontDisturbNormal, id: 3670116 },
+    { name: GameMark.names.dontDisturbRodeo, id: 3670118 },
+    { name: GameMark.names.answer, id: 3670120 },
+    { name: GameMark.names.music1, id: 3670122 },
+    { name: GameMark.names.music2, id: 3670124 },
+    { name: GameMark.names.music3, id: 3670126 },
+    { name: GameMark.names.music4, id: 3670128 },
 ];
 class SimpleCardNumber extends StandardId {
 }
@@ -1665,12 +1703,77 @@ class CubeConfigChar extends CubeChar {
         super(...arguments);
         this.uuid = '10b201ff-5b3b-4571-9508-cf3efcd7bbae';
         this.cmdId = {
+            requestBleProtocolVersion: 0x01,
             configMagnet: 0x1b,
         };
         this.magConfigId = {
             disable: 0x00,
             enable: 0x01,
         };
+        this.configInfo = {
+            bleProtcolVersion: '0.0.0',
+        };
+        this.cbProtocolVersion = [];
+    }
+    prepare() {
+        return new Promise((resolve, reject) => {
+            super
+                .prepare()
+                .then(() => {
+                this.characteristic.addEventListener('characteristicvaluechanged', (event) => {
+                    const target = event.target;
+                    if (target === null || target === void 0 ? void 0 : target.value) {
+                        this.setConfigInfo(target.value);
+                    }
+                });
+                this.characteristic
+                    .startNotifications()
+                    .then(() => {
+                    return this.requestBleProtocolVersion();
+                })
+                    .then(() => {
+                    resolve('characteristic resolve');
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            })
+                .catch((error) => {
+                reject(error);
+            });
+        });
+    }
+    getProtocolVersion() {
+        return this.configInfo.bleProtcolVersion;
+    }
+    setConfigInfo(data) {
+        const CONFIG_TYPE_INDEX = 0;
+        const CONFIG_TYPE_BLE_PROTOCOL_VERSION = 0x81;
+        if (data.getUint8(CONFIG_TYPE_INDEX) === CONFIG_TYPE_BLE_PROTOCOL_VERSION) {
+            const BLE_PROTOCOL_VERSION_INDEX = 2;
+            const BLE_PROTOCOL_VERSION_SIZE = 5;
+            let protocolVersionText = '';
+            for (let i = 0; i < BLE_PROTOCOL_VERSION_SIZE; i++) {
+                protocolVersionText += String.fromCharCode(data.getUint8(BLE_PROTOCOL_VERSION_INDEX + i));
+            }
+            console.log('BLE Protocol version: ' + protocolVersionText);
+            this.configInfo.bleProtcolVersion = protocolVersionText;
+            for (const cb of this.cbProtocolVersion) {
+                cb(this.configInfo.bleProtcolVersion);
+            }
+        }
+    }
+    callbackCurrentInfo() {
+        for (const cb of this.cbProtocolVersion) {
+            cb(this.configInfo.bleProtcolVersion);
+        }
+    }
+    addEventListener(type, listener) {
+        const TYPE_PROTOCOL_VERSION = 'protocolversion';
+        if (type === TYPE_PROTOCOL_VERSION) {
+            this.cbProtocolVersion.push(listener);
+        }
+        this.callbackCurrentInfo();
     }
     enableMagnet() {
         const RESERVED = 0x00;
@@ -1680,6 +1783,11 @@ class CubeConfigChar extends CubeChar {
     disableMagnet() {
         const RESERVED = 0x00;
         const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.disable]);
+        this.writeValue(buf);
+    }
+    requestBleProtocolVersion() {
+        const RESERVED = 0x00;
+        const buf = new Uint8Array([this.cmdId.requestBleProtocolVersion, RESERVED]);
         this.writeValue(buf);
     }
 }
@@ -1803,6 +1911,7 @@ class Cube {
         this.magnet = undefined;
         this.buttonPressed = undefined;
         this.batteryLevel = undefined;
+        this.bleProtocolVersion = undefined;
         this.cube = undefined;
         this.cube = cube;
         this.registCallback();
@@ -1879,7 +1988,7 @@ class Cube {
         }
     }
     registCallback() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
         (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.buttonChar) === null || _b === void 0 ? void 0 : _b.addEventListener('press', this.onButtonPressed.bind(this));
         (_d = (_c = this.cube) === null || _c === void 0 ? void 0 : _c.buttonChar) === null || _d === void 0 ? void 0 : _d.addEventListener('release', this.onButtonReleased.bind(this));
         (_f = (_e = this.cube) === null || _e === void 0 ? void 0 : _e.batteryChar) === null || _f === void 0 ? void 0 : _f.addEventListener('change', this.onBatteryLevelChanged.bind(this));
@@ -1891,6 +2000,7 @@ class Cube {
         (_t = (_s = this.cube) === null || _s === void 0 ? void 0 : _s.sensorChar) === null || _t === void 0 ? void 0 : _t.addEventListener('magnet', this.onMagnetChanged.bind(this));
         (_v = (_u = this.cube) === null || _u === void 0 ? void 0 : _u.idChar) === null || _v === void 0 ? void 0 : _v.addEventListener('positionid', this.onPositionIdChanged.bind(this));
         (_x = (_w = this.cube) === null || _w === void 0 ? void 0 : _w.idChar) === null || _x === void 0 ? void 0 : _x.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+        (_z = (_y = this.cube) === null || _y === void 0 ? void 0 : _y.configChar) === null || _z === void 0 ? void 0 : _z.addEventListener('protocolversion', this.onProtocolVersionNotified.bind(this));
     }
     onButtonPressed() {
         this.buttonPressed = true;
@@ -1967,6 +2077,9 @@ class Cube {
             cubeStandardIdChanged(info);
         }
     }
+    onProtocolVersionNotified(version) {
+        this.bleProtocolVersion = version;
+    }
     setFrameRate(fps) {
         var _a;
         (_a = this.cube) === null || _a === void 0 ? void 0 : _a.setFrameRate(fps);
@@ -2032,12 +2145,8 @@ class Cube {
     }
     rotate(speed, duration = 0) {
         var _a, _b;
-        let left = speed;
-        let right = -speed;
-        if (speed < 0) {
-            left = -speed;
-            right = speed;
-        }
+        const left = speed;
+        const right = -speed;
         return (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.motorChar) === null || _b === void 0 ? void 0 : _b.motorControlTimeSpecified(left, right, duration);
     }
     turnTo(angle, speed, rotateType = Cube.rotateTypeId.efficient, timeout = 5) {
