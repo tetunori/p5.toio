@@ -2145,12 +2145,8 @@ class Cube {
     }
     rotate(speed, duration = 0) {
         var _a, _b;
-        let left = speed;
-        let right = -speed;
-        if (speed < 0) {
-            left = -speed;
-            right = speed;
-        }
+        const left = speed;
+        const right = -speed;
         return (_b = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.motorChar) === null || _b === void 0 ? void 0 : _b.motorControlTimeSpecified(left, right, duration);
     }
     turnTo(angle, speed, rotateType = Cube.rotateTypeId.efficient, timeout = 5) {

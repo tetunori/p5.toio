@@ -553,13 +553,8 @@ export class Cube {
    * @param duration Motor control duration in msec. 0-2550( 0: Eternally ).
    */
   public rotate(speed: number, duration = 0): void {
-    let left = speed;
-    let right = -speed;
-
-    if (speed < 0) {
-      left = -speed;
-      right = speed;
-    }
+    const left = speed;
+    const right = -speed;
     return this.cube?.motorChar?.motorControlTimeSpecified(left, right, duration);
   }
 
