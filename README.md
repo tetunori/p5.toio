@@ -40,7 +40,7 @@ Just insert a sigle script after 2 dependent scripts `p5.js` and `p5.sound.min.j
 <!-- INSERT HERE -->
 <script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.min.js"></script>
 ```
-We can also use the non-uglified code.  
+We can also use the non-minified code.  
 ```html
 <script src="https://tetunori.github.io/p5.toio/dist/0.5.0/p5.toio.js"></script>
 ```

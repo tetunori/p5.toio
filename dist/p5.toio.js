@@ -1801,10 +1801,12 @@ class CubeBase {
         this.soundChar = undefined;
         this.buttonChar = undefined;
         this.configChar = undefined;
+        this.name = undefined;
         this.device = undefined;
         this.charStatusArray = [false, false, false, false, false, false, false, false];
         this.isConnected = false;
         this.device = device;
+        this.name = device.name;
     }
     connect() {
         return new Promise((resolve, reject) => {
@@ -1912,8 +1914,10 @@ class Cube {
         this.buttonPressed = undefined;
         this.batteryLevel = undefined;
         this.bleProtocolVersion = undefined;
+        this.name = undefined;
         this.cube = undefined;
         this.cube = cube;
+        this.name = cube.name;
         this.registCallback();
     }
     connect() {

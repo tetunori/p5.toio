@@ -43,11 +43,13 @@ export class Cube {
   public buttonPressed: boolean | undefined = undefined;
   public batteryLevel: number | undefined = undefined;
   public bleProtocolVersion: string | undefined = undefined;
+  public name: string | undefined = undefined;
 
   protected cube: CubeBase | undefined = undefined;
 
   constructor(cube: CubeBase) {
     this.cube = cube;
+    this.name = cube.name;
     this.registCallback();
   }
 

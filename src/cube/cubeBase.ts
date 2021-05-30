@@ -49,6 +49,7 @@ export class CubeBase implements CubeBaseIF {
   public soundChar: CubeSoundChar | undefined = undefined;
   public buttonChar: CubeButtonChar | undefined = undefined;
   public configChar: CubeConfigChar | undefined = undefined;
+  public name: string | undefined = undefined;
   private device: BluetoothDevice | undefined = undefined;
   // private server: BluetoothRemoteGATTServer | undefined = undefined;
   // private service: BluetoothRemoteGATTService | undefined = undefined;
@@ -65,6 +66,7 @@ export class CubeBase implements CubeBaseIF {
 
   constructor(device: BluetoothDevice) {
     this.device = device;
+    this.name = device.name;
   }
 
   /**
