@@ -24,6 +24,8 @@ sidebar_label: "CubeChar"
 
   ↳ [CubeSoundChar](cubesoundchar.md)
 
+  ↳ [CubeConfigChar](cubeconfigchar.md)
+
 ## Implements
 
 * [CubeCharIF](../interfaces/cubecharif.md)
@@ -54,7 +56,7 @@ sidebar_label: "CubeChar"
 
 \+ **new CubeChar**(`service`: BluetoothRemoteGATTService): *[CubeChar](cubechar.md)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -68,9 +70,9 @@ Name | Type |
 
 ### `Protected` characteristic
 
-• **characteristic**: *BluetoothRemoteGATTCharacteristic | undefined* = undefined
+• **characteristic**: *BluetoothRemoteGATTCharacteristic*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -78,7 +80,7 @@ ___
 
 • **errStrInProgress**: *string* = "GATT operation already in progress."
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -86,7 +88,7 @@ ___
 
 • **uuid**: *string* = ""
 
-*Defined in [cube/char/char.ts:9](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L9)*
+*Defined in [cube/char/char.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L9)*
 
 ## Methods
 
@@ -96,7 +98,7 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L30)*
+*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L30)*
 
 Prepare for using characteristic function.
 
@@ -112,7 +114,7 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Defined in [cube/char/char.ts:114](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L114)*
+*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L110)*
 
 Read value from remote GATT Characteristics.
 
@@ -128,7 +130,7 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Defined in [cube/char/char.ts:142](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L142)*
+*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L134)*
 
 Set framerate.
 
@@ -148,7 +150,7 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -168,7 +170,7 @@ ___
 
 ▸ **writeValueCore**(`buf`: ArrayBuffer, `countRetry`: number): *Promise‹string | Error›*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

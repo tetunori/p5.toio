@@ -15,6 +15,7 @@ sidebar_label: "CubeCharIF"
 * [CubeBatteryChar](../classes/cubebatterychar.md)
 * [CubeButtonChar](../classes/cubebuttonchar.md)
 * [CubeChar](../classes/cubechar.md)
+* [CubeConfigChar](../classes/cubeconfigchar.md)
 * [CubeIDChar](../classes/cubeidchar.md)
 * [CubeLightChar](../classes/cubelightchar.md)
 * [CubeMotorChar](../classes/cubemotorchar.md)
@@ -36,7 +37,7 @@ sidebar_label: "CubeCharIF"
 
 ▸ **prepare**(): *Promise‹string | Error›*
 
-*Defined in [cube/char/char.ts:2](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L2)*
+*Defined in [cube/char/char.ts:2](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L2)*
 
 **Returns:** *Promise‹string | Error›*
 
@@ -46,7 +47,7 @@ ___
 
 ▸ **readValue**(): *Promise‹DataView›*
 
-*Defined in [cube/char/char.ts:4](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L4)*
+*Defined in [cube/char/char.ts:4](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L4)*
 
 **Returns:** *Promise‹DataView›*
 
@@ -56,7 +57,7 @@ ___
 
 ▸ **setFrameRate**(`fps`: number): *void*
 
-*Defined in [cube/char/char.ts:5](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L5)*
+*Defined in [cube/char/char.ts:5](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L5)*
 
 **Parameters:**
 
@@ -72,7 +73,7 @@ ___
 
 ▸ **writeValue**(`buf`: ArrayBuffer): *Promise‹string | Error›*
 
-*Defined in [cube/char/char.ts:3](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/char/char.ts#L3)*
+*Defined in [cube/char/char.ts:3](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L3)*
 
 **Parameters:**
 

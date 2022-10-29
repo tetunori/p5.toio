@@ -20,6 +20,7 @@ sidebar_label: "CubeBaseIF"
 
 * [batteryChar](cubebaseif.md#batterychar)
 * [buttonChar](cubebaseif.md#buttonchar)
+* [configChar](cubebaseif.md#configchar)
 * [idChar](cubebaseif.md#idchar)
 * [lightChar](cubebaseif.md#lightchar)
 * [motorChar](cubebaseif.md#motorchar)
@@ -38,7 +39,7 @@ sidebar_label: "CubeBaseIF"
 
 • **batteryChar**: *[CubeBatteryChar](../classes/cubebatterychar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:34](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L34)*
+*Defined in [cube/cubeBase.ts:37](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L37)*
 
 ___
 
@@ -46,7 +47,15 @@ ___
 
 • **buttonChar**: *[CubeButtonChar](../classes/cubebuttonchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:36](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L36)*
+*Defined in [cube/cubeBase.ts:39](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L39)*
+
+___
+
+###  configChar
+
+• **configChar**: *[CubeConfigChar](../classes/cubeconfigchar.md) | undefined*
+
+*Defined in [cube/cubeBase.ts:40](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L40)*
 
 ___
 
@@ -54,7 +63,7 @@ ___
 
 • **idChar**: *[CubeIDChar](../classes/cubeidchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L30)*
+*Defined in [cube/cubeBase.ts:33](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L33)*
 
 ___
 
@@ -62,7 +71,7 @@ ___
 
 • **lightChar**: *[CubeLightChar](../classes/cubelightchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:32](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L32)*
+*Defined in [cube/cubeBase.ts:35](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L35)*
 
 ___
 
@@ -70,7 +79,7 @@ ___
 
 • **motorChar**: *[CubeMotorChar](../classes/cubemotorchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:31](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L31)*
+*Defined in [cube/cubeBase.ts:34](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L34)*
 
 ___
 
@@ -78,7 +87,7 @@ ___
 
 • **sensorChar**: *[CubeSensorChar](../classes/cubesensorchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:33](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L33)*
+*Defined in [cube/cubeBase.ts:36](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L36)*
 
 ___
 
@@ -86,7 +95,7 @@ ___
 
 • **soundChar**: *[CubeSoundChar](../classes/cubesoundchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:35](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L35)*
+*Defined in [cube/cubeBase.ts:38](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L38)*
 
 ## Methods
 
@@ -94,7 +103,7 @@ ___
 
 ▸ **connect**(): *Promise‹[CubeBase](../classes/cubebase.md)›*
 
-*Defined in [cube/cubeBase.ts:26](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L26)*
+*Defined in [cube/cubeBase.ts:29](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L29)*
 
 **Returns:** *Promise‹[CubeBase](../classes/cubebase.md)›*
 
@@ -104,7 +113,7 @@ ___
 
 ▸ **disconnect**(): *void*
 
-*Defined in [cube/cubeBase.ts:27](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L27)*
+*Defined in [cube/cubeBase.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L30)*
 
 **Returns:** *void*
 
@@ -114,7 +123,7 @@ ___
 
 ▸ **setFrameRate**(`fps`: number): *void*
 
-*Defined in [cube/cubeBase.ts:28](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L28)*
+*Defined in [cube/cubeBase.ts:31](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L31)*
 
 **Parameters:**
 

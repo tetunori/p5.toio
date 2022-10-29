@@ -1,16 +1,16 @@
 ---
-id: "cubeidchar"
-title: "CubeIDChar"
-sidebar_label: "CubeIDChar"
+id: "cubeconfigchar"
+title: "CubeConfigChar"
+sidebar_label: "CubeConfigChar"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeIDChar](cubeidchar.md)
+[p5.toio](../index.md) › [Globals](../globals.md) › [CubeConfigChar](cubeconfigchar.md)
 
 ## Hierarchy
 
 * [CubeChar](cubechar.md)
 
-  ↳ **CubeIDChar**
+  ↳ **CubeConfigChar**
 
 ## Implements
 
@@ -20,30 +20,31 @@ sidebar_label: "CubeIDChar"
 
 ### Constructors
 
-* [constructor](cubeidchar.md#constructor)
+* [constructor](cubeconfigchar.md#constructor)
 
 ### Properties
 
-* [characteristic](cubeidchar.md#protected-characteristic)
-* [errStrInProgress](cubeidchar.md#protected-errstrinprogress)
-* [uuid](cubeidchar.md#readonly-uuid)
+* [characteristic](cubeconfigchar.md#protected-characteristic)
+* [errStrInProgress](cubeconfigchar.md#protected-errstrinprogress)
+* [uuid](cubeconfigchar.md#readonly-uuid)
 
 ### Methods
 
-* [addEventListener](cubeidchar.md#addeventlistener)
-* [getPositionId](cubeidchar.md#getpositionid)
-* [getStandardId](cubeidchar.md#getstandardid)
-* [prepare](cubeidchar.md#prepare)
-* [readValue](cubeidchar.md#readvalue)
-* [setFrameRate](cubeidchar.md#setframerate)
-* [writeValue](cubeidchar.md#writevalue)
-* [writeValueCore](cubeidchar.md#writevaluecore)
+* [addEventListener](cubeconfigchar.md#addeventlistener)
+* [disableMagnet](cubeconfigchar.md#disablemagnet)
+* [enableMagnet](cubeconfigchar.md#enablemagnet)
+* [getProtocolVersion](cubeconfigchar.md#getprotocolversion)
+* [prepare](cubeconfigchar.md#prepare)
+* [readValue](cubeconfigchar.md#readvalue)
+* [setFrameRate](cubeconfigchar.md#setframerate)
+* [writeValue](cubeconfigchar.md#writevalue)
+* [writeValueCore](cubeconfigchar.md#writevaluecore)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new CubeIDChar**(`service`: BluetoothRemoteGATTService): *[CubeIDChar](cubeidchar.md)*
+\+ **new CubeConfigChar**(`service`: BluetoothRemoteGATTService): *[CubeConfigChar](cubeconfigchar.md)*
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
@@ -55,7 +56,7 @@ Name | Type |
 ------ | ------ |
 `service` | BluetoothRemoteGATTService |
 
-**Returns:** *[CubeIDChar](cubeidchar.md)*
+**Returns:** *[CubeConfigChar](cubeconfigchar.md)*
 
 ## Properties
 
@@ -81,19 +82,19 @@ ___
 
 ### `Readonly` uuid
 
-• **uuid**: *string* = "10b20101-5b3b-4571-9508-cf3efcd7bbae"
+• **uuid**: *string* = "10b201ff-5b3b-4571-9508-cf3efcd7bbae"
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/idChar.ts:31](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L31)*
+*Defined in [cube/char/configChar.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L11)*
 
 ## Methods
 
 ###  addEventListener
 
-▸ **addEventListener**(`type`: string, `listener`: [CubeIdCharListner](../globals.md#cubeidcharlistner)): *void*
+▸ **addEventListener**(`type`: string, `listener`: [CubeConfigCharListner](../globals.md#cubeconfigcharlistner)): *void*
 
-*Defined in [cube/char/idChar.ts:249](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L249)*
+*Defined in [cube/char/configChar.ts:123](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L123)*
 
 Register callback.
 
@@ -101,38 +102,48 @@ Register callback.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`type` | string | Specify the type from 'positionid' or 'standardid'. |
-`listener` | [CubeIdCharListner](../globals.md#cubeidcharlistner) | - |
+`type` | string | Specify the type from 'protocolversion'. |
+`listener` | [CubeConfigCharListner](../globals.md#cubeconfigcharlistner) | - |
 
 **Returns:** *void*
 
 ___
 
-###  getPositionId
+###  disableMagnet
 
-▸ **getPositionId**(): *[positionIdInfo](../globals.md#positionidinfo)*
+▸ **disableMagnet**(): *void*
 
-*Defined in [cube/char/idChar.ts:85](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L85)*
+*Defined in [cube/char/configChar.ts:144](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L144)*
 
-Get current Position Id.
+Disable magnet function.
 
-**Returns:** *[positionIdInfo](../globals.md#positionidinfo)*
-
-Position Id info.
+**Returns:** *void*
 
 ___
 
-###  getStandardId
+###  enableMagnet
 
-▸ **getStandardId**(): *[standardIdInfo](../globals.md#standardidinfo)*
+▸ **enableMagnet**(): *void*
 
-*Defined in [cube/char/idChar.ts:94](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L94)*
+*Defined in [cube/char/configChar.ts:135](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L135)*
 
-Get current Standard Id.
+Enable magnet function.
 
-**Returns:** *[standardIdInfo](../globals.md#standardidinfo)*
+**Returns:** *void*
 
-Standard Id info.
+___
+
+###  getProtocolVersion
+
+▸ **getProtocolVersion**(): *string*
+
+*Defined in [cube/char/configChar.ts:75](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L75)*
+
+Get BLE protocol version.
+
+**Returns:** *string*
+
+string id of BLE protocol version.
 
 ___
 
@@ -144,9 +155,9 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/idChar.ts:46](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L46)*
+*Defined in [cube/char/configChar.ts:40](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L40)*
 
-Prepare for using id characteristic function.
+Prepare for using configuration characteristic function.
 
 **Returns:** *Promise‹string | Error›*
 

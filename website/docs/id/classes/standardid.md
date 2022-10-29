@@ -41,7 +41,7 @@ sidebar_label: "StandardId"
 
 ▪ **idTable**: *object[]*
 
-*Defined in [id/standard/standardId.ts:2](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L2)*
+*Defined in [id/standard/standardId.ts:2](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L2)*
 
 ## Methods
 
@@ -49,7 +49,7 @@ sidebar_label: "StandardId"
 
 ▸ **getIdName**(`value`: number): *string | undefined*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **includes**(`idName`: string): *boolean*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
