@@ -58,7 +58,7 @@ cubeP?.moveToCube( cubeQ, speed, moveType );
 const color = P5tId.ColorTileMat.getTileColor(cube?.x, cube?.y);
 background( color );
 ```
-**[OpenProcessing Sample: Change background color with touched mat color](https://editor.p5js.org/tetunori/sketches/cHerL4iap)**
+**[OpenProcessing Sample: Change background color with touched mat color](https://openprocessing.org/sketch/1716673)**
 
 ## Example 6: Random tile move on SimpleMat.
 ```javascript
@@ -71,11 +71,8 @@ const rowRand = Math.floor( Math.random() * targetMat.matrixRows);
 // Move to random tile.
 cube?.moveTo(targetMat.getTileCenter(rowRand, columnRand), 80);
 ```
-**[OpenProcessing Sample: Random tile move on TileMat](https://editor.p5js.org/tetunori/sketches/pEwYvCLW_)**  
+**[OpenProcessing Sample: Move random tiles on TileMat](https://openprocessing.org/sketch/1716674)**  
 Press `Space Key` to move after connection.
-:::warning
-I'm afraid but this sample does not work with alpha-version(0.5.0). Please use beta-versino(0.8.0).
-:::
 
 ## Example 7: Move to start position on RingMat.
 ```javascript
@@ -93,6 +90,6 @@ cubeQ?.moveTo({
   angleType: 0
 }, 80);
 ```
-**[OpenProcessing Sample: Move to start position on RingMat.](https://editor.p5js.org/tetunori/sketches/STNvAnVLB)**  
+**[OpenProcessing Sample: Move to start position on RingMat.](https://openprocessing.org/sketch/1716678)**  
 Press `Space Key` to move after connection.
 
