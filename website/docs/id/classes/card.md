@@ -4,7 +4,6 @@ title: "Card"
 sidebar_label: "Card"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [Card](card.md)
 
 ## Hierarchy
 
@@ -49,7 +48,7 @@ sidebar_label: "Card"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/card.ts:21](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L21)*
+*Defined in [id/standard/card.ts:21](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L21)*
 
 ## Methods
 
@@ -59,7 +58,7 @@ sidebar_label: "Card"
 
 *Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -81,7 +80,7 @@ ___
 
 *Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -101,82 +100,82 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/card.ts:4](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L4)*
+*Defined in [id/standard/card.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L4)*
 
 ###  autoTackleCard
 
 • **autoTackleCard**: *string* = "autoTackleCard"
 
-*Defined in [id/standard/card.ts:7](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L7)*
+*Defined in [id/standard/card.ts:7](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L7)*
 
 ###  backCard
 
 • **backCard**: *string* = "backCard"
 
-*Defined in [id/standard/card.ts:16](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L16)*
+*Defined in [id/standard/card.ts:16](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L16)*
 
 ###  easyModeCard
 
 • **easyModeCard**: *string* = "easyModeCard"
 
-*Defined in [id/standard/card.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L12)*
+*Defined in [id/standard/card.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L12)*
 
 ###  frontCard
 
 • **frontCard**: *string* = "frontCard"
 
-*Defined in [id/standard/card.ts:15](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L15)*
+*Defined in [id/standard/card.ts:15](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L15)*
 
 ###  goCard
 
 • **goCard**: *string* = "goCard"
 
-*Defined in [id/standard/card.ts:17](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L17)*
+*Defined in [id/standard/card.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L17)*
 
 ###  haritePowerUpCard
 
 • **haritePowerUpCard**: *string* = "haritePowerUpCard"
 
-*Defined in [id/standard/card.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L10)*
+*Defined in [id/standard/card.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L10)*
 
 ###  leftCard
 
 • **leftCard**: *string* = "leftCard"
 
-*Defined in [id/standard/card.ts:13](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L13)*
+*Defined in [id/standard/card.ts:13](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L13)*
 
 ###  pushPowerUpCard
 
 • **pushPowerUpCard**: *string* = "pushPowerUpCard"
 
-*Defined in [id/standard/card.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L9)*
+*Defined in [id/standard/card.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L9)*
 
 ###  randomCard
 
 • **randomCard**: *string* = "randomCard"
 
-*Defined in [id/standard/card.ts:8](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L8)*
+*Defined in [id/standard/card.ts:8](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L8)*
 
 ###  rightCard
 
 • **rightCard**: *string* = "rightCard"
 
-*Defined in [id/standard/card.ts:14](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L14)*
+*Defined in [id/standard/card.ts:14](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L14)*
 
 ###  rushCard
 
 • **rushCard**: *string* = "rushCard"
 
-*Defined in [id/standard/card.ts:6](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L6)*
+*Defined in [id/standard/card.ts:6](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L6)*
 
 ###  sideAttackCard
 
 • **sideAttackCard**: *string* = "sideAttackCard"
 
-*Defined in [id/standard/card.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L11)*
+*Defined in [id/standard/card.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L11)*
 
 ###  typhoonCard
 
 • **typhoonCard**: *string* = "typhoonCard"
 
-*Defined in [id/standard/card.ts:5](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/card.ts#L5)*
+*Defined in [id/standard/card.ts:5](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/card.ts#L5)*

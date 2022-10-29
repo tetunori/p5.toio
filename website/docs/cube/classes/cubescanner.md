@@ -4,7 +4,6 @@ title: "CubeScanner"
 sidebar_label: "CubeScanner"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeScanner](cubescanner.md)
 
 ## Hierarchy
 
@@ -22,7 +21,7 @@ sidebar_label: "CubeScanner"
 
 ▸ **scanNewCube**(): *Promise‹[CubeBase](cubebase.md)›*
 
-*Defined in [cube/scanner.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/scanner.ts#L9)*
+*Defined in [cube/scanner.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/scanner.ts#L9)*
 
 Scan a new cube.
 

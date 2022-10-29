@@ -4,7 +4,6 @@ title: "p5.toio"
 sidebar_label: "Globals"
 ---
 
-[p5.toio](index.md) › [Globals](globals.md)
 
 ## Index
 
@@ -62,7 +61,7 @@ sidebar_label: "Globals"
 
 Ƭ **CubeBatteryCharListner**: *[CubeBatteryLevelListner](globals.md#cubebatterylevellistner)*
 
-*Defined in [cube/char/batteryChar.ts:3](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L3)*
+*Defined in [cube/char/batteryChar.ts:3](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L3)*
 
 ___
 
@@ -70,7 +69,7 @@ ___
 
 Ƭ **CubeBatteryLevelListner**: *function*
 
-*Defined in [cube/char/batteryChar.ts:2](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L2)*
+*Defined in [cube/char/batteryChar.ts:2](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L2)*
 
 #### Type declaration:
 
@@ -88,7 +87,7 @@ ___
 
 Ƭ **CubeButtonCharListner**: *[CubeButtonPressedStatusListner](globals.md#cubebuttonpressedstatuslistner)*
 
-*Defined in [cube/char/buttonChar.ts:3](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/buttonChar.ts#L3)*
+*Defined in [cube/char/buttonChar.ts:3](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/buttonChar.ts#L3)*
 
 ___
 
@@ -96,7 +95,7 @@ ___
 
 Ƭ **CubeButtonPressedStatusListner**: *function*
 
-*Defined in [cube/char/buttonChar.ts:2](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/buttonChar.ts#L2)*
+*Defined in [cube/char/buttonChar.ts:2](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/buttonChar.ts#L2)*
 
 #### Type declaration:
 
@@ -114,7 +113,7 @@ ___
 
 Ƭ **CubeCharInstance**: *[CubeIDChar](classes/cubeidchar.md) | [CubeMotorChar](classes/cubemotorchar.md) | [CubeLightChar](classes/cubelightchar.md) | [CubeSensorChar](classes/cubesensorchar.md) | [CubeBatteryChar](classes/cubebatterychar.md) | [CubeSoundChar](classes/cubesoundchar.md) | [CubeButtonChar](classes/cubebuttonchar.md) | [CubeConfigChar](classes/cubeconfigchar.md) | undefined*
 
-*Defined in [cube/cubeBase.ts:17](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L17)*
+*Defined in [cube/cubeBase.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L17)*
 
 ___
 
@@ -122,7 +121,7 @@ ___
 
 Ƭ **CubeCollisionListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L10)*
+*Defined in [cube/char/sensorChar.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L10)*
 
 #### Type declaration:
 
@@ -134,7 +133,7 @@ ___
 
 Ƭ **CubeConfigCharListner**: *[CubeProtocolVersionListner](globals.md#cubeprotocolversionlistner)*
 
-*Defined in [cube/char/configChar.ts:8](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L8)*
+*Defined in [cube/char/configChar.ts:8](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L8)*
 
 ___
 
@@ -142,7 +141,7 @@ ___
 
 Ƭ **CubeDoubleTapListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L11)*
+*Defined in [cube/char/sensorChar.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L11)*
 
 #### Type declaration:
 
@@ -154,7 +153,7 @@ ___
 
 Ƭ **CubeFlatListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L9)*
+*Defined in [cube/char/sensorChar.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L9)*
 
 #### Type declaration:
 
@@ -172,7 +171,7 @@ ___
 
 Ƭ **CubeIdCharListner**: *[CubePositionIdListner](globals.md#cubepositionidlistner) | [CubeStandardIdListner](globals.md#cubestandardidlistner)*
 
-*Defined in [cube/char/idChar.ts:28](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L28)*
+*Defined in [cube/char/idChar.ts:28](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L28)*
 
 ___
 
@@ -180,7 +179,7 @@ ___
 
 Ƭ **CubeListner**: *[CubeSensorCharListner](globals.md#cubesensorcharlistner) | [CubeBatteryCharListner](globals.md#cubebatterycharlistner) | [CubeButtonCharListner](globals.md#cubebuttoncharlistner) | [CubeConfigCharListner](globals.md#cubeconfigcharlistner) | [CubeIdCharListner](globals.md#cubeidcharlistner)*
 
-*Defined in [cube/cubeBase.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cubeBase.ts#L10)*
+*Defined in [cube/cubeBase.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L10)*
 
 ___
 
@@ -188,7 +187,7 @@ ___
 
 Ƭ **CubeMagnetListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:14](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L14)*
+*Defined in [cube/char/sensorChar.ts:14](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L14)*
 
 #### Type declaration:
 
@@ -206,7 +205,7 @@ ___
 
 Ƭ **CubePositionIdListner**: *function*
 
-*Defined in [cube/char/idChar.ts:26](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L26)*
+*Defined in [cube/char/idChar.ts:26](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L26)*
 
 #### Type declaration:
 
@@ -224,7 +223,7 @@ ___
 
 Ƭ **CubePostureListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L12)*
+*Defined in [cube/char/sensorChar.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L12)*
 
 #### Type declaration:
 
@@ -242,7 +241,7 @@ ___
 
 Ƭ **CubeProtocolVersionListner**: *function*
 
-*Defined in [cube/char/configChar.ts:7](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L7)*
+*Defined in [cube/char/configChar.ts:7](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L7)*
 
 #### Type declaration:
 
@@ -260,7 +259,7 @@ ___
 
 Ƭ **CubeSensorCharListner**: *[CubeFlatListner](globals.md#cubeflatlistner) | [CubeCollisionListner](globals.md#cubecollisionlistner) | [CubeDoubleTapListner](globals.md#cubedoubletaplistner) | [CubePostureListner](globals.md#cubeposturelistner) | [CubeShakeLevelListner](globals.md#cubeshakelevellistner) | [CubeMagnetListner](globals.md#cubemagnetlistner)*
 
-*Defined in [cube/char/sensorChar.ts:15](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L15)*
+*Defined in [cube/char/sensorChar.ts:15](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L15)*
 
 ___
 
@@ -268,7 +267,7 @@ ___
 
 Ƭ **CubeShakeLevelListner**: *function*
 
-*Defined in [cube/char/sensorChar.ts:13](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L13)*
+*Defined in [cube/char/sensorChar.ts:13](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L13)*
 
 #### Type declaration:
 
@@ -286,7 +285,7 @@ ___
 
 Ƭ **CubeStandardIdListner**: *function*
 
-*Defined in [cube/char/idChar.ts:27](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L27)*
+*Defined in [cube/char/idChar.ts:27](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L27)*
 
 #### Type declaration:
 
@@ -304,7 +303,7 @@ ___
 
 Ƭ **configInfo**: *object*
 
-*Defined in [cube/char/configChar.ts:3](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L3)*
+*Defined in [cube/char/configChar.ts:3](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L3)*
 
 #### Type declaration:
 
@@ -316,7 +315,7 @@ ___
 
 Ƭ **idInfo**: *object*
 
-*Defined in [cube/char/idChar.ts:21](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L21)*
+*Defined in [cube/char/idChar.ts:21](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L21)*
 
 #### Type declaration:
 
@@ -330,7 +329,7 @@ ___
 
 Ƭ **positionIdInfo**: *object | undefined*
 
-*Defined in [cube/char/idChar.ts:3](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L3)*
+*Defined in [cube/char/idChar.ts:3](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L3)*
 
 ___
 
@@ -338,7 +337,7 @@ ___
 
 Ƭ **sensorInfo**: *object*
 
-*Defined in [cube/char/sensorChar.ts:2](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L2)*
+*Defined in [cube/char/sensorChar.ts:2](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L2)*
 
 #### Type declaration:
 
@@ -356,4 +355,4 @@ ___
 
 Ƭ **standardIdInfo**: *object | undefined*
 
-*Defined in [cube/char/idChar.ts:13](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/idChar.ts#L13)*
+*Defined in [cube/char/idChar.ts:13](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/idChar.ts#L13)*

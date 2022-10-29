@@ -4,7 +4,6 @@ title: "GameMark"
 sidebar_label: "GameMark"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [GameMark](gamemark.md)
 
 ## Hierarchy
 
@@ -61,7 +60,7 @@ sidebar_label: "GameMark"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/gameMark.ts:33](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L33)*
+*Defined in [id/standard/gameMark.ts:33](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L33)*
 
 ## Methods
 
@@ -71,7 +70,7 @@ sidebar_label: "GameMark"
 
 *Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -93,7 +92,7 @@ ___
 
 *Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -113,154 +112,154 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/gameMark.ts:4](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L4)*
+*Defined in [id/standard/gameMark.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L4)*
 
 ###  Baton
 
 • **Baton**: *string* = "Baton"
 
-*Defined in [id/standard/gameMark.ts:20](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L20)*
+*Defined in [id/standard/gameMark.ts:20](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L20)*
 
 ###  KaijuBusters
 
 • **KaijuBusters**: *string* = "KaijuBusters"
 
-*Defined in [id/standard/gameMark.ts:13](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L13)*
+*Defined in [id/standard/gameMark.ts:13](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L13)*
 
 ###  answer
 
 • **answer**: *string* = "answer"
 
-*Defined in [id/standard/gameMark.ts:25](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L25)*
+*Defined in [id/standard/gameMark.ts:25](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L25)*
 
 ###  colorMemory
 
 • **colorMemory**: *string* = "colorMemory"
 
-*Defined in [id/standard/gameMark.ts:17](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L17)*
+*Defined in [id/standard/gameMark.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L17)*
 
 ###  craftFighter
 
 • **craftFighter**: *string* = "craftFighter"
 
-*Defined in [id/standard/gameMark.ts:5](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L5)*
+*Defined in [id/standard/gameMark.ts:5](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L5)*
 
 ###  dash
 
 • **dash**: *string* = "dash"
 
-*Defined in [id/standard/gameMark.ts:22](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L22)*
+*Defined in [id/standard/gameMark.ts:22](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L22)*
 
 ###  dontDisturbNormal
 
 • **dontDisturbNormal**: *string* = "dontDisturbNormal"
 
-*Defined in [id/standard/gameMark.ts:23](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L23)*
+*Defined in [id/standard/gameMark.ts:23](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L23)*
 
 ###  dontDisturbRodeo
 
 • **dontDisturbRodeo**: *string* = "dontDisturbRodeo"
 
-*Defined in [id/standard/gameMark.ts:24](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L24)*
+*Defined in [id/standard/gameMark.ts:24](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L24)*
 
 ###  fingerStrike1P
 
 • **fingerStrike1P**: *string* = "fingerStrike1P"
 
-*Defined in [id/standard/gameMark.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L9)*
+*Defined in [id/standard/gameMark.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L9)*
 
 ###  fingerStrike2P
 
 • **fingerStrike2P**: *string* = "fingerStrike2P"
 
-*Defined in [id/standard/gameMark.ts:8](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L8)*
+*Defined in [id/standard/gameMark.ts:8](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L8)*
 
 ###  freeMove
 
 • **freeMove**: *string* = "freeMove"
 
-*Defined in [id/standard/gameMark.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L10)*
+*Defined in [id/standard/gameMark.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L10)*
 
 ###  lazerBeamChallenge
 
 • **lazerBeamChallenge**: *string* = "lazerBeamChallenge"
 
-*Defined in [id/standard/gameMark.ts:18](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L18)*
+*Defined in [id/standard/gameMark.ts:18](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L18)*
 
 ###  lazerBeamCreate
 
 • **lazerBeamCreate**: *string* = "lazerBeamCreate"
 
-*Defined in [id/standard/gameMark.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L19)*
+*Defined in [id/standard/gameMark.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L19)*
 
 ###  music1
 
 • **music1**: *string* = "music1"
 
-*Defined in [id/standard/gameMark.ts:26](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L26)*
+*Defined in [id/standard/gameMark.ts:26](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L26)*
 
 ###  music2
 
 • **music2**: *string* = "music2"
 
-*Defined in [id/standard/gameMark.ts:27](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L27)*
+*Defined in [id/standard/gameMark.ts:27](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L27)*
 
 ###  music3
 
 • **music3**: *string* = "music3"
 
-*Defined in [id/standard/gameMark.ts:28](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L28)*
+*Defined in [id/standard/gameMark.ts:28](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L28)*
 
 ###  music4
 
 • **music4**: *string* = "music4"
 
-*Defined in [id/standard/gameMark.ts:29](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L29)*
+*Defined in [id/standard/gameMark.ts:29](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L29)*
 
 ###  pullBack
 
 • **pullBack**: *string* = "pullBack"
 
-*Defined in [id/standard/gameMark.ts:21](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L21)*
+*Defined in [id/standard/gameMark.ts:21](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L21)*
 
 ###  quickSkunk2P
 
 • **quickSkunk2P**: *string* = "quickSkunk2P"
 
-*Defined in [id/standard/gameMark.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L11)*
+*Defined in [id/standard/gameMark.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L11)*
 
 ###  quickSkunkCPU
 
 • **quickSkunkCPU**: *string* = "quickSkunkCPU"
 
-*Defined in [id/standard/gameMark.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L12)*
+*Defined in [id/standard/gameMark.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L12)*
 
 ###  rythmAndGo
 
 • **rythmAndGo**: *string* = "rythmAndGo"
 
-*Defined in [id/standard/gameMark.ts:6](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L6)*
+*Defined in [id/standard/gameMark.ts:6](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L6)*
 
 ###  skunkChaser
 
 • **skunkChaser**: *string* = "skunkChaser"
 
-*Defined in [id/standard/gameMark.ts:7](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L7)*
+*Defined in [id/standard/gameMark.ts:7](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L7)*
 
 ###  watchOut2P
 
 • **watchOut2P**: *string* = "watchOut2P"
 
-*Defined in [id/standard/gameMark.ts:15](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L15)*
+*Defined in [id/standard/gameMark.ts:15](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L15)*
 
 ###  watchOutCPU
 
 • **watchOutCPU**: *string* = "watchOutCPU"
 
-*Defined in [id/standard/gameMark.ts:16](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L16)*
+*Defined in [id/standard/gameMark.ts:16](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L16)*
 
 ###  watchOutFree
 
 • **watchOutFree**: *string* = "watchOutFree"
 
-*Defined in [id/standard/gameMark.ts:14](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/gameMark.ts#L14)*
+*Defined in [id/standard/gameMark.ts:14](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/gameMark.ts#L14)*

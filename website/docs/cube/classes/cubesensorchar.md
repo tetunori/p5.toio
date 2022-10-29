@@ -4,7 +4,6 @@ title: "CubeSensorChar"
 sidebar_label: "CubeSensorChar"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeSensorChar](cubesensorchar.md)
 
 ## Hierarchy
 
@@ -52,7 +51,7 @@ sidebar_label: "CubeSensorChar"
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -70,7 +69,7 @@ Name | Type |
 
 *Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -80,7 +79,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -90,7 +89,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/sensorChar.ts:24](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L24)*
+*Defined in [cube/char/sensorChar.ts:24](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L24)*
 
 ___
 
@@ -106,7 +105,7 @@ ___
     pattern6: 'pattern6',
   } as const
 
-*Defined in [cube/char/sensorChar.ts:58](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L58)*
+*Defined in [cube/char/sensorChar.ts:58](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L58)*
 
 Magnet IDs.
 
@@ -139,7 +138,7 @@ ___
     left: 'left',
   } as const
 
-*Defined in [cube/char/sensorChar.ts:29](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L29)*
+*Defined in [cube/char/sensorChar.ts:29](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L29)*
 
 Posture IDs.
 
@@ -175,7 +174,7 @@ ___
     level10: 0x0a,
   } as const
 
-*Defined in [cube/char/sensorChar.ts:41](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L41)*
+*Defined in [cube/char/sensorChar.ts:41](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L41)*
 
 Shake level IDs.
 
@@ -209,7 +208,7 @@ Shake level IDs.
 
 ▸ **addEventListener**(`type`: string, `listener`: [CubeSensorCharListner](../globals.md#cubesensorcharlistner)): *void*
 
-*Defined in [cube/char/sensorChar.ts:264](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L264)*
+*Defined in [cube/char/sensorChar.ts:264](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L264)*
 
 Register callback.
 
@@ -228,7 +227,7 @@ ___
 
 ▸ **getMagnetSatus**(): *string*
 
-*Defined in [cube/char/sensorChar.ts:149](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L149)*
+*Defined in [cube/char/sensorChar.ts:149](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L149)*
 
 Get current magnet status.
 
@@ -242,7 +241,7 @@ ___
 
 ▸ **getPosture**(): *string*
 
-*Defined in [cube/char/sensorChar.ts:131](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L131)*
+*Defined in [cube/char/sensorChar.ts:131](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L131)*
 
 Get current posture.
 
@@ -256,7 +255,7 @@ ___
 
 ▸ **getShakeLevel**(): *number*
 
-*Defined in [cube/char/sensorChar.ts:140](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L140)*
+*Defined in [cube/char/sensorChar.ts:140](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L140)*
 
 Get current shake level.
 
@@ -270,7 +269,7 @@ ___
 
 ▸ **isFlat**(): *boolean*
 
-*Defined in [cube/char/sensorChar.ts:122](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L122)*
+*Defined in [cube/char/sensorChar.ts:122](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L122)*
 
 Get current flat status.
 
@@ -288,7 +287,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/sensorChar.ts:87](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/sensorChar.ts#L87)*
+*Defined in [cube/char/sensorChar.ts:87](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/sensorChar.ts#L87)*
 
 Prepare for using sensor characteristic function.
 
@@ -306,7 +305,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L110)*
+*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L110)*
 
 Read value from remote GATT Characteristics.
 
@@ -324,7 +323,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L134)*
+*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L134)*
 
 Set framerate.
 
@@ -346,7 +345,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -368,7 +367,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

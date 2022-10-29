@@ -4,7 +4,6 @@ title: "DevMat12"
 sidebar_label: "DevMat12"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [DevMat12](devmat12.md)
 
 ## Hierarchy
 
@@ -35,7 +34,7 @@ sidebar_label: "DevMat12"
 
 *Overrides [Mat](mat.md).[centerX](mat.md#static-protected-centerx)*
 
-*Defined in [id/position/devMat.ts:106](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L106)*
+*Defined in [id/position/devMat.ts:106](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L106)*
 
 ___
 
@@ -45,7 +44,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerY](mat.md#static-protected-centery)*
 
-*Defined in [id/position/devMat.ts:107](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L107)*
+*Defined in [id/position/devMat.ts:107](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L107)*
 
 ___
 
@@ -55,7 +54,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxX](mat.md#static-protected-maxx)*
 
-*Defined in [id/position/devMat.ts:104](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L104)*
+*Defined in [id/position/devMat.ts:104](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L104)*
 
 ___
 
@@ -65,7 +64,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxY](mat.md#static-protected-maxy)*
 
-*Defined in [id/position/devMat.ts:105](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L105)*
+*Defined in [id/position/devMat.ts:105](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L105)*
 
 ___
 
@@ -75,7 +74,7 @@ ___
 
 *Overrides [Mat](mat.md).[minX](mat.md#static-protected-minx)*
 
-*Defined in [id/position/devMat.ts:102](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L102)*
+*Defined in [id/position/devMat.ts:102](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L102)*
 
 ___
 
@@ -85,7 +84,7 @@ ___
 
 *Overrides [Mat](mat.md).[minY](mat.md#static-protected-miny)*
 
-*Defined in [id/position/devMat.ts:103](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/devMat.ts#L103)*
+*Defined in [id/position/devMat.ts:103](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/devMat.ts#L103)*
 
 ## Methods
 
@@ -95,7 +94,7 @@ ___
 
 *Inherited from [Mat](mat.md).[isOnMat](mat.md#static-isonmat)*
 
-*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/position/mat.ts#L17)*
+*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/mat.ts#L17)*
 
 Specified coordinate is on the mat or not.
 

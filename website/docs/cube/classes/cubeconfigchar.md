@@ -4,7 +4,6 @@ title: "CubeConfigChar"
 sidebar_label: "CubeConfigChar"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeConfigChar](cubeconfigchar.md)
 
 ## Hierarchy
 
@@ -48,7 +47,7 @@ sidebar_label: "CubeConfigChar"
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -66,7 +65,7 @@ Name | Type |
 
 *Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -76,7 +75,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -86,7 +85,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/configChar.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L11)*
+*Defined in [cube/char/configChar.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L11)*
 
 ## Methods
 
@@ -94,7 +93,7 @@ ___
 
 ▸ **addEventListener**(`type`: string, `listener`: [CubeConfigCharListner](../globals.md#cubeconfigcharlistner)): *void*
 
-*Defined in [cube/char/configChar.ts:123](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L123)*
+*Defined in [cube/char/configChar.ts:123](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L123)*
 
 Register callback.
 
@@ -113,7 +112,7 @@ ___
 
 ▸ **disableMagnet**(): *void*
 
-*Defined in [cube/char/configChar.ts:144](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L144)*
+*Defined in [cube/char/configChar.ts:144](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L144)*
 
 Disable magnet function.
 
@@ -125,7 +124,7 @@ ___
 
 ▸ **enableMagnet**(): *void*
 
-*Defined in [cube/char/configChar.ts:135](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L135)*
+*Defined in [cube/char/configChar.ts:135](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L135)*
 
 Enable magnet function.
 
@@ -137,7 +136,7 @@ ___
 
 ▸ **getProtocolVersion**(): *string*
 
-*Defined in [cube/char/configChar.ts:75](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L75)*
+*Defined in [cube/char/configChar.ts:75](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L75)*
 
 Get BLE protocol version.
 
@@ -155,7 +154,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/configChar.ts:40](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/configChar.ts#L40)*
+*Defined in [cube/char/configChar.ts:40](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L40)*
 
 Prepare for using configuration characteristic function.
 
@@ -173,7 +172,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L110)*
+*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L110)*
 
 Read value from remote GATT Characteristics.
 
@@ -191,7 +190,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L134)*
+*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L134)*
 
 Set framerate.
 
@@ -213,7 +212,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -235,7 +234,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

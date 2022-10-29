@@ -4,7 +4,6 @@ title: "Skunk"
 sidebar_label: "Skunk"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [Skunk](skunk.md)
 
 ## Hierarchy
 
@@ -42,7 +41,7 @@ sidebar_label: "Skunk"
 
 *Overrides [StandardId](standardid.md).[idTable](standardid.md#static-protected-readonly-idtable)*
 
-*Defined in [id/standard/skunk.ts:14](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L14)*
+*Defined in [id/standard/skunk.ts:14](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L14)*
 
 ## Methods
 
@@ -52,7 +51,7 @@ sidebar_label: "Skunk"
 
 *Inherited from [StandardId](standardid.md).[getIdName](standardid.md#static-getidname)*
 
-*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L11)*
+*Defined in [id/standard/standardId.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L11)*
 
 Get standard ID string name.
 
@@ -74,7 +73,7 @@ ___
 
 *Inherited from [StandardId](standardid.md).[includes](standardid.md#static-includes)*
 
-*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/standardId.ts#L30)*
+*Defined in [id/standard/standardId.ts:30](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/standardId.ts#L30)*
 
 Specified standard ID is included or not.
 
@@ -94,40 +93,40 @@ true iff specified standard ID is toio Collection card.
 
 ### ▪ **names**: *object*
 
-*Defined in [id/standard/skunk.ts:4](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L4)*
+*Defined in [id/standard/skunk.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L4)*
 
 ###  blueSkunk
 
 • **blueSkunk**: *string* = "blueSkunk"
 
-*Defined in [id/standard/skunk.ts:5](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L5)*
+*Defined in [id/standard/skunk.ts:5](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L5)*
 
 ###  brownSkunk
 
 • **brownSkunk**: *string* = "brownSkunk"
 
-*Defined in [id/standard/skunk.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L10)*
+*Defined in [id/standard/skunk.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L10)*
 
 ###  greenSkunk
 
 • **greenSkunk**: *string* = "greenSkunk"
 
-*Defined in [id/standard/skunk.ts:6](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L6)*
+*Defined in [id/standard/skunk.ts:6](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L6)*
 
 ###  orangeSkunk
 
 • **orangeSkunk**: *string* = "orangeSkunk"
 
-*Defined in [id/standard/skunk.ts:8](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L8)*
+*Defined in [id/standard/skunk.ts:8](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L8)*
 
 ###  redSkunk
 
 • **redSkunk**: *string* = "redSkunk"
 
-*Defined in [id/standard/skunk.ts:9](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L9)*
+*Defined in [id/standard/skunk.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L9)*
 
 ###  yellowSkunk
 
 • **yellowSkunk**: *string* = "yellowSkunk"
 
-*Defined in [id/standard/skunk.ts:7](https://github.com/tetunori/p5.toio/blob/49eab6e/src/id/standard/skunk.ts#L7)*
+*Defined in [id/standard/skunk.ts:7](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/standard/skunk.ts#L7)*

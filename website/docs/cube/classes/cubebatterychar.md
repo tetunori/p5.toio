@@ -4,7 +4,6 @@ title: "CubeBatteryChar"
 sidebar_label: "CubeBatteryChar"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeBatteryChar](cubebatterychar.md)
 
 ## Hierarchy
 
@@ -46,7 +45,7 @@ sidebar_label: "CubeBatteryChar"
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -64,7 +63,7 @@ Name | Type |
 
 *Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -74,7 +73,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -84,7 +83,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/batteryChar.ts:6](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L6)*
+*Defined in [cube/char/batteryChar.ts:6](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L6)*
 
 ## Methods
 
@@ -92,7 +91,7 @@ ___
 
 ▸ **addEventListener**(`type`: string, `listener`: [CubeBatteryLevelListner](../globals.md#cubebatterylevellistner)): *void*
 
-*Defined in [cube/char/batteryChar.ts:97](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L97)*
+*Defined in [cube/char/batteryChar.ts:97](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L97)*
 
 Register callback.
 
@@ -111,7 +110,7 @@ ___
 
 ▸ **getBatteryLevel**(): *number*
 
-*Defined in [cube/char/batteryChar.ts:52](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L52)*
+*Defined in [cube/char/batteryChar.ts:52](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L52)*
 
 Get current battery level.
 
@@ -129,7 +128,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/batteryChar.ts:17](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/batteryChar.ts#L17)*
+*Defined in [cube/char/batteryChar.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/batteryChar.ts#L17)*
 
 Prepare for using battery characteristic function.
 
@@ -147,7 +146,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L110)*
+*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L110)*
 
 Read value from remote GATT Characteristics.
 
@@ -165,7 +164,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L134)*
+*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L134)*
 
 Set framerate.
 
@@ -187,7 +186,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -209,7 +208,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 

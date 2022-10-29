@@ -4,7 +4,6 @@ title: "P5tCube"
 sidebar_label: "P5tCube"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [P5tCube](p5tcube.md)
 
 ## Hierarchy
 
@@ -86,7 +85,7 @@ sidebar_label: "P5tCube"
 
 *Inherited from [Cube](cube.md).[constructor](cube.md#constructor)*
 
-*Defined in [cube/cube.ts:48](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L48)*
+*Defined in [cube/cube.ts:48](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L48)*
 
 **Parameters:**
 
@@ -104,7 +103,7 @@ Name | Type |
 
 *Inherited from [Cube](cube.md).[angle](cube.md#angle)*
 
-*Defined in [cube/cube.ts:37](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L37)*
+*Defined in [cube/cube.ts:37](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L37)*
 
 ___
 
@@ -114,7 +113,7 @@ ___
 
 *Inherited from [Cube](cube.md).[batteryLevel](cube.md#batterylevel)*
 
-*Defined in [cube/cube.ts:44](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L44)*
+*Defined in [cube/cube.ts:44](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L44)*
 
 ___
 
@@ -124,7 +123,7 @@ ___
 
 *Inherited from [Cube](cube.md).[bleProtocolVersion](cube.md#bleprotocolversion)*
 
-*Defined in [cube/cube.ts:45](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L45)*
+*Defined in [cube/cube.ts:45](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L45)*
 
 ___
 
@@ -134,7 +133,7 @@ ___
 
 *Inherited from [Cube](cube.md).[buttonPressed](cube.md#buttonpressed)*
 
-*Defined in [cube/cube.ts:43](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L43)*
+*Defined in [cube/cube.ts:43](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L43)*
 
 ___
 
@@ -144,7 +143,7 @@ ___
 
 *Inherited from [Cube](cube.md).[cube](cube.md#protected-cube)*
 
-*Defined in [cube/cube.ts:48](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L48)*
+*Defined in [cube/cube.ts:48](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L48)*
 
 ___
 
@@ -154,7 +153,7 @@ ___
 
 *Inherited from [Cube](cube.md).[flat](cube.md#flat)*
 
-*Defined in [cube/cube.ts:39](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L39)*
+*Defined in [cube/cube.ts:39](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L39)*
 
 ___
 
@@ -164,7 +163,7 @@ ___
 
 *Inherited from [Cube](cube.md).[magnet](cube.md#magnet)*
 
-*Defined in [cube/cube.ts:42](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L42)*
+*Defined in [cube/cube.ts:42](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L42)*
 
 ___
 
@@ -174,7 +173,7 @@ ___
 
 *Inherited from [Cube](cube.md).[name](cube.md#name)*
 
-*Defined in [cube/cube.ts:46](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L46)*
+*Defined in [cube/cube.ts:46](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L46)*
 
 ___
 
@@ -184,7 +183,7 @@ ___
 
 *Inherited from [Cube](cube.md).[posture](cube.md#posture)*
 
-*Defined in [cube/cube.ts:40](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L40)*
+*Defined in [cube/cube.ts:40](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L40)*
 
 ___
 
@@ -194,7 +193,7 @@ ___
 
 *Inherited from [Cube](cube.md).[sensorX](cube.md#sensorx)*
 
-*Defined in [cube/cube.ts:35](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L35)*
+*Defined in [cube/cube.ts:35](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L35)*
 
 ___
 
@@ -204,7 +203,7 @@ ___
 
 *Inherited from [Cube](cube.md).[sensorY](cube.md#sensory)*
 
-*Defined in [cube/cube.ts:36](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L36)*
+*Defined in [cube/cube.ts:36](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L36)*
 
 ___
 
@@ -214,7 +213,7 @@ ___
 
 *Inherited from [Cube](cube.md).[shakeLevel](cube.md#shakelevel)*
 
-*Defined in [cube/cube.ts:41](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L41)*
+*Defined in [cube/cube.ts:41](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L41)*
 
 ___
 
@@ -224,7 +223,7 @@ ___
 
 *Inherited from [Cube](cube.md).[standardId](cube.md#standardid)*
 
-*Defined in [cube/cube.ts:38](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L38)*
+*Defined in [cube/cube.ts:38](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L38)*
 
 ___
 
@@ -234,7 +233,7 @@ ___
 
 *Inherited from [Cube](cube.md).[x](cube.md#x)*
 
-*Defined in [cube/cube.ts:33](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L33)*
+*Defined in [cube/cube.ts:33](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L33)*
 
 ___
 
@@ -244,7 +243,7 @@ ___
 
 *Inherited from [Cube](cube.md).[y](cube.md#y)*
 
-*Defined in [cube/cube.ts:34](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L34)*
+*Defined in [cube/cube.ts:34](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L34)*
 
 ___
 
@@ -254,7 +253,7 @@ ___
 
 *Inherited from [Cube](cube.md).[angleTypeId](cube.md#static-angletypeid)*
 
-*Defined in [cube/cube.ts:25](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L25)*
+*Defined in [cube/cube.ts:25](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L25)*
 
 #### Type declaration:
 
@@ -280,7 +279,7 @@ ___
 
 *Inherited from [Cube](cube.md).[easeTypeId](cube.md#static-easetypeid)*
 
-*Defined in [cube/cube.ts:24](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L24)*
+*Defined in [cube/cube.ts:24](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L24)*
 
 #### Type declaration:
 
@@ -300,7 +299,7 @@ ___
 
 *Inherited from [Cube](cube.md).[magnetId](cube.md#static-magnetid)*
 
-*Defined in [cube/cube.ts:22](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L22)*
+*Defined in [cube/cube.ts:22](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L22)*
 
 #### Type declaration:
 
@@ -326,7 +325,7 @@ ___
 
 *Inherited from [Cube](cube.md).[moveTypeId](cube.md#static-movetypeid)*
 
-*Defined in [cube/cube.ts:23](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L23)*
+*Defined in [cube/cube.ts:23](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L23)*
 
 #### Type declaration:
 
@@ -344,7 +343,7 @@ ___
 
 *Inherited from [Cube](cube.md).[postureId](cube.md#static-postureid)*
 
-*Defined in [cube/cube.ts:20](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L20)*
+*Defined in [cube/cube.ts:20](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L20)*
 
 #### Type declaration:
 
@@ -372,7 +371,7 @@ ___
 
 *Inherited from [Cube](cube.md).[rotateTypeId](cube.md#static-readonly-rotatetypeid)*
 
-*Defined in [cube/cube.ts:27](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L27)*
+*Defined in [cube/cube.ts:27](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L27)*
 
 #### Type declaration:
 
@@ -390,7 +389,7 @@ ___
 
 *Inherited from [Cube](cube.md).[seId](cube.md#static-seid)*
 
-*Defined in [cube/cube.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L19)*
+*Defined in [cube/cube.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L19)*
 
 #### Type declaration:
 
@@ -424,7 +423,7 @@ ___
 
 *Inherited from [Cube](cube.md).[shakeLevelId](cube.md#static-shakelevelid)*
 
-*Defined in [cube/cube.ts:21](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L21)*
+*Defined in [cube/cube.ts:21](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L21)*
 
 #### Type declaration:
 
@@ -458,7 +457,7 @@ ___
 
 *Inherited from [Cube](cube.md).[addEventListener](cube.md#addeventlistener)*
 
-*Defined in [cube/cube.ts:106](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L106)*
+*Defined in [cube/cube.ts:106](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L106)*
 
 Register callback from upper layer.
 
@@ -479,7 +478,7 @@ ___
 
 *Inherited from [Cube](cube.md).[configMagnet](cube.md#configmagnet)*
 
-*Defined in [cube/cube.ts:779](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L779)*
+*Defined in [cube/cube.ts:779](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L779)*
 
 Enable/Disable magnet function.
 
@@ -499,7 +498,7 @@ ___
 
 *Inherited from [Cube](cube.md).[connect](cube.md#connect)*
 
-*Defined in [cube/cube.ts:61](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L61)*
+*Defined in [cube/cube.ts:61](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L61)*
 
 Connect to the toio™Core Cube.
 
@@ -513,7 +512,7 @@ ___
 
 ▸ **connectP5tCube**(): *Promise‹[P5tCube](p5tcube.md)›*
 
-*Defined in [p5tCube.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L12)*
+*Defined in [p5tCube.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L12)*
 
 Connect to the toio™Core Cube.
 
@@ -529,7 +528,7 @@ ___
 
 *Inherited from [Cube](cube.md).[disconnect](cube.md#disconnect)*
 
-*Defined in [cube/cube.ts:83](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L83)*
+*Defined in [cube/cube.ts:83](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L83)*
 
 Disconnet from the toio™Core Cube.
 
@@ -543,7 +542,7 @@ ___
 
 *Inherited from [Cube](cube.md).[distanceToCube](cube.md#distancetocube)*
 
-*Defined in [cube/cube.ts:683](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L683)*
+*Defined in [cube/cube.ts:683](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L683)*
 
 Calculate distance from this Cube to the specified Cube.
 
@@ -565,7 +564,7 @@ ___
 
 *Inherited from [Cube](cube.md).[distanceToXY](cube.md#distancetoxy)*
 
-*Defined in [cube/cube.ts:665](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L665)*
+*Defined in [cube/cube.ts:665](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L665)*
 
 Calculate distance from this Cube to the specified coordinate.
 
@@ -588,7 +587,7 @@ ___
 
 *Inherited from [Cube](cube.md).[move](cube.md#move)*
 
-*Defined in [cube/cube.ts:455](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L455)*
+*Defined in [cube/cube.ts:455](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L455)*
 
 Move with specified speed/time.
 
@@ -610,7 +609,7 @@ ___
 
 *Overrides [Cube](cube.md).[moveTo](cube.md#moveto)*
 
-*Defined in [p5tCube.ts:74](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L74)*
+*Defined in [p5tCube.ts:74](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L74)*
 
 Move to specified coordinate/angle.
 
@@ -655,7 +654,7 @@ ___
 
 *Inherited from [Cube](cube.md).[moveToCube](cube.md#movetocube)*
 
-*Defined in [cube/cube.ts:533](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L533)*
+*Defined in [cube/cube.ts:533](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L533)*
 
 Move to specified cube's position.
 
@@ -679,7 +678,7 @@ ___
 
 *Overrides [Cube](cube.md).[moveToMulti](cube.md#movetomulti)*
 
-*Defined in [p5tCube.ts:99](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L99)*
+*Defined in [p5tCube.ts:99](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L99)*
 
 Move to specified several coordinate/angle.
 
@@ -704,7 +703,7 @@ ___
 
 *Inherited from [Cube](cube.md).[normalizeAngleDegrees](cube.md#protected-normalizeangledegrees)*
 
-*Defined in [cube/cube.ts:741](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L741)*
+*Defined in [cube/cube.ts:741](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L741)*
 
 Normalize the specified angle in Degrees within [0-360]
 
@@ -726,7 +725,7 @@ ___
 
 *Inherited from [Cube](cube.md).[normalizeAngleRadian](cube.md#protected-normalizeangleradian)*
 
-*Defined in [cube/cube.ts:759](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L759)*
+*Defined in [cube/cube.ts:759](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L759)*
 
 Normalize the specified angle in Radian within [(-Math.PI)-Math.PI]
 
@@ -748,7 +747,7 @@ ___
 
 *Overrides [Cube](cube.md).[onPositionIdChanged](cube.md#protected-onpositionidchanged)*
 
-*Defined in [p5tCube.ts:29](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L29)*
+*Defined in [p5tCube.ts:29](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L29)*
 
 For prepared callback function `cubePositionIdChanged`.
 
@@ -768,7 +767,7 @@ ___
 
 *Overrides [Cube](cube.md).[onStandardIdChanged](cube.md#protected-onstandardidchanged)*
 
-*Defined in [p5tCube.ts:39](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L39)*
+*Defined in [p5tCube.ts:39](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L39)*
 
 For prepared callback function `cubeStandardIdChanged`.
 
@@ -788,7 +787,7 @@ ___
 
 *Inherited from [Cube](cube.md).[playMelody](cube.md#playmelody)*
 
-*Defined in [cube/cube.ts:436](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L436)*
+*Defined in [cube/cube.ts:436](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L436)*
 
 Play melody specified wiht MIDI note sequence.
 
@@ -808,7 +807,7 @@ ___
 
 *Inherited from [Cube](cube.md).[playSE](cube.md#playse)*
 
-*Defined in [cube/cube.ts:408](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L408)*
+*Defined in [cube/cube.ts:408](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L408)*
 
 Play pre-installed sound effect.
 
@@ -828,7 +827,7 @@ ___
 
 *Inherited from [Cube](cube.md).[playSingleNote](cube.md#playsinglenote)*
 
-*Defined in [cube/cube.ts:419](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L419)*
+*Defined in [cube/cube.ts:419](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L419)*
 
 Play single MIDI note.
 
@@ -849,7 +848,7 @@ ___
 
 *Inherited from [Cube](cube.md).[relativeAngleToXY](cube.md#relativeangletoxy)*
 
-*Defined in [cube/cube.ts:700](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L700)*
+*Defined in [cube/cube.ts:700](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L700)*
 
 Calculate relative angle from this Cube to the specified coordinate.
 
@@ -872,7 +871,7 @@ ___
 
 *Inherited from [Cube](cube.md).[rotate](cube.md#rotate)*
 
-*Defined in [cube/cube.ts:557](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L557)*
+*Defined in [cube/cube.ts:557](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L557)*
 
 Rotate with specified speed/time.
 
@@ -893,7 +892,7 @@ ___
 
 *Inherited from [Cube](cube.md).[setFrameRate](cube.md#setframerate)*
 
-*Defined in [cube/cube.ts:367](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L367)*
+*Defined in [cube/cube.ts:367](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L367)*
 
 Set framerate.
 
@@ -913,7 +912,7 @@ ___
 
 *Inherited from [Cube](cube.md).[stop](cube.md#stop)*
 
-*Defined in [cube/cube.ts:444](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L444)*
+*Defined in [cube/cube.ts:444](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L444)*
 
 Stop moving.
 
@@ -927,7 +926,7 @@ ___
 
 *Inherited from [Cube](cube.md).[turnLightOff](cube.md#turnlightoff)*
 
-*Defined in [cube/cube.ts:374](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L374)*
+*Defined in [cube/cube.ts:374](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L374)*
 
 Turn the light off.
 
@@ -939,7 +938,7 @@ ___
 
 ▸ **turnLightOn**(`color`: p5.Color, `duration`: number): *void*
 
-*Defined in [p5tCube.ts:52](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L52)*
+*Defined in [p5tCube.ts:52](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L52)*
 
 Turn the light on with specified `p5.Color` and duration(optional) values.
 
@@ -960,7 +959,7 @@ ___
 
 *Inherited from [Cube](cube.md).[turnLightOnRGB](cube.md#turnlightonrgb)*
 
-*Defined in [cube/cube.ts:386](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L386)*
+*Defined in [cube/cube.ts:386](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L386)*
 
 Turn the light on with specified RGB and duration(optional) values.
 
@@ -983,7 +982,7 @@ ___
 
 *Inherited from [Cube](cube.md).[turnLightOnRGBA](cube.md#turnlightonrgba)*
 
-*Defined in [cube/cube.ts:399](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L399)*
+*Defined in [cube/cube.ts:399](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L399)*
 
 Turn the light on with specified RGB, Alpha and duration(optional) values.
 
@@ -1007,7 +1006,7 @@ ___
 
 *Overrides [Cube](cube.md).[turnTo](cube.md#turnto)*
 
-*Defined in [p5tCube.ts:123](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L123)*
+*Defined in [p5tCube.ts:123](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L123)*
 
 Turn to specified angle.
 
@@ -1030,7 +1029,7 @@ ___
 
 *Inherited from [Cube](cube.md).[turnToCube](cube.md#turntocube)*
 
-*Defined in [cube/cube.ts:646](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L646)*
+*Defined in [cube/cube.ts:646](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L646)*
 
 Turn to specified cube's position.
 
@@ -1053,7 +1052,7 @@ ___
 
 *Overrides [Cube](cube.md).[turnToXY](cube.md#turntoxy)*
 
-*Defined in [p5tCube.ts:142](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L142)*
+*Defined in [p5tCube.ts:142](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L142)*
 
 Turn to the specified coordinate.
 
@@ -1077,7 +1076,7 @@ ___
 
 *Inherited from [Cube](cube.md).[connectNewCube](cube.md#static-connectnewcube)*
 
-*Defined in [cube/cube.ts:793](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/cube.ts#L793)*
+*Defined in [cube/cube.ts:793](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cube.ts#L793)*
 
 Connect to new toio™Core Cube.
 
@@ -1091,7 +1090,7 @@ ___
 
 ▸ **connectNewP5tCube**(): *Promise‹[P5tCube](p5tcube.md)›*
 
-*Defined in [p5tCube.ts:218](https://github.com/tetunori/p5.toio/blob/49eab6e/src/p5tCube.ts#L218)*
+*Defined in [p5tCube.ts:218](https://github.com/tetunori/p5.toio/blob/49ecddb/src/p5tCube.ts#L218)*
 
 Connect to new toio™Core Cube.
 

@@ -4,7 +4,6 @@ title: "CubeMotorChar"
 sidebar_label: "CubeMotorChar"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeMotorChar](cubemotorchar.md)
 
 ## Hierarchy
 
@@ -52,7 +51,7 @@ sidebar_label: "CubeMotorChar"
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
-*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L19)*
+*Defined in [cube/char/char.ts:19](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L19)*
 
 **Parameters:**
 
@@ -70,7 +69,7 @@ Name | Type |
 
 *Inherited from [CubeChar](cubechar.md).[characteristic](cubechar.md#protected-characteristic)*
 
-*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L10)*
+*Defined in [cube/char/char.ts:10](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L10)*
 
 ___
 
@@ -80,7 +79,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[errStrInProgress](cubechar.md#protected-errstrinprogress)*
 
-*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L12)*
+*Defined in [cube/char/char.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L12)*
 
 ___
 
@@ -90,7 +89,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/motorChar.ts:4](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L4)*
+*Defined in [cube/char/motorChar.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L4)*
 
 ___
 
@@ -106,7 +105,7 @@ ___
     sameAsCurrent: 6,
   } as const
 
-*Defined in [cube/char/motorChar.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L55)*
+*Defined in [cube/char/motorChar.ts:55](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L55)*
 
 Angle type IDs.
 
@@ -137,7 +136,7 @@ ___
     accelDecel: 3,
   } as const
 
-*Defined in [cube/char/motorChar.ts:45](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L45)*
+*Defined in [cube/char/motorChar.ts:45](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L45)*
 
 Ease type IDs.
 
@@ -161,7 +160,7 @@ ___
     rotate1st: 2,
   } as const
 
-*Defined in [cube/char/motorChar.ts:36](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L36)*
+*Defined in [cube/char/motorChar.ts:36](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L36)*
 
 Movement type IDs.
 
@@ -179,7 +178,7 @@ Movement type IDs.
 
 ▸ **motorControl**(`left`: number, `right`: number): *void*
 
-*Defined in [cube/char/motorChar.ts:123](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L123)*
+*Defined in [cube/char/motorChar.ts:123](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L123)*
 
 Primitive motor control.
 
@@ -198,7 +197,7 @@ ___
 
 ▸ **motorControlAccelerationSpecified**(): *void*
 
-*Defined in [cube/char/motorChar.ts:284](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L284)*
+*Defined in [cube/char/motorChar.ts:284](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L284)*
 
 Acceleration specified motor control.
 NOT IMPLEMENTED YET.
@@ -211,7 +210,7 @@ ___
 
 ▸ **motorControlAimSpecified**(`aim`: object, `maxSpeed`: number, `moveType`: 0, `easeType`: 0, `timeout`: number): *void*
 
-*Defined in [cube/char/motorChar.ts:161](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L161)*
+*Defined in [cube/char/motorChar.ts:161](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L161)*
 
 Aim specified motor control.
 
@@ -254,7 +253,7 @@ ___
 
 ▸ **motorControlMultipleAimSpecified**(`aims`: object[], `maxSpeed`: number, `moveType`: 0, `easeType`: 0, `isAppend`: boolean, `timeout`: number): *void*
 
-*Defined in [cube/char/motorChar.ts:225](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L225)*
+*Defined in [cube/char/motorChar.ts:225](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L225)*
 
 Multiple aim specified motor control.
 
@@ -277,7 +276,7 @@ ___
 
 ▸ **motorControlTimeSpecified**(`left`: number, `right`: number, `duration`: number): *void*
 
-*Defined in [cube/char/motorChar.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L134)*
+*Defined in [cube/char/motorChar.ts:134](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L134)*
 
 Time specified motor control.
 
@@ -301,7 +300,7 @@ ___
 
 *Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/motorChar.ts:70](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/motorChar.ts#L70)*
+*Defined in [cube/char/motorChar.ts:70](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/motorChar.ts#L70)*
 
 Prepare for using motor characteristic function.
 
@@ -319,7 +318,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[readValue](cubechar.md#readvalue)*
 
-*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L110)*
+*Defined in [cube/char/char.ts:110](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L110)*
 
 Read value from remote GATT Characteristics.
 
@@ -337,7 +336,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[setFrameRate](cubechar.md#setframerate)*
 
-*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L134)*
+*Defined in [cube/char/char.ts:134](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L134)*
 
 Set framerate.
 
@@ -359,7 +358,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValue](cubechar.md#writevalue)*
 
-*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L55)*
+*Defined in [cube/char/char.ts:55](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L55)*
 
 Write value to remote GATT Characteristics.
 
@@ -381,7 +380,7 @@ ___
 
 *Inherited from [CubeChar](cubechar.md).[writeValueCore](cubechar.md#writevaluecore)*
 
-*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49eab6e/src/cube/char/char.ts#L78)*
+*Defined in [cube/char/char.ts:78](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L78)*
 
 Write value to remote GATT Characteristics. Core function.
 
