@@ -9,7 +9,7 @@ module.exports = {
   themeConfig: {
     image: 'images/logo-a.png',
     algolia: {
-      apiKey: '40d278d81283e5fccabca0c4e788be6d',
+      apiKey: '935d5b3d7f1761f069b079400c211bdc',
       appId: '42Y1BH8W15',
       indexName: 'p5_toio',
     },
