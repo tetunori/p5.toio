@@ -4,6 +4,16 @@ export type sensorInfo = {
   posture: string;
   shakeLevel: number;
   magnet: string;
+  poseAngle: {
+    type: string;
+    roll: number;
+    pitch: number;
+    yaw: number;
+    q0: number;
+    q1: number;
+    q2: number;
+    q3: number;
+  };
 };
 
 export type CubeFlatListner = (isFlat: boolean) => void;
@@ -12,13 +22,15 @@ export type CubeDoubleTapListner = () => void;
 export type CubePostureListner = (posture: string) => void;
 export type CubeShakeLevelListner = (shakeLevel: number) => void;
 export type CubeMagnetListner = (magnet: string) => void;
+export type CubePoseAngleListner = (poseAngle: object) => void;
 export type CubeSensorCharListner =
   | CubeFlatListner
   | CubeCollisionListner
   | CubeDoubleTapListner
   | CubePostureListner
   | CubeShakeLevelListner
-  | CubeMagnetListner;
+  | CubeMagnetListner
+  | CubePoseAngleListner;
 
 export class CubeSensorChar extends CubeChar {
   readonly uuid: string = '10b20106-5b3b-4571-9508-cf3efcd7bbae';
@@ -65,11 +77,29 @@ export class CubeSensorChar extends CubeChar {
     pattern6: 'pattern6',
   } as const;
 
+  /**
+   * Magnet IDs.
+   */
+  static poseNotifyTypeId = {
+    eular: 'eular',
+    quaternion: 'quaternion',
+  } as const;
+
   private sensorInfo: sensorInfo = {
     flat: false,
     posture: CubeSensorChar.postureId.top,
     shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
     magnet: CubeSensorChar.magnetId.noMagnet,
+    poseAngle: {
+      type: CubeSensorChar.poseNotifyTypeId.eular,
+      roll: 0,
+      pitch: 0,
+      yaw: 0,
+      q0: 0,
+      q1: 0,
+      q2: 0,
+      q3: 0,
+    },
   };
 
   private cbFlat: CubeFlatListner[] = [];
@@ -78,6 +108,7 @@ export class CubeSensorChar extends CubeChar {
   private cbPostureChanged: CubePostureListner[] = [];
   private cbShakeLevelChanged: CubeShakeLevelListner[] = [];
   private cbMagnetChanged: CubeMagnetListner[] = [];
+  private cbPoseAngleChanged: CubePoseAngleListner[] = [];
 
   /**
    * Prepare for using sensor characteristic function.
@@ -151,6 +182,15 @@ export class CubeSensorChar extends CubeChar {
   }
 
   /**
+   * Get current pose angle status.
+   *
+   * @returns object of pose angle status.
+   */
+  public getPoseAngleSatus(): object {
+    return this.sensorInfo.poseAngle;
+  }
+
+  /**
    * Read sensorInfo from Cube.
    *
    * @returns Promise. `resolve` handler says that sensorInfo was correctly got.
@@ -180,6 +220,8 @@ export class CubeSensorChar extends CubeChar {
     const INFO_TYPE_INDEX = 0;
     const INFO_TYPE_DETECTED = 1;
     const INFO_TYPE_MAGNET = 2;
+    const INFO_TYPE_POSE_ANGLE = 3;
+
     if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_DETECTED) {
       const FLAT_INDEX = 1;
       const COLLISION_INDEX = 2;
@@ -230,6 +272,42 @@ export class CubeSensorChar extends CubeChar {
           cb(this.sensorInfo.magnet);
         }
       }
+    } else if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_POSE_ANGLE) {
+      const TYPE_EULAR = 0x01;
+      const TYPE_QUATERNION = 0x02;
+
+      const NOTIFY_TYPE_INDEX = 1;
+      const notType = data.getUint8(NOTIFY_TYPE_INDEX);
+      if (notType === TYPE_EULAR) {
+        this.sensorInfo.poseAngle.type = CubeSensorChar.poseNotifyTypeId.eular;
+
+        const ROLL_INDEX = 2;
+        const PITCH_INDEX = 4;
+        const YAW_INDEX = 6;
+
+        this.sensorInfo.poseAngle.roll = data.getInt16(ROLL_INDEX, true);
+        this.sensorInfo.poseAngle.pitch = data.getInt16(PITCH_INDEX, true);
+        this.sensorInfo.poseAngle.yaw = data.getInt16(YAW_INDEX, true);
+      } else if (notType === TYPE_QUATERNION) {
+        this.sensorInfo.poseAngle.type = CubeSensorChar.poseNotifyTypeId.quaternion;
+
+        const Q0_INDEX = 2;
+        const Q1_INDEX = 4;
+        const Q2_INDEX = 6;
+        const Q3_INDEX = 8;
+
+        this.sensorInfo.poseAngle.q0 = data.getInt16(Q0_INDEX, true) / 10000;
+        this.sensorInfo.poseAngle.q1 = data.getInt16(Q1_INDEX, true) / 10000;
+        this.sensorInfo.poseAngle.q2 = data.getInt16(Q2_INDEX, true) / 10000;
+        this.sensorInfo.poseAngle.q3 = data.getInt16(Q3_INDEX, true) / 10000;
+      } else {
+        // Illegal type. Ignore...
+        return;
+      }
+
+      for (const cb of this.cbPoseAngleChanged) {
+        cb(this.sensorInfo.poseAngle);
+      }
     }
   }
 
@@ -252,12 +330,16 @@ export class CubeSensorChar extends CubeChar {
     for (const cb of this.cbMagnetChanged) {
       cb(this.sensorInfo.magnet);
     }
+
+    for (const cb of this.cbPoseAngleChanged) {
+      cb(this.sensorInfo.poseAngle);
+    }
   }
 
   /**
    * Register callback.
    *
-   * @param type Specify the type from 'flat', 'collision', 'doubletap', 'magnet' or 'posture'.
+   * @param type Specify the type from 'flat', 'collision', 'doubletap', 'magnet', 'poseangle'  or 'posture'.
    * @param listener: Callback function with param info: sensorInfo and return: void.
    *
    */
@@ -268,6 +350,7 @@ export class CubeSensorChar extends CubeChar {
     const TYPE_POSTURE = 'posture';
     const TYPE_SHAKE_LEVEL = 'shakelevel';
     const TYPE_MAGNET = 'magnet';
+    const TYPE_POSE_ANGLE = 'poseangle';
 
     if (type === TYPE_FLAT) {
       this.cbFlat.push(listener as CubeFlatListner);
@@ -281,6 +364,8 @@ export class CubeSensorChar extends CubeChar {
       this.cbShakeLevelChanged.push(listener as CubeShakeLevelListner);
     } else if (type === TYPE_MAGNET) {
       this.cbMagnetChanged.push(listener as CubeMagnetListner);
+    } else if (type === TYPE_POSE_ANGLE) {
+      this.cbPoseAngleChanged.push(listener as CubePoseAngleListner);
     }
     this.callbackCurrentInfo();
   }

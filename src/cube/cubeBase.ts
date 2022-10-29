@@ -208,6 +208,6 @@ export class CubeBase implements CubeBaseIF {
    *
    */
   private initializeOnConnet(): void {
-    this.configChar?.enableMagnet();
+    // No op.
   }
 }

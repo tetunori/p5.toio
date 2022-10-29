@@ -1411,6 +1411,15 @@ class CubeSensorChar extends CubeChar {
             posture: CubeSensorChar.postureId.top,
             shakeLevel: CubeSensorChar.shakeLevelId.noDetection,
             magnet: CubeSensorChar.magnetId.noMagnet,
+            poseAngle: {
+                roll: 0,
+                pitch: 0,
+                yaw: 0,
+                q0: 0,
+                q1: 0,
+                q2: 0,
+                q3: 0,
+            },
         };
         this.cbFlat = [];
         this.cbCollision = [];
@@ -1418,6 +1427,7 @@ class CubeSensorChar extends CubeChar {
         this.cbPostureChanged = [];
         this.cbShakeLevelChanged = [];
         this.cbMagnetChanged = [];
+        this.cbPoseAngleChanged = [];
     }
     prepare() {
         return new Promise((resolve, reject) => {
@@ -1459,6 +1469,9 @@ class CubeSensorChar extends CubeChar {
     getMagnetSatus() {
         return this.sensorInfo.magnet;
     }
+    getPoseAngleSatus() {
+        return this.sensorInfo.poseAngle;
+    }
     readSensorInfo() {
         return new Promise((resolve, reject) => {
             this.readValue()
@@ -1476,6 +1489,7 @@ class CubeSensorChar extends CubeChar {
         const INFO_TYPE_INDEX = 0;
         const INFO_TYPE_DETECTED = 1;
         const INFO_TYPE_MAGNET = 2;
+        const INFO_TYPE_POSE_ANGLE = 3;
         if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_DETECTED) {
             const FLAT_INDEX = 1;
             const COLLISION_INDEX = 2;
@@ -1520,6 +1534,37 @@ class CubeSensorChar extends CubeChar {
                 }
             }
         }
+        else if (data.getUint8(INFO_TYPE_INDEX) === INFO_TYPE_POSE_ANGLE) {
+            const TYPE_EULAR = 0x01;
+            const TYPE_QUATERNION = 0x02;
+            const NOTIFY_TYPE_INDEX = 1;
+            const notType = data.getUint8(NOTIFY_TYPE_INDEX);
+            if (notType === TYPE_EULAR) {
+                const ROLL_INDEX = 2;
+                const PITCH_INDEX = 4;
+                const YAW_INDEX = 6;
+                this.sensorInfo.poseAngle.roll = data.getInt16(ROLL_INDEX, true);
+                this.sensorInfo.poseAngle.pitch = data.getInt16(PITCH_INDEX, true);
+                this.sensorInfo.poseAngle.yaw = data.getInt16(YAW_INDEX, true);
+            }
+            else if (notType === TYPE_QUATERNION) {
+                const Q0_INDEX = 2;
+                const Q1_INDEX = 4;
+                const Q2_INDEX = 6;
+                const Q3_INDEX = 8;
+                this.sensorInfo.poseAngle.q0 = data.getInt16(Q0_INDEX, true) / 10000;
+                this.sensorInfo.poseAngle.q1 = data.getInt16(Q1_INDEX, true) / 10000;
+                this.sensorInfo.poseAngle.q2 = data.getInt16(Q2_INDEX, true) / 10000;
+                this.sensorInfo.poseAngle.q3 = data.getInt16(Q3_INDEX, true) / 10000;
+                console.log(this.sensorInfo.poseAngle);
+            }
+            else {
+                return;
+            }
+            for (const cb of this.cbPoseAngleChanged) {
+                cb(this.sensorInfo.poseAngle);
+            }
+        }
     }
     callbackCurrentInfo() {
         for (const cb of this.cbFlat) {
@@ -1534,6 +1579,9 @@ class CubeSensorChar extends CubeChar {
         for (const cb of this.cbMagnetChanged) {
             cb(this.sensorInfo.magnet);
         }
+        for (const cb of this.cbPoseAngleChanged) {
+            cb(this.sensorInfo.poseAngle);
+        }
     }
     addEventListener(type, listener) {
         const TYPE_FLAT = 'flat';
@@ -1542,6 +1590,7 @@ class CubeSensorChar extends CubeChar {
         const TYPE_POSTURE = 'posture';
         const TYPE_SHAKE_LEVEL = 'shakelevel';
         const TYPE_MAGNET = 'magnet';
+        const TYPE_POSE_ANGLE = 'poseangle';
         if (type === TYPE_FLAT) {
             this.cbFlat.push(listener);
         }
@@ -1559,6 +1608,9 @@ class CubeSensorChar extends CubeChar {
         }
         else if (type === TYPE_MAGNET) {
             this.cbMagnetChanged.push(listener);
+        }
+        else if (type === TYPE_POSE_ANGLE) {
+            this.cbPoseAngleChanged.push(listener);
         }
         this.callbackCurrentInfo();
     }
@@ -1705,6 +1757,7 @@ class CubeConfigChar extends CubeChar {
         this.cmdId = {
             requestBleProtocolVersion: 0x01,
             configMagnet: 0x1b,
+            configPoseAngle: 0x1d,
         };
         this.magConfigId = {
             disable: 0x00,
@@ -1785,12 +1838,36 @@ class CubeConfigChar extends CubeChar {
         const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.disable]);
         this.writeValue(buf);
     }
+    enablePoseAngle(notifyType = CubeConfigChar.posAngleNotifyTypeId.euler) {
+        const RESERVED = 0x00;
+        const DURATION = 0x01;
+        const NOTIFY_ALWAYS = 0x00;
+        const buf = new Uint8Array([
+            this.cmdId.configPoseAngle,
+            RESERVED,
+            notifyType,
+            DURATION,
+            NOTIFY_ALWAYS,
+        ]);
+        this.writeValue(buf);
+    }
+    disablePoseAngle() {
+        const RESERVED = 0x00;
+        const DURATION = 0x00;
+        const PADDING = 0x00;
+        const buf = new Uint8Array([this.cmdId.configPoseAngle, RESERVED, PADDING, DURATION, PADDING]);
+        this.writeValue(buf);
+    }
     requestBleProtocolVersion() {
         const RESERVED = 0x00;
         const buf = new Uint8Array([this.cmdId.requestBleProtocolVersion, RESERVED]);
         this.writeValue(buf);
     }
 }
+CubeConfigChar.posAngleNotifyTypeId = {
+    euler: 0x01,
+    quaternion: 0x02,
+};
 class CubeBase {
     constructor(device) {
         this.idChar = undefined;
@@ -1895,8 +1972,6 @@ class CubeBase {
         (_h = this.configChar) === null || _h === void 0 ? void 0 : _h.setFrameRate(fps);
     }
     initializeOnConnet() {
-        var _a;
-        (_a = this.configChar) === null || _a === void 0 ? void 0 : _a.enableMagnet();
     }
 }
 class Cube {
@@ -2259,6 +2334,16 @@ class Cube {
             char === null || char === void 0 ? void 0 : char.disableMagnet();
         }
     }
+    configPoseAngle(enable, notifyType = Cube.posAngleNotifyTypeId.euler) {
+        var _a;
+        const char = (_a = this.cube) === null || _a === void 0 ? void 0 : _a.configChar;
+        if (enable) {
+            char === null || char === void 0 ? void 0 : char.enablePoseAngle(notifyType);
+        }
+        else {
+            char === null || char === void 0 ? void 0 : char.disablePoseAngle();
+        }
+    }
 }
 Cube.seId = CubeSoundChar.seId;
 Cube.postureId = CubeSensorChar.postureId;
@@ -2267,6 +2352,7 @@ Cube.magnetId = CubeSensorChar.magnetId;
 Cube.moveTypeId = CubeMotorChar.moveTypeId;
 Cube.easeTypeId = CubeMotorChar.easeTypeId;
 Cube.angleTypeId = CubeMotorChar.angleTypeId;
+Cube.posAngleNotifyTypeId = CubeConfigChar.posAngleNotifyTypeId;
 Cube.rotateTypeId = {
     efficient: 'efficient',
     clockwise: 'clockwise',

@@ -16,6 +16,7 @@ export class CubeConfigChar extends CubeChar {
   private cmdId = {
     requestBleProtocolVersion: 0x01,
     configMagnet: 0x1b,
+    configPoseAngle: 0x1d,
   } as const;
 
   /**
@@ -24,6 +25,14 @@ export class CubeConfigChar extends CubeChar {
   private magConfigId = {
     disable: 0x00,
     enable: 0x01,
+  } as const;
+
+  /**
+   * Pose angle notification type IDs.
+   */
+  static poseAngleNotifyTypeId = {
+    euler: 0x01,
+    quaternion: 0x02,
   } as const;
 
   private configInfo: configInfo = {
@@ -144,6 +153,35 @@ export class CubeConfigChar extends CubeChar {
   public disableMagnet(): void {
     const RESERVED = 0x00;
     const buf = new Uint8Array([this.cmdId.configMagnet, RESERVED, this.magConfigId.disable]);
+    this.writeValue(buf);
+  }
+
+  /**
+   * Enable pose angle function.
+   */
+  public enablePoseAngle(notifyType = CubeConfigChar.poseAngleNotifyTypeId.euler): void {
+    const RESERVED = 0x00;
+    const DURATION = 0x01; // 10 msec
+    const NOTIFY_ALWAYS = 0x00;
+    const buf = new Uint8Array([
+      this.cmdId.configPoseAngle,
+      RESERVED,
+      notifyType,
+      DURATION,
+      NOTIFY_ALWAYS,
+    ]);
+
+    this.writeValue(buf);
+  }
+
+  /**
+   * Disable pose angle function.
+   */
+  public disablePoseAngle(): void {
+    const RESERVED = 0x00;
+    const DURATION = 0x00; // Stop pose angle notification.
+    const PADDING = 0x00;
+    const buf = new Uint8Array([this.cmdId.configPoseAngle, RESERVED, PADDING, DURATION, PADDING]);
     this.writeValue(buf);
   }
 

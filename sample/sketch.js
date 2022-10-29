@@ -52,7 +52,10 @@ function mouseClicked() {
   P5tCube.connectNewP5tCube().then( cube => {
     gCubes.push( cube );
     cube.turnLightOn( 'white' );
-    
+    cube.configPoseAngle( true );
+    // cube.configPoseAngle( true, P5tCube.poseAngleNotifyTypeId.euler );
+    // cube.configPoseAngle( true, P5tCube.poseAngleNotifyTypeId.quaternion );
+    // cube.configMagnet(true);
   } );
 
   // let fs = fullscreen();
@@ -151,6 +154,7 @@ function keyPressed() {
           console.log(cube.posture);
           console.log(cube.shakeLevel);
           console.log(cube.magnet);
+          console.log(cube.poseAngle);
           break;
         case 68:
           console.log(cube.bleProtocolVersion);
@@ -208,6 +212,8 @@ function keyPressed() {
           cube.addEventListener(type, (shakeLevel)=>{console.log(type, shakeLevel)});
           break;
         case 219:
+          // type = 'sensormagnetchange';
+          // cube.addEventListener(type, (magnet)=>{console.log(type, magnet)});
           type = 'sensormagnetchange';
           cube.addEventListener(type, (magnet)=>{console.log(type, magnet)});
           break;
