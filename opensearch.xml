@@ -4,8 +4,8 @@
   <ShortName>p5.toio</ShortName>
   <Description>Search p5.toio</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://tetunori.github.io/images/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://tetunori.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://tetunori.github.io/opensearch.xml" />
-  <moz:SearchForm>https://tetunori.github.io</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://tetunori.github.io/p5.toio/images/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://tetunori.github.io/p5.toio/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://tetunori.github.io/p5.toio/opensearch.xml" />
+  <moz:SearchForm>https://tetunori.github.io/p5.toio/</moz:SearchForm>
 </OpenSearchDescription>
