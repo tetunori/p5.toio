@@ -30,7 +30,7 @@ jobs:
     - name: Website Installation
       run: cd website && yarn
     - name: Generate TypeDoc
-      run: yarn docs2
+      run: cd .. && yarn docs2
     - name: Docusaurus Build
       run: cd website && yarn run build
       env:
