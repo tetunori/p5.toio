@@ -9,12 +9,9 @@ module.exports = {
   themeConfig: {
     image: 'images/logo-a.png',
     algolia: {
-      apiKey: '40d278d81283e5fccabca0c4e788be6d',
+      apiKey: '935d5b3d7f1761f069b079400c211bdc',
+      appId: '42Y1BH8W15',
       indexName: 'p5_toio',
-    },
-    googleAnalytics: {
-      trackingID: 'UA-167461637-1',
-      anonymizeIP: true,
     },
     navbar: {
       title: 'p5.toio',
@@ -22,7 +19,7 @@ module.exports = {
         alt: 'mini logo',
         src: 'images/mini-logo.png',
       },
-      links: [
+      items: [
         {
           to: 'docs/intro',
           activeBasePath: 'docs',
@@ -96,13 +93,16 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          homePageId: 'docs/intro',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/tetunori/p5.toio/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        googleAnalytics: {
+          trackingID: 'UA-167461637-1',
+          anonymizeIP: true,
         },
       },
     ],

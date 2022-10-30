@@ -7,14 +7,19 @@ import {
   CubeCollisionListner,
   CubeDoubleTapListner,
   CubePostureListner,
+  CubeShakeLevelListner,
+  CubeMagnetListner,
   CubeSensorChar,
 } from './char/sensorChar';
 import { CubeMotorChar } from './char/motorChar';
 import { CubeSoundChar } from './char/soundChar';
 import { CubeBase, CubeListner } from './cubeBase';
+
 export class Cube {
   static seId = CubeSoundChar.seId;
   static postureId = CubeSensorChar.postureId;
+  static shakeLevelId = CubeSensorChar.shakeLevelId;
+  static magnetId = CubeSensorChar.magnetId;
   static moveTypeId = CubeMotorChar.moveTypeId;
   static easeTypeId = CubeMotorChar.easeTypeId;
   static angleTypeId = CubeMotorChar.angleTypeId;
@@ -33,13 +38,18 @@ export class Cube {
   public standardId: string | undefined = undefined;
   public flat: boolean | undefined = undefined;
   public posture: string | undefined = undefined;
+  public shakeLevel: number | undefined = undefined;
+  public magnet: string | undefined = undefined;
   public buttonPressed: boolean | undefined = undefined;
   public batteryLevel: number | undefined = undefined;
+  public bleProtocolVersion: string | undefined = undefined;
+  public name: string | undefined = undefined;
 
   protected cube: CubeBase | undefined = undefined;
 
   constructor(cube: CubeBase) {
     this.cube = cube;
+    this.name = cube.name;
     this.registCallback();
   }
 
@@ -86,6 +96,8 @@ export class Cube {
    *  - 'sensorcollision'
    *  - 'sensordoubletap'
    *  - 'sensorposturechange'
+   *  - 'sensorshakelevelchange'
+   *  - 'sensormagnetchange'
    *  - 'positionid'
    *  - 'standardid'
    * @param listener: Callback function.
@@ -99,6 +111,8 @@ export class Cube {
     const TYPE_SENSOR_COLLISION = 'sensorcollision';
     const TYPE_SENSOR_DTAP = 'sensordoubletap';
     const TYPE_SENSOR_POSTURE = 'sensorposturechange';
+    const TYPE_SENSOR_SHAKE_LEVEL = 'sensorshakelevelchange';
+    const TYPE_SENSOR_MAGNET = 'sensormagnetchange';
     const TYPE_ID_POSITION = 'positionid';
     const TYPE_ID_STANDARD = 'standardid';
 
@@ -130,6 +144,12 @@ export class Cube {
       case TYPE_SENSOR_POSTURE:
         this.cube?.sensorChar?.addEventListener('posture', listener as CubePostureListner);
         break;
+      case TYPE_SENSOR_SHAKE_LEVEL:
+        this.cube?.sensorChar?.addEventListener('shakelevel', listener as CubeShakeLevelListner);
+        break;
+      case TYPE_SENSOR_MAGNET:
+        this.cube?.sensorChar?.addEventListener('magnet', listener as CubeMagnetListner);
+        break;
       case TYPE_ID_POSITION:
         this.cube?.idChar?.addEventListener('positionid', listener as CubeIdCharListner);
         break;
@@ -150,8 +170,14 @@ export class Cube {
     this.cube?.sensorChar?.addEventListener('collision', this.onCollisionOccurred.bind(this));
     this.cube?.sensorChar?.addEventListener('doubletap', this.onDoubleTapped.bind(this));
     this.cube?.sensorChar?.addEventListener('posture', this.onPostureChanged.bind(this));
+    this.cube?.sensorChar?.addEventListener('shakelevel', this.onShakeLevelChanged.bind(this));
+    this.cube?.sensorChar?.addEventListener('magnet', this.onMagnetChanged.bind(this));
     this.cube?.idChar?.addEventListener('positionid', this.onPositionIdChanged.bind(this));
     this.cube?.idChar?.addEventListener('standardid', this.onStandardIdChanged.bind(this));
+    this.cube?.configChar?.addEventListener(
+      'protocolversion',
+      this.onProtocolVersionNotified.bind(this),
+    );
   }
 
   /**
@@ -256,6 +282,36 @@ export class Cube {
   }
 
   /**
+   * For prepared callback function `cubeShakeLevelChanged`.
+   */
+  private onShakeLevelChanged(shakeLevel: number): void {
+    this.shakeLevel = shakeLevel;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    if (typeof cubeShakeLevelChanged === 'function') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      cubeShakeLevelChanged(shakeLevel);
+    }
+  }
+
+  /**
+   * For prepared callback function `cubeMagnetChanged`.
+   */
+  private onMagnetChanged(magnet: string): void {
+    this.magnet = magnet;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    if (typeof cubeMagnetChanged === 'function') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      cubeMagnetChanged(magnet);
+    }
+  }
+
+  /**
    * For prepared callback function `cubePositionIdChanged`.
    */
   protected onPositionIdChanged(info: positionIdInfo): void {
@@ -294,6 +350,13 @@ export class Cube {
       // @ts-ignore
       cubeStandardIdChanged(info);
     }
+  }
+
+  /**
+   * For setting protocol version.
+   */
+  private onProtocolVersionNotified(version: string): void {
+    this.bleProtocolVersion = version;
   }
 
   /**
@@ -492,13 +555,8 @@ export class Cube {
    * @param duration Motor control duration in msec. 0-2550( 0: Eternally ).
    */
   public rotate(speed: number, duration = 0): void {
-    let left = speed;
-    let right = -speed;
-
-    if (speed < 0) {
-      left = -speed;
-      right = speed;
-    }
+    const left = speed;
+    const right = -speed;
     return this.cube?.motorChar?.motorControlTimeSpecified(left, right, duration);
   }
 
@@ -710,6 +768,21 @@ export class Cube {
     }
 
     return normalizedAngle;
+  }
+
+  /**
+   * Enable/Disable magnet function.
+   *
+   * @param enable boolean value. set `true` to enable and `false` to disable.
+   *
+   */
+  public configMagnet(enable: boolean): void {
+    const char = this.cube?.configChar;
+    if (enable) {
+      char?.enableMagnet();
+    } else {
+      char?.disableMagnet();
+    }
   }
 
   /**

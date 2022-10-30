@@ -23,7 +23,7 @@ function mouseClicked() {
 ```
 Then, we can fully access to any API of `p5.toio`.
 
-## Issue a P5tCube API
+## Use a P5tCube API
 Basically, please refer to the [`P5tCube` API reference Page](https://tetunori.github.io/p5.toio/docs/cube/classes/p5tcube/). Here is a simple example.
 
 ### Example: Turn the light on
@@ -31,10 +31,10 @@ Basically, please refer to the [`P5tCube` API reference Page](https://tetunori.g
 // Turn the light on with white
 cube?.turnLightOn( 'white' );
 ```
-OK. Super simple. You can confirm the result by p5.js Web Editor.  
-**[p5.js Web Editor Sample: Turn Light On](https://editor.p5js.org/tetunori/sketches/2J4HYQA35)**
+OK. Super simple. You can confirm the result by OpenProcessing.  
+**[OpenProcessing Sample: Turn Light On](https://openprocessing.org/sketch/1716380)**
 
-## Issue a P5tId API
+## Use a P5tId API
 For `P5tId` class, refer to the [`P5tId` API reference Page](https://tetunori.github.io/p5.toio/docs/id/classes/p5tid/). And here is another sample.
 
 ### Example: Is on the tile mat
@@ -49,4 +49,4 @@ if (P5tId.ColorTileMat.isOnMat(cube?.x, cube?.y)) {
 }
 ```
 Also, you can play immediately from the following link.  
-**[p5.js Web Editor Sample: Is on Tile Mat](https://editor.p5js.org/tetunori/sketches/8jqqVPs3B)**
+**[OpenProcessing Sample: Is on Tile Mat](https://openprocessing.org/sketch/1716385)**

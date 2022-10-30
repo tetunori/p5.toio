@@ -7,7 +7,7 @@ interface CubeCharIF {
 
 export class CubeChar implements CubeCharIF {
   protected uuid = ''; // To be override
-  protected characteristic: BluetoothRemoteGATTCharacteristic | undefined = undefined;
+  protected characteristic!: BluetoothRemoteGATTCharacteristic;
 
   protected errStrInProgress = 'GATT operation already in progress.';
 
@@ -82,27 +82,23 @@ export class CubeChar implements CubeCharIF {
         resolve('writeValue ignored because it reaches max retry count');
       }
 
-      if (this.characteristic !== undefined) {
-        this.characteristic
-          .writeValue(buf)
-          .then(() => {
-            resolve('writeValue resolved');
-          })
-          .catch((error) => {
-            if (error.message.indexOf(this.errStrInProgress) !== -1) {
-              // Retry
-              clearTimeout(this.timerID);
-              this.timerID = window.setTimeout(
-                this.writeValueCore.bind(this, buf, countRetry + 1),
-                this.retryInterval,
-              );
-            } else {
-              reject(error);
-            }
-          });
-      } else {
-        reject(new Error('characteristic does not exist.'));
-      }
+      this.characteristic
+        ?.writeValue(buf)
+        .then(() => {
+          resolve('writeValue resolved');
+        })
+        .catch((error) => {
+          if (error.message.indexOf(this.errStrInProgress) !== -1) {
+            // Retry
+            clearTimeout(this.timerID);
+            this.timerID = window.setTimeout(
+              this.writeValueCore.bind(this, buf, countRetry + 1),
+              this.retryInterval,
+            );
+          } else {
+            reject(error);
+          }
+        });
     });
   }
 
@@ -113,24 +109,20 @@ export class CubeChar implements CubeCharIF {
    */
   public readValue(): Promise<DataView> {
     return new Promise((resolve, reject) => {
-      if (this.characteristic !== undefined) {
-        this.characteristic
-          .readValue()
-          .then((dataView) => {
-            resolve(dataView);
-          })
-          .catch((error) => {
-            if (error.message.indexOf(this.errStrInProgress) !== -1) {
-              // Retry
-              clearTimeout(this.timerID);
-              this.timerID = window.setTimeout(this.readValue.bind(this), this.retryInterval);
-            } else {
-              reject(error);
-            }
-          });
-      } else {
-        reject(new Error('characteristic does not exist.'));
-      }
+      this.characteristic
+        ?.readValue()
+        .then((dataView) => {
+          resolve(dataView);
+        })
+        .catch((error) => {
+          if (error.message.indexOf(this.errStrInProgress) !== -1) {
+            // Retry
+            clearTimeout(this.timerID);
+            this.timerID = window.setTimeout(this.readValue.bind(this), this.retryInterval);
+          } else {
+            reject(error);
+          }
+        });
     });
   }
 

@@ -9,7 +9,7 @@ sidebar_label: Examples
 // Turn the light on with white
 cube?.turnLightOn( 'white' );
 ```
-**[p5.js Web Editor Sample: Turn Light On](https://editor.p5js.org/tetunori/sketches/2J4HYQA35)**
+**[OpenProcessing Sample: Turn Light On](https://openprocessing.org/sketch/1716380)**
 
 ## Example 2: Play MIDI melody
 ```javascript
@@ -20,7 +20,7 @@ cube?.playMelody( [
   { note: 0x40, duration: 0x1E } 
 ] );
 ```
-**[p5.js Web Editor Sample: Play MIDI melody](https://editor.p5js.org/tetunori/sketches/yfFYiyMRx)**
+**[OpenProcessing Sample: Play MIDI melody](https://openprocessing.org/sketch/1716390)**
 
 ## Example 3: Interaction with mouse X.
 ```javascript
@@ -32,7 +32,7 @@ for( const cube of connectedCubeArray ){
   cube?.turnToXY( x, y, speed );
 }
 ```
-**[p5.js Web Editor Sample: Keep on gazing at mouse point](https://editor.p5js.org/tetunori/sketches/HNZniaSdx)**
+**[OpenProcessing Sample: Keep on gazing at mouse point](https://openprocessing.org/sketch/1716392)**
 
 ## Example 4: Interaction with 2 Cubes.
 ### 4-1: Keep on gazing at the othre Cube
@@ -41,7 +41,7 @@ for( const cube of connectedCubeArray ){
 const speed = 115;
 cubeP?.turnToCube( cubeQ, speed );
 ```
-**[p5.js Web Editor Sample: Keep on gazing at the other Cube](https://editor.p5js.org/tetunori/sketches/wsYXbuRL5)**
+**[OpenProcessing Sample: Keep on gazing at the other Cube](https://openprocessing.org/sketch/1716393)**
 
 ### 4-2: Keep on chasing the othre Cube
 ```javascript
@@ -50,7 +50,7 @@ const moveType = P5tCube.moveTypeId.withoutBack;
 const speed = 80;
 cubeP?.moveToCube( cubeQ, speed, moveType );
 ```
-**[p5.js Web Editor Sample: Keep on chasing the other Cube](https://editor.p5js.org/tetunori/sketches/gSg6D4zGC)**
+**[OpenProcessing Sample: Keep on chasing the other Cube](https://openprocessing.org/sketch/1716396)**
 
 ## Example 5: Get color from ColorTileMat.
 ```javascript
@@ -58,7 +58,7 @@ cubeP?.moveToCube( cubeQ, speed, moveType );
 const color = P5tId.ColorTileMat.getTileColor(cube?.x, cube?.y);
 background( color );
 ```
-**[p5.js Web Editor Sample: Change background color with touched mat color](https://editor.p5js.org/tetunori/sketches/cHerL4iap)**
+**[OpenProcessing Sample: Change background color with touched mat color](https://openprocessing.org/sketch/1716673)**
 
 ## Example 6: Random tile move on SimpleMat.
 ```javascript
@@ -71,11 +71,8 @@ const rowRand = Math.floor( Math.random() * targetMat.matrixRows);
 // Move to random tile.
 cube?.moveTo(targetMat.getTileCenter(rowRand, columnRand), 80);
 ```
-**[p5.js Web Editor Sample: Random tile move on TileMat](https://editor.p5js.org/tetunori/sketches/pEwYvCLW_)**  
+**[OpenProcessing Sample: Move random tiles on TileMat](https://openprocessing.org/sketch/1716674)**  
 Press `Space Key` to move after connection.
-:::warning
-I'm afraid but this sample does not work with alpha-version(0.5.0). Please use beta-versino(0.8.0).
-:::
 
 ## Example 7: Move to start position on RingMat.
 ```javascript
@@ -93,6 +90,6 @@ cubeQ?.moveTo({
   angleType: 0
 }, 80);
 ```
-**[p5.js Web Editor Sample: Move to start position on RingMat.](https://editor.p5js.org/tetunori/sketches/STNvAnVLB)**  
+**[OpenProcessing Sample: Move to start position on RingMat.](https://openprocessing.org/sketch/1716678)**  
 Press `Space Key` to move after connection.
 

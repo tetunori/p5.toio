@@ -4,7 +4,6 @@ title: "CubeBase"
 sidebar_label: "CubeBase"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [CubeBase](cubebase.md)
 
 ## Hierarchy
 
@@ -24,9 +23,11 @@ sidebar_label: "CubeBase"
 
 * [batteryChar](cubebase.md#batterychar)
 * [buttonChar](cubebase.md#buttonchar)
+* [configChar](cubebase.md#configchar)
 * [idChar](cubebase.md#idchar)
 * [lightChar](cubebase.md#lightchar)
 * [motorChar](cubebase.md#motorchar)
+* [name](cubebase.md#name)
 * [sensorChar](cubebase.md#sensorchar)
 * [soundChar](cubebase.md#soundchar)
 
@@ -42,7 +43,7 @@ sidebar_label: "CubeBase"
 
 \+ **new CubeBase**(`device`: BluetoothDevice): *[CubeBase](cubebase.md)*
 
-*Defined in [cube/cubeBase.ts:59](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L59)*
+*Defined in [cube/cubeBase.ts:65](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L65)*
 
 **Parameters:**
 
@@ -60,7 +61,7 @@ Name | Type |
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[batteryChar](../interfaces/cubebaseif.md#batterychar)*
 
-*Defined in [cube/cubeBase.ts:44](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L44)*
+*Defined in [cube/cubeBase.ts:48](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L48)*
 
 ___
 
@@ -70,7 +71,17 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[buttonChar](../interfaces/cubebaseif.md#buttonchar)*
 
-*Defined in [cube/cubeBase.ts:46](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L46)*
+*Defined in [cube/cubeBase.ts:50](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L50)*
+
+___
+
+###  configChar
+
+• **configChar**: *[CubeConfigChar](cubeconfigchar.md) | undefined* = undefined
+
+*Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[configChar](../interfaces/cubebaseif.md#configchar)*
+
+*Defined in [cube/cubeBase.ts:51](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L51)*
 
 ___
 
@@ -80,7 +91,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[idChar](../interfaces/cubebaseif.md#idchar)*
 
-*Defined in [cube/cubeBase.ts:40](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L40)*
+*Defined in [cube/cubeBase.ts:44](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L44)*
 
 ___
 
@@ -90,7 +101,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[lightChar](../interfaces/cubebaseif.md#lightchar)*
 
-*Defined in [cube/cubeBase.ts:42](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L42)*
+*Defined in [cube/cubeBase.ts:46](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L46)*
 
 ___
 
@@ -100,7 +111,15 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[motorChar](../interfaces/cubebaseif.md#motorchar)*
 
-*Defined in [cube/cubeBase.ts:41](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L41)*
+*Defined in [cube/cubeBase.ts:45](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L45)*
+
+___
+
+###  name
+
+• **name**: *string | undefined* = undefined
+
+*Defined in [cube/cubeBase.ts:52](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L52)*
 
 ___
 
@@ -110,7 +129,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[sensorChar](../interfaces/cubebaseif.md#sensorchar)*
 
-*Defined in [cube/cubeBase.ts:43](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L43)*
+*Defined in [cube/cubeBase.ts:47](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L47)*
 
 ___
 
@@ -120,7 +139,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md).[soundChar](../interfaces/cubebaseif.md#soundchar)*
 
-*Defined in [cube/cubeBase.ts:45](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L45)*
+*Defined in [cube/cubeBase.ts:49](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L49)*
 
 ## Methods
 
@@ -130,7 +149,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md)*
 
-*Defined in [cube/cubeBase.ts:70](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L70)*
+*Defined in [cube/cubeBase.ts:77](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L77)*
 
 Connect to the toio™Core Cube. Internally, this function includes GATT connect and prepare for all of the Characteristics.
 
@@ -146,7 +165,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md)*
 
-*Defined in [cube/cubeBase.ts:131](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L131)*
+*Defined in [cube/cubeBase.ts:140](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L140)*
 
 Disconnet from the toio™Core Cube.
 
@@ -160,7 +179,7 @@ ___
 
 *Implementation of [CubeBaseIF](../interfaces/cubebaseif.md)*
 
-*Defined in [cube/cubeBase.ts:185](https://github.com/tetunori/p5.toio/blob/f95e57b/src/cube/cubeBase.ts#L185)*
+*Defined in [cube/cubeBase.ts:195](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/cubeBase.ts#L195)*
 
 Set framerate.
 

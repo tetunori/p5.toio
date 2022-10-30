@@ -22,7 +22,7 @@ cube?.addEventListener(type, (posture)=>{
   console.log(type, posture);
 });
 ```
-**[p5.js Web Editor Sample: addEventListner](https://editor.p5js.org/tetunori/sketches/xTCH-scLp)**
+**[p5.js Web Editor Sample: addEventListner](https://openprocessing.org/sketch/1716681)**
 
 ## Example: Definition of callback
 If you define callback functions as below, it will call when notified.
@@ -35,7 +35,7 @@ const cubeStandardIdChanged = (info) => {
   console.log('cubeStandardIdChanged!', info);
 }
 ```
-**[p5.js Web Editor Sample: Callback definition](https://editor.p5js.org/tetunori/sketches/tlc8-qE9d)**
+**[p5.js Web Editor Sample: Callback definition](https://openprocessing.org/sketch/1716683)**
 
 Here are the all callback function name.
 ```js

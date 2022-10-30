@@ -1,7 +1,7 @@
 ---
-id: "cubesoundchar"
-title: "CubeSoundChar"
-sidebar_label: "CubeSoundChar"
+id: "cubeconfigchar"
+title: "CubeConfigChar"
+sidebar_label: "CubeConfigChar"
 ---
 
 
@@ -9,7 +9,7 @@ sidebar_label: "CubeSoundChar"
 
 * [CubeChar](cubechar.md)
 
-  ↳ **CubeSoundChar**
+  ↳ **CubeConfigChar**
 
 ## Implements
 
@@ -19,31 +19,31 @@ sidebar_label: "CubeSoundChar"
 
 ### Constructors
 
-* [constructor](cubesoundchar.md#constructor)
+* [constructor](cubeconfigchar.md#constructor)
 
 ### Properties
 
-* [characteristic](cubesoundchar.md#protected-characteristic)
-* [errStrInProgress](cubesoundchar.md#protected-errstrinprogress)
-* [uuid](cubesoundchar.md#readonly-uuid)
-* [seId](cubesoundchar.md#static-seid)
+* [characteristic](cubeconfigchar.md#protected-characteristic)
+* [errStrInProgress](cubeconfigchar.md#protected-errstrinprogress)
+* [uuid](cubeconfigchar.md#readonly-uuid)
 
 ### Methods
 
-* [playMelody](cubesoundchar.md#playmelody)
-* [playSE](cubesoundchar.md#playse)
-* [playSingleNote](cubesoundchar.md#playsinglenote)
-* [prepare](cubesoundchar.md#prepare)
-* [readValue](cubesoundchar.md#readvalue)
-* [setFrameRate](cubesoundchar.md#setframerate)
-* [writeValue](cubesoundchar.md#writevalue)
-* [writeValueCore](cubesoundchar.md#writevaluecore)
+* [addEventListener](cubeconfigchar.md#addeventlistener)
+* [disableMagnet](cubeconfigchar.md#disablemagnet)
+* [enableMagnet](cubeconfigchar.md#enablemagnet)
+* [getProtocolVersion](cubeconfigchar.md#getprotocolversion)
+* [prepare](cubeconfigchar.md#prepare)
+* [readValue](cubeconfigchar.md#readvalue)
+* [setFrameRate](cubeconfigchar.md#setframerate)
+* [writeValue](cubeconfigchar.md#writevalue)
+* [writeValueCore](cubeconfigchar.md#writevaluecore)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new CubeSoundChar**(`service`: BluetoothRemoteGATTService): *[CubeSoundChar](cubesoundchar.md)*
+\+ **new CubeConfigChar**(`service`: BluetoothRemoteGATTService): *[CubeConfigChar](cubeconfigchar.md)*
 
 *Inherited from [CubeChar](cubechar.md).[constructor](cubechar.md#constructor)*
 
@@ -55,7 +55,7 @@ Name | Type |
 ------ | ------ |
 `service` | BluetoothRemoteGATTService |
 
-**Returns:** *[CubeSoundChar](cubesoundchar.md)*
+**Returns:** *[CubeConfigChar](cubeconfigchar.md)*
 
 ## Properties
 
@@ -81,112 +81,68 @@ ___
 
 ### `Readonly` uuid
 
-• **uuid**: *string* = "10b20104-5b3b-4571-9508-cf3efcd7bbae"
+• **uuid**: *string* = "10b201ff-5b3b-4571-9508-cf3efcd7bbae"
 
 *Overrides [CubeChar](cubechar.md).[uuid](cubechar.md#protected-uuid)*
 
-*Defined in [cube/char/soundChar.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/soundChar.ts#L4)*
-
-___
-
-### `Static` seId
-
-▪ **seId**: *object* = {
-    enter: 0,
-    selected: 1,
-    cancel: 2,
-    cursor: 3,
-    matIn: 4,
-    matOut: 5,
-    get1: 6,
-    get2: 7,
-    get3: 8,
-    effect1: 9,
-    effect2: 10,
-  } as const
-
-*Defined in [cube/char/soundChar.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/soundChar.ts#L17)*
-
-Sound Effect IDs.
-
-#### Type declaration:
-
-* **cancel**: *2* = 2
-
-* **cursor**: *3* = 3
-
-* **effect1**: *9* = 9
-
-* **effect2**: *10* = 10
-
-* **enter**: *0* = 0
-
-* **get1**: *6* = 6
-
-* **get2**: *7* = 7
-
-* **get3**: *8* = 8
-
-* **matIn**: *4* = 4
-
-* **matOut**: *5* = 5
-
-* **selected**: *1* = 1
+*Defined in [cube/char/configChar.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L11)*
 
 ## Methods
 
-###  playMelody
+###  addEventListener
 
-▸ **playMelody**(`melody`: object[]): *void*
+▸ **addEventListener**(`type`: string, `listener`: [CubeConfigCharListner](../globals.md#cubeconfigcharlistner)): *void*
 
-*Defined in [cube/char/soundChar.ts:88](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/soundChar.ts#L88)*
+*Defined in [cube/char/configChar.ts:123](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L123)*
 
-Play melody specified wiht MIDI note sequence.
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`melody` | object[] | An array composed of some combinations of `note` and `duration` values. Use like below. ``` playMelody( [   { note: 0x50, duration: 0x1E },   { note: 0x52, duration: 0x1E },   { note: 0x54, duration: 0x1E } ] ); ``` Refer to the instruction of `playSingleNote()` for note/duration.  |
-
-**Returns:** *void*
-
-___
-
-###  playSE
-
-▸ **playSE**(`idSE`: number): *void*
-
-*Defined in [cube/char/soundChar.ts:36](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/soundChar.ts#L36)*
-
-Play pre-installed sound effect.
+Register callback.
 
 **Parameters:**
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`idSE` | number | Sounde effect index value. Please make use of static `seId.xxx` properties in this class.  |
+`type` | string | Specify the type from 'protocolversion'. |
+`listener` | [CubeConfigCharListner](../globals.md#cubeconfigcharlistner) | - |
 
 **Returns:** *void*
 
 ___
 
-###  playSingleNote
+###  disableMagnet
 
-▸ **playSingleNote**(`note`: number, `duration`: number): *void*
+▸ **disableMagnet**(): *void*
 
-*Defined in [cube/char/soundChar.ts:53](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/soundChar.ts#L53)*
+*Defined in [cube/char/configChar.ts:144](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L144)*
 
-Play single MIDI note.
-
-**Parameters:**
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`note` | number | - | MIDI note number 0-128. 128 is a special value for no-sound.        Refer [toio™Core Cube Spec: Note number and note name](https://toio.github.io/toio-spec/docs/ble_sound). |
-`duration` | number | 30 | Sound duration in msec. 0-2550( 0: Eternally ).  |
+Disable magnet function.
 
 **Returns:** *void*
+
+___
+
+###  enableMagnet
+
+▸ **enableMagnet**(): *void*
+
+*Defined in [cube/char/configChar.ts:135](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L135)*
+
+Enable magnet function.
+
+**Returns:** *void*
+
+___
+
+###  getProtocolVersion
+
+▸ **getProtocolVersion**(): *string*
+
+*Defined in [cube/char/configChar.ts:75](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L75)*
+
+Get BLE protocol version.
+
+**Returns:** *string*
+
+string id of BLE protocol version.
 
 ___
 
@@ -196,11 +152,11 @@ ___
 
 *Implementation of [CubeCharIF](../interfaces/cubecharif.md)*
 
-*Inherited from [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
+*Overrides [CubeChar](cubechar.md).[prepare](cubechar.md#prepare)*
 
-*Defined in [cube/char/char.ts:30](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/char.ts#L30)*
+*Defined in [cube/char/configChar.ts:40](https://github.com/tetunori/p5.toio/blob/49ecddb/src/cube/char/configChar.ts#L40)*
 
-Prepare for using characteristic function.
+Prepare for using configuration characteristic function.
 
 **Returns:** *Promise‹string | Error›*
 

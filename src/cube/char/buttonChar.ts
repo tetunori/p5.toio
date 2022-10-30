@@ -7,9 +7,9 @@ export class CubeButtonChar extends CubeChar {
 
   private buttonPressed = false;
 
-  private cbBoth: (CubeButtonPressedStatusListner | undefined)[] = [];
-  private cbPressed: (CubeButtonPressedStatusListner | undefined)[] = [];
-  private cbReleased: (CubeButtonPressedStatusListner | undefined)[] = [];
+  private cbBoth: CubeButtonPressedStatusListner[] = [];
+  private cbPressed: CubeButtonPressedStatusListner[] = [];
+  private cbReleased: CubeButtonPressedStatusListner[] = [];
 
   /**
    * Prepare for using button characteristic function.
@@ -21,30 +21,26 @@ export class CubeButtonChar extends CubeChar {
       super
         .prepare()
         .then(() => {
-          if (this.characteristic) {
-            // Enable notification
-            this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
-              const target = event.target as BluetoothRemoteGATTCharacteristic;
-              if (target?.value) {
-                this.setButtonStatus(target.value);
-                this.callbackButtonStatus(this.buttonPressed);
-              }
+          // Enable notification
+          this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
+            const target = event.target as BluetoothRemoteGATTCharacteristic;
+            if (target?.value) {
+              this.setButtonStatus(target.value);
+              this.callbackButtonStatus(this.buttonPressed);
+            }
+          });
+          this.characteristic
+            .startNotifications()
+            .then(() => {
+              return this.readButtonStatus();
+            })
+            .then(() => {
+              this.callbackButtonStatus(this.buttonPressed);
+              resolve('characteristic resolve');
+            })
+            .catch((error) => {
+              reject(error);
             });
-            this.characteristic
-              .startNotifications()
-              .then(() => {
-                return this.readButtonStatus();
-              })
-              .then(() => {
-                this.callbackButtonStatus(this.buttonPressed);
-                resolve('characteristic resolve');
-              })
-              .catch((error) => {
-                reject(error);
-              });
-          } else {
-            reject(new Error('characteristic does not exist.'));
-          }
         })
         .catch((error) => {
           reject(error);
@@ -101,8 +97,8 @@ export class CubeButtonChar extends CubeChar {
   /**
    * Register callback.
    *
-   * @param type Specify the type from 'btpress' on Pressed, 'btrelease' on Released or 'btboth' on Pressed/Released.
-   * @param listener: Callback function with param isPressed: boolean and return: void.
+   * @param type Specify the type from 'press' on Pressed, 'release' on Released or 'both' on Pressed/Released.
+   * @param listener: Callback function with param isPressed?: boolean and return: void.
    *
    */
   public addEventListener(type: string, listener: CubeButtonPressedStatusListner): void {
@@ -127,18 +123,18 @@ export class CubeButtonChar extends CubeChar {
    */
   private callbackButtonStatus(isPressed: boolean): void {
     for (const cb of this.cbBoth) {
-      cb?.(isPressed);
+      cb(isPressed);
     }
 
     for (const cb of this.cbPressed) {
       if (isPressed) {
-        cb?.();
+        cb();
       }
     }
 
     for (const cb of this.cbReleased) {
       if (!isPressed) {
-        cb?.();
+        cb();
       }
     }
   }

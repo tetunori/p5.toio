@@ -31,6 +31,7 @@ cat ./out/common/util.js\
     ./out/cube/char/motorChar.js\
     ./out/cube/char/sensorChar.js\
     ./out/cube/char/soundChar.js\
+    ./out/cube/char/configChar.js\
     ./out/cube/cubeBase.js\
     ./out/cube/cube.js\
     ./out/cube/scanner.js\

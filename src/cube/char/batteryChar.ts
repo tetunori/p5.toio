@@ -7,7 +7,7 @@ export class CubeBatteryChar extends CubeChar {
 
   private batteryLevel = 0;
 
-  private cbBatteryLevelChanged: (CubeBatteryLevelListner | undefined)[] = [];
+  private cbBatteryLevelChanged: CubeBatteryLevelListner[] = [];
 
   /**
    * Prepare for using battery characteristic function.
@@ -19,28 +19,24 @@ export class CubeBatteryChar extends CubeChar {
       super
         .prepare()
         .then(() => {
-          if (this.characteristic) {
-            // Enable notification
-            this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
-              const target = event.target as BluetoothRemoteGATTCharacteristic;
-              if (target?.value) {
-                this.setBatteryLevel(target.value);
-              }
+          // Enable notification
+          this.characteristic.addEventListener('characteristicvaluechanged', (event: Event) => {
+            const target = event.target as BluetoothRemoteGATTCharacteristic;
+            if (target?.value) {
+              this.setBatteryLevel(target.value);
+            }
+          });
+          this.characteristic
+            .startNotifications()
+            .then(() => {
+              return this.readBatteryLevel();
+            })
+            .then(() => {
+              resolve('characteristic resolve');
+            })
+            .catch((error) => {
+              reject(error);
             });
-            this.characteristic
-              .startNotifications()
-              .then(() => {
-                return this.readBatteryLevel();
-              })
-              .then(() => {
-                resolve('characteristic resolve');
-              })
-              .catch((error) => {
-                reject(error);
-              });
-          } else {
-            reject(new Error('characteristic does not exist.'));
-          }
         })
         .catch((error) => {
           reject(error);
@@ -114,7 +110,7 @@ export class CubeBatteryChar extends CubeChar {
    */
   private callbackBatteryLevel(batteryLevel: number): void {
     for (const cb of this.cbBatteryLevelChanged) {
-      cb?.(batteryLevel);
+      cb(batteryLevel);
     }
   }
 }

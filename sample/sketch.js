@@ -110,7 +110,7 @@ function keyPressed() {
           cube.stop();
           break;
         case 189:
-          cube.rotate(-70, 120);
+          cube.rotate(80, 0);
           break;
         case 187:
           cube.moveTo( { x: 351, y: 344 }, 80/* maxSpeed */, undefined, P5tCube.easeTypeId.decel );
@@ -147,12 +147,15 @@ function keyPressed() {
           break;
         case 83:
           console.log(cube.batteryLevel);
+          console.log(cube.flat);
+          console.log(cube.posture);
+          console.log(cube.shakeLevel);
+          console.log(cube.magnet);
           break;
         case 68:
-          console.log(cube.flat);
+          console.log(cube.bleProtocolVersion);
           break;
         case 70:
-          console.log(cube.posture);
           break;
         case 71:
           console.log(cube.x, cube.y, cube.angle, cube.sensorX, cube.sensorY);
@@ -162,7 +165,7 @@ function keyPressed() {
           break;
         case 74:
           break;
-        case 65:
+        case 75:
           break;
         case 81: // 'q'
           type = 'buttonpress';
@@ -201,8 +204,12 @@ function keyPressed() {
           cube.addEventListener(type, (idInfo)=>{console.log(type, idInfo)});
           break;
         case 80:
+          type = 'sensorshakelevelchange';
+          cube.addEventListener(type, (shakeLevel)=>{console.log(type, shakeLevel)});
           break;
         case 219:
+          type = 'sensormagnetchange';
+          cube.addEventListener(type, (magnet)=>{console.log(type, magnet)});
           break;
         case 90: // z
           cube.turnToXY( 351, 344, 50 );
@@ -299,6 +306,15 @@ const initCanvas = () => {
 // const cubePostureChanged = (posture) => {
 //   console.log('O: cubePostureChanged!', posture);
 // }
+
+// const cubeShakeLevelChanged = (shakeLevel) => {
+//   console.log('O: cubeShakeLevelChanged!', shakeLevel);
+// }
+
+// const cubeMagnetChanged = (magnet) => {
+//   console.log('O: cubeMagnetChanged!', magnet);
+// }
+
 // const cubePositionIdChanged = (info) => {
 //   console.log('O: cubePositionIdChanged!', info);
 // }

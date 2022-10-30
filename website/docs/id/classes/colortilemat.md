@@ -4,7 +4,6 @@ title: "ColorTileMat"
 sidebar_label: "ColorTileMat"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [ColorTileMat](colortilemat.md)
 
 ## Hierarchy
 
@@ -62,7 +61,7 @@ sidebar_label: "ColorTileMat"
     { row: 7, column: 4 },
   ]
 
-*Defined in [id/position/colorTileMat.ts:153](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L153)*
+*Defined in [id/position/colorTileMat.ts:153](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L153)*
 
 ___
 
@@ -72,7 +71,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerX](mat.md#static-protected-centerx)*
 
-*Defined in [id/position/colorTileMat.ts:8](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L8)*
+*Defined in [id/position/colorTileMat.ts:8](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L8)*
 
 ___
 
@@ -82,7 +81,7 @@ ___
 
 *Overrides [Mat](mat.md).[centerY](mat.md#static-protected-centery)*
 
-*Defined in [id/position/colorTileMat.ts:9](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L9)*
+*Defined in [id/position/colorTileMat.ts:9](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L9)*
 
 ___
 
@@ -101,7 +100,7 @@ ___
     { row: 8, column: 7 },
   ]
 
-*Defined in [id/position/colorTileMat.ts:166](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L166)*
+*Defined in [id/position/colorTileMat.ts:166](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L166)*
 
 ___
 
@@ -111,7 +110,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixColumns](tilemat.md#static-readonly-matrixcolumns)*
 
-*Defined in [id/position/colorTileMat.ts:16](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L16)*
+*Defined in [id/position/colorTileMat.ts:16](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L16)*
 
 ___
 
@@ -121,7 +120,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixMaxX](tilemat.md#static-readonly-matrixmaxx)*
 
-*Defined in [id/position/colorTileMat.ts:13](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L13)*
+*Defined in [id/position/colorTileMat.ts:13](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L13)*
 
 ___
 
@@ -131,7 +130,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixMaxY](tilemat.md#static-readonly-matrixmaxy)*
 
-*Defined in [id/position/colorTileMat.ts:14](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L14)*
+*Defined in [id/position/colorTileMat.ts:14](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L14)*
 
 ___
 
@@ -141,7 +140,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixMinX](tilemat.md#static-readonly-matrixminx)*
 
-*Defined in [id/position/colorTileMat.ts:11](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L11)*
+*Defined in [id/position/colorTileMat.ts:11](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L11)*
 
 ___
 
@@ -151,7 +150,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixMinY](tilemat.md#static-readonly-matrixminy)*
 
-*Defined in [id/position/colorTileMat.ts:12](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L12)*
+*Defined in [id/position/colorTileMat.ts:12](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L12)*
 
 ___
 
@@ -161,7 +160,7 @@ ___
 
 *Overrides [TileMat](tilemat.md).[matrixRows](tilemat.md#static-readonly-matrixrows)*
 
-*Defined in [id/position/colorTileMat.ts:15](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L15)*
+*Defined in [id/position/colorTileMat.ts:15](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L15)*
 
 ___
 
@@ -171,7 +170,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxX](mat.md#static-protected-maxx)*
 
-*Defined in [id/position/colorTileMat.ts:6](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L6)*
+*Defined in [id/position/colorTileMat.ts:6](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L6)*
 
 ___
 
@@ -181,7 +180,7 @@ ___
 
 *Overrides [Mat](mat.md).[maxY](mat.md#static-protected-maxy)*
 
-*Defined in [id/position/colorTileMat.ts:7](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L7)*
+*Defined in [id/position/colorTileMat.ts:7](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L7)*
 
 ___
 
@@ -191,7 +190,7 @@ ___
 
 *Overrides [Mat](mat.md).[minX](mat.md#static-protected-minx)*
 
-*Defined in [id/position/colorTileMat.ts:4](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L4)*
+*Defined in [id/position/colorTileMat.ts:4](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L4)*
 
 ___
 
@@ -201,7 +200,7 @@ ___
 
 *Overrides [Mat](mat.md).[minY](mat.md#static-protected-miny)*
 
-*Defined in [id/position/colorTileMat.ts:5](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L5)*
+*Defined in [id/position/colorTileMat.ts:5](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L5)*
 
 ___
 
@@ -220,7 +219,7 @@ ___
     { row: 8, column: 1 },
   ]
 
-*Defined in [id/position/colorTileMat.ts:140](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L140)*
+*Defined in [id/position/colorTileMat.ts:140](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L140)*
 
 ___
 
@@ -234,7 +233,7 @@ ___
     yellow: '#f0ac00',
   } as const
 
-*Defined in [id/position/colorTileMat.ts:21](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L21)*
+*Defined in [id/position/colorTileMat.ts:21](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L21)*
 
 toio Collection tile color names.
 
@@ -356,7 +355,7 @@ ___
     ],
   ]
 
-*Defined in [id/position/colorTileMat.ts:38](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L38)*
+*Defined in [id/position/colorTileMat.ts:38](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L38)*
 
 toio Collection tile color matrix.
 
@@ -408,7 +407,7 @@ ___
     { row: 8, column: 8 },
   ]
 
-*Defined in [id/position/colorTileMat.ts:192](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L192)*
+*Defined in [id/position/colorTileMat.ts:192](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L192)*
 
 ___
 
@@ -427,7 +426,7 @@ ___
     { row: 8, column: 5 },
   ]
 
-*Defined in [id/position/colorTileMat.ts:179](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L179)*
+*Defined in [id/position/colorTileMat.ts:179](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L179)*
 
 ## Methods
 
@@ -437,7 +436,7 @@ ___
 
 *Inherited from [TileMat](tilemat.md).[getTileCenter](tilemat.md#static-gettilecenter)*
 
-*Defined in [id/position/tileMat.ts:18](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/tileMat.ts#L18)*
+*Defined in [id/position/tileMat.ts:18](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/tileMat.ts#L18)*
 
 Get center of the tile position.
 
@@ -450,15 +449,15 @@ Name | Type | Description |
 
 **Returns:** *object | undefined*
 
-Center position x, y of the specified row/column. If specified row/column is invalid, this function returns undefined.
+Center position x, y of the specified row/column as `{x: number, y: number}`. If specified row/column is invalid, this function returns undefined.
 
 ___
 
 ### `Static` getTileColor
 
-▸ **getTileColor**(`x`: number, `y`: number): *string | undefined*
+▸ **getTileColor**(`x`: number | undefined, `y`: number | undefined): *string | undefined*
 
-*Defined in [id/position/colorTileMat.ts:244](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/colorTileMat.ts#L244)*
+*Defined in [id/position/colorTileMat.ts:244](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/colorTileMat.ts#L244)*
 
 Get tile color of toio Collection.
 
@@ -466,8 +465,8 @@ Get tile color of toio Collection.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`x` | number | X coordinate of checking target point. |
-`y` | number | Y coordinate of checking target point.  |
+`x` | number &#124; undefined | X coordinate of checking target point. |
+`y` | number &#124; undefined | Y coordinate of checking target point.  |
 
 **Returns:** *string | undefined*
 
@@ -481,7 +480,7 @@ ___
 
 *Inherited from [TileMat](tilemat.md).[getTileColumn](tilemat.md#static-gettilecolumn)*
 
-*Defined in [id/position/tileMat.ts:102](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/tileMat.ts#L102)*
+*Defined in [id/position/tileMat.ts:101](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/tileMat.ts#L101)*
 
 Get column index number of the tile matrix.
 
@@ -503,7 +502,7 @@ ___
 
 *Inherited from [TileMat](tilemat.md).[getTileMatrixIndex](tilemat.md#static-gettilematrixindex)*
 
-*Defined in [id/position/tileMat.ts:49](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/tileMat.ts#L49)*
+*Defined in [id/position/tileMat.ts:49](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/tileMat.ts#L49)*
 
 Get matrix index of simple play(tile) mat.
 
@@ -516,7 +515,7 @@ Name | Type | Description |
 
 **Returns:** *object | undefined*
 
-row/column numbers. If specified (x, y) is not on toio Collection tile mat, this function returns undefined.
+row/column numbers as `{row: number, column: number}`. If specified (x, y) is not on toio Collection tile mat, this function returns undefined.
 
 ___
 
@@ -526,7 +525,7 @@ ___
 
 *Inherited from [TileMat](tilemat.md).[getTileRow](tilemat.md#static-gettilerow)*
 
-*Defined in [id/position/tileMat.ts:79](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/tileMat.ts#L79)*
+*Defined in [id/position/tileMat.ts:74](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/tileMat.ts#L74)*
 
 Get row index number of the tile matrix.
 
@@ -548,7 +547,7 @@ ___
 
 *Inherited from [Mat](mat.md).[isOnMat](mat.md#static-isonmat)*
 
-*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/position/mat.ts#L17)*
+*Defined in [id/position/mat.ts:17](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/position/mat.ts#L17)*
 
 Specified coordinate is on the mat or not.
 

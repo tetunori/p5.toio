@@ -4,7 +4,6 @@ title: "p5.toio"
 sidebar_label: "Globals"
 ---
 
-[p5.toio](index.md) › [Globals](globals.md)
 
 ## Index
 

@@ -4,7 +4,6 @@ title: "P5tId"
 sidebar_label: "P5tId"
 ---
 
-[p5.toio](../index.md) › [Globals](../globals.md) › [P5tId](p5tid.md)
 
 ## Hierarchy
 
@@ -51,7 +50,7 @@ sidebar_label: "P5tId"
 
 *Inherited from [Id](id.md).[Card](id.md#static-card)*
 
-*Defined in [id/id.ts:27](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L27)*
+*Defined in [id/id.ts:27](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L27)*
 
 ___
 
@@ -61,7 +60,7 @@ ___
 
 *Inherited from [Id](id.md).[ColorTileMat](id.md#static-colortilemat)*
 
-*Defined in [id/id.ts:35](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L35)*
+*Defined in [id/id.ts:35](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L35)*
 
 ___
 
@@ -71,7 +70,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat01](id.md#static-devmat01)*
 
-*Defined in [id/id.ts:38](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L38)*
+*Defined in [id/id.ts:38](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L38)*
 
 ___
 
@@ -81,7 +80,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat02](id.md#static-devmat02)*
 
-*Defined in [id/id.ts:39](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L39)*
+*Defined in [id/id.ts:39](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L39)*
 
 ___
 
@@ -91,7 +90,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat03](id.md#static-devmat03)*
 
-*Defined in [id/id.ts:40](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L40)*
+*Defined in [id/id.ts:40](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L40)*
 
 ___
 
@@ -101,7 +100,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat04](id.md#static-devmat04)*
 
-*Defined in [id/id.ts:41](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L41)*
+*Defined in [id/id.ts:41](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L41)*
 
 ___
 
@@ -111,7 +110,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat05](id.md#static-devmat05)*
 
-*Defined in [id/id.ts:42](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L42)*
+*Defined in [id/id.ts:42](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L42)*
 
 ___
 
@@ -121,7 +120,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat06](id.md#static-devmat06)*
 
-*Defined in [id/id.ts:43](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L43)*
+*Defined in [id/id.ts:43](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L43)*
 
 ___
 
@@ -131,7 +130,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat07](id.md#static-devmat07)*
 
-*Defined in [id/id.ts:44](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L44)*
+*Defined in [id/id.ts:44](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L44)*
 
 ___
 
@@ -141,7 +140,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat08](id.md#static-devmat08)*
 
-*Defined in [id/id.ts:45](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L45)*
+*Defined in [id/id.ts:45](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L45)*
 
 ___
 
@@ -151,7 +150,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat09](id.md#static-devmat09)*
 
-*Defined in [id/id.ts:46](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L46)*
+*Defined in [id/id.ts:46](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L46)*
 
 ___
 
@@ -161,7 +160,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat10](id.md#static-devmat10)*
 
-*Defined in [id/id.ts:47](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L47)*
+*Defined in [id/id.ts:47](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L47)*
 
 ___
 
@@ -171,7 +170,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat11](id.md#static-devmat11)*
 
-*Defined in [id/id.ts:48](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L48)*
+*Defined in [id/id.ts:48](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L48)*
 
 ___
 
@@ -181,7 +180,7 @@ ___
 
 *Inherited from [Id](id.md).[DevMat12](id.md#static-devmat12)*
 
-*Defined in [id/id.ts:49](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L49)*
+*Defined in [id/id.ts:49](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L49)*
 
 ___
 
@@ -191,7 +190,7 @@ ___
 
 *Inherited from [Id](id.md).[GameMark](id.md#static-gamemark)*
 
-*Defined in [id/id.ts:28](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L28)*
+*Defined in [id/id.ts:28](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L28)*
 
 ___
 
@@ -201,7 +200,7 @@ ___
 
 *Inherited from [Id](id.md).[RingMat](id.md#static-ringmat)*
 
-*Defined in [id/id.ts:36](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L36)*
+*Defined in [id/id.ts:36](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L36)*
 
 ___
 
@@ -211,7 +210,7 @@ ___
 
 *Inherited from [Id](id.md).[SimpleCardAlphabet](id.md#static-simplecardalphabet)*
 
-*Defined in [id/id.ts:32](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L32)*
+*Defined in [id/id.ts:32](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L32)*
 
 ___
 
@@ -221,7 +220,7 @@ ___
 
 *Inherited from [Id](id.md).[SimpleCardNumber](id.md#static-simplecardnumber)*
 
-*Defined in [id/id.ts:31](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L31)*
+*Defined in [id/id.ts:31](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L31)*
 
 ___
 
@@ -231,7 +230,7 @@ ___
 
 *Inherited from [Id](id.md).[SimpleCardSymbol](id.md#static-simplecardsymbol)*
 
-*Defined in [id/id.ts:33](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L33)*
+*Defined in [id/id.ts:33](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L33)*
 
 ___
 
@@ -241,7 +240,7 @@ ___
 
 *Inherited from [Id](id.md).[SimpleTileMat](id.md#static-simpletilemat)*
 
-*Defined in [id/id.ts:37](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L37)*
+*Defined in [id/id.ts:37](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L37)*
 
 ___
 
@@ -251,7 +250,7 @@ ___
 
 *Inherited from [Id](id.md).[Skunk](id.md#static-skunk)*
 
-*Defined in [id/id.ts:29](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L29)*
+*Defined in [id/id.ts:29](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L29)*
 
 ___
 
@@ -261,7 +260,7 @@ ___
 
 *Inherited from [Id](id.md).[Sticker](id.md#static-sticker)*
 
-*Defined in [id/id.ts:30](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L30)*
+*Defined in [id/id.ts:30](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L30)*
 
 ## Methods
 
@@ -271,7 +270,7 @@ ___
 
 *Inherited from [Id](id.md).[getStandardIdName](id.md#static-getstandardidname)*
 
-*Defined in [id/id.ts:58](https://github.com/tetunori/p5.toio/blob/f95e57b/src/id/id.ts#L58)*
+*Defined in [id/id.ts:58](https://github.com/tetunori/p5.toio/blob/49ecddb/src/id/id.ts#L58)*
 
 Get standard ID string name.
 

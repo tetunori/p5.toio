@@ -6,7 +6,8 @@
     "docs2:id": "typedoc src/p5tId.ts src/id/ --out docs/id --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:cube": "typedoc src/p5tCube.ts src/cube/ --out docs/cube --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
     "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/ && git checkout website/sidebars.js",
-    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:web",
+    "docs2:sed": "find docs -name '*.md' | xargs sed -i -e \"7d\"",
+    "docs2": "yarn docs:clean && yarn docs2:id && yarn docs2:cube && yarn docs2:sed && yarn docs2:web",
     "min": "terser ./dist/p5.toio.js --compress --mangle --output ./dist/p5.toio.min.js",
     "make": "eslint ./src/**/*.ts --fix && tsc && bash ./concat.sh && yarn min",
     "lint": "eslint ./src/**/*.ts ./tests/**/*.ts",
@@ -15,14 +16,14 @@
     "test:coverage": "jest --coverage --collectCoverage"
   },
   "dependencies": {
-    "terser": "^4.6.13",
     "@types/p5": "^0.9.0",
     "@types/web-bluetooth": "0.0.5",
     "eslint-config-p5js": "^1.0.1",
     "eslint-plugin-prettier": "^3.1.3",
     "p5": "^1.0.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "terser": "^4.6.13"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
@@ -41,7 +42,8 @@
     "ts-jest": "^26.0.0",
     "typedoc": "^0.17.7",
     "typedoc-plugin-markdown": "^2.2.17",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "web-bluetooth-mock": "^1.0.2"
   },
   "jest": {
     "preset": "ts-jest",
@@ -60,7 +62,8 @@
     "testMatch": [
       "**/tests/common/*.test.ts",
       "**/tests/id/**/*.test.ts",
-      "**/tests/p5tId.test.ts"
+      "**/tests/p5tId.test.ts",
+      "**/tests/cube/char/batteryChar.test.ts"
     ]
   }
 }
