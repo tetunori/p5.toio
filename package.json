@@ -23,7 +23,7 @@
     "p5": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "terser": "^4.6.13"
+    "terser": "^4.8.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
