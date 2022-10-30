@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://tetunori.github.io/p5.toio"><img src="https://tetunori.github.io/p5.toio/images/logo-a.png" alt="p5.toio" width="600px"></a>
+  <a href="https://tetunori.github.io/p5.toio"><img src="https://tetunori.github.io/p5.toio/images/logo.png" alt="p5.toio" width="600px"></a>
 </h1>
 
 <p align="center">
