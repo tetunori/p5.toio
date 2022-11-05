@@ -5,11 +5,12 @@ module.exports = {
   baseUrl: '/p5.toio/',
   favicon: 'images/favicon.ico',
   organizationName: 'tetunori',
+  trailingSlash: false,
   projectName: 'p5.toio',
   themeConfig: {
     image: 'images/logo-a.png',
     algolia: {
-      apiKey: '935d5b3d7f1761f069b079400c211bdc',
+      apiKey: '1abf27b835b825a213669c84dd8e07f9',
       appId: '42Y1BH8W15',
       indexName: 'p5_toio',
     },
