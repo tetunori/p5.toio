@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://tetunori.github.io/p5.toio"><img src="https://tetunori.github.io/p5.toio/images/logo.png" alt="p5.toio" width="600px"></a>
+  <a href="https://tetunori.github.io/p5.toio"><img src="https://tetunori.github.io/p5.toio/images/logo-b.png" alt="p5.toio" width="600px"></a>
 </h1>
 
 <p align="center">
@@ -12,9 +12,9 @@
 </p>
 
 # Description
-**p5.toio** is a library for controlling toio™ in p5.js environment.  
-A lot of APIs on [toio™](https://toio.io/) can be used with just a simple step as below.  
-beta-release(0.8.0)
+**p5.toio** is a library for controlling [toio™](https://toio.io/)Core Cube in p5.js environment.  
+A lot of APIs on toio™Core Cube can be used with just a simple step as below.  
+Beta-release(0.8.0) Now.
 
 **p5.toio** consists of 2 classes `P5tCube` and `P5tId`.  
 `P5tCube` class supplies a lot of APIs and utilities enable us to control Cube easily.  
@@ -28,9 +28,7 @@ Due to the dependency to `WebBluetooth`, this library works with the following e
 - OS: Windows, macOS, Android. **iOS/iPadOS does not support**(Please use [Bluefy](https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055) app instead). 
 - Browser: Latest version of Google Chrome is highly recommended.  
 
-Currently(2022/10/29), [OpenProcessing](https://www.openprocessing.org/) supports `Web Bluetooth` but [p5.js Web Editor](https://editor.p5js.org/) unfortunately does not support it so that this library also does not work😭.  
-Please see [the issue](https://github.com/processing/p5.js-web-editor/issues/1900) on p5.js Web Editor.  
-**[OpenProcessing: p5.toio Basic Sample](https://openprocessing.org/sketch/1716366)**  
+You can check & use immediately via **[OpenProcessing: p5.toio Basic Sample](https://openprocessing.org/sketch/1716366)**.
 
 ## Import library
 Just insert a sigle script after 2 dependent scripts `p5.js` and `p5.sound.min.js` in your `<head>`.  
@@ -198,6 +196,7 @@ const onFlatChanged(flat: boolean);
 const onCollisionOccurred();
 const onDoubleTapped();
 const onPostureChanged(posture: string);
+const onShakeLevelChanged(shakelevel: number);
 const onPositionIdChanged(info: positionIdInfo);
 const onStandardIdChanged(info: standardIdInfo);
 ```
@@ -235,7 +234,7 @@ Only in Windows environment, `moveToMulti` API does not work correctly with spec
 This software is released under MIT License, see LICENSE.
 
 # Author
-Tetsunori NAKAYAMA.
+Tetsunori Nakayama.
 
 # References
 ## TypeScript
