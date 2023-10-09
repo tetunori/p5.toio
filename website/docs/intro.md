@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-![Logo](https://tetunori.github.io/p5.toio/images/logo.png 'Logo')
+![Logo](https://tetunori.github.io/p5.toio/images/logo-b.png 'Logo')
 ## What is p5.toio?
 **p5.toio** is a library for [toio™](https://toio.io/) in p5.js environment. A lot of APIs on toio can be used with just simple steps as we see later. Now, we have `beta-version(0.8.0)`.
 

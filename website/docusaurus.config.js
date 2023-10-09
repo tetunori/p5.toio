@@ -86,7 +86,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Tetsunori NAKAYAMA.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Tetsunori Nakayama.`,
     },
   },
   presets: [
