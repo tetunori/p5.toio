@@ -46,6 +46,7 @@ const onFlatChanged(flat: boolean);
 const onCollisionOccurred();
 const onDoubleTapped();
 const onPostureChanged(posture: string);
+const onShakeLevelChanged(shakelevel: number);
 const onPositionIdChanged(info: positionIdInfo);
 const onStandardIdChanged(info: standardIdInfo);
 ```

@@ -25,7 +25,3 @@ We can also use the non-minified code.
 2. Insert `p5.toio` library as the additional library by pressing "+" button aside "LIBRARIES".
 3. Then, you can go back and start programming in `mySketch`.
    Go on to the next page [Basic Usage](https://tetunori.github.io/p5.toio/docs/basic).
-
-:::note
-Currently(2022/10/29), [OpenProcessing](https://www.openprocessing.org/) supports `Web Bluetooth` but [p5.js Web Editor](https://editor.p5js.org/) unfortunately does not support it so that this library also does not work😭. Please see [the issue](https://github.com/processing/p5.js-web-editor/issues/1900) on p5.js Web Editor.  
-:::

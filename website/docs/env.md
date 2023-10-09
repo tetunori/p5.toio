@@ -10,6 +10,3 @@ Due to the dependency to `Web Bluetooth`, this library works with the following 
 - Browser: Latest version of Google Chrome is highly recommended.
 
 Also, some Web Editor like [OpenProcessing](https://www.openprocessing.org/) support this library. We use this environment for samples.
-:::note
-[p5.js Web Editor](https://editor.p5js.org/) unfortunately does not support `Web Bluetooth` so that this library also does not work😭. Please see [the issue](https://github.com/processing/p5.js-web-editor/issues/1900) on p5.js Web Editor.
-:::
